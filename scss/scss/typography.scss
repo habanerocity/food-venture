@@ -1,0 +1,37 @@
+
+body{
+    font-family: 'Source Sans 3', sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'montserrat', sans-serif;
+}
+h1{
+    font-size: 5.2rem;
+    line-height: 7rem;
+    font-weight: $fontweight-bold;
+    margin: 0.67em 0;
+}
+h2{
+    font-size: 3.6rem;
+    line-height: 4rem;
+    font-weight: $fontweight-semibold;
+}
+h3{
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    font-weight: $fontweight-semibold;
+}
+h4{
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    font-weight: $fontweight-semibold;
+}
+p, div{
+    font-size: 2rem;
+    line-height: 1.7rem;
+    font-weight: $fontweight-regular;
+}
+a:hover,
+a:visited{
+    color: #6d6d6d;
+}
