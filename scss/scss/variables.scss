@@ -1,5 +1,7 @@
 // Typography
 
+$fontfamily-headings: 'montserrat';
+
 $fontweight-bold: 800;
 $fontweight-semibold: 600;
 $fontweight-regular: 400;
@@ -16,3 +18,24 @@ $secondary-white: #f5f5f5;
 $accent-color: #888888;
 
 $confirmation-color: #5cb85c;
+
+// Spacing
+
+// Basic Spacing Variables
+$spacing-unit: 4px;
+$spacing-small: $spacing-unit;
+$spacing-medium: $spacing-unit * 2;
+$spacing-large: $spacing-unit * 3;
+$spacing-xl: $spacing-unit * 4;
+
+// Layout Spacing
+$section-inner-spacing: $spacing-unit * 10;
+$section-spacing: $spacing-unit * 21;
+
+// Responsive Spacing
+$mobile-spacing: $spacing-small;
+$tablet-spacing: $spacing-medium;
+$desktop-spacing: $spacing-large;
+
+// Styles
+$border-radius: 3px;

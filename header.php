@@ -7,25 +7,31 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <h1>This is an h1</h1>
-    <h2>This is an h2</h2>
-    <h3>This is an h3</h3>
-    <h4>This is an h4</h4>
-    <p>this is a p tag</p>
-    <div>this is a div tag</div>
     <div id="page" class="site">
         <header>
             <nav class="top-bar">
-                <div class="logo">
-                    Logo
-                </div>
-                <div class="searchbox">
-                    Search
+                <div class="container">
+                    <div class="logo">
+                        Logo
+                    </div>
+                    <nav class="main-menu">
+                        <button class="check-button">
+                            <div class="menu-icon">
+                                <div class="bar1" id=""></div>
+                                <div class="bar2" id=""></div>
+                                <div class="bar3" id=""></div>
+                            </div>
+                        </button>
+                        <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
+                        <div class="searchbox">
+                            Search
+                        </div>
+                    </nav>
                 </div>
             </nav>
             <section class="menu-area">
-                <nav class="main-menu">
-                    Menu
-                </nav>
+                <div class="container">
+                   
+                </div>
             </section>
         </header>

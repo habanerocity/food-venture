@@ -1,3 +1,6 @@
+@import "variables";
+
+
 /**
 1. Normalize
 2. Theme Specific CSS
@@ -308,41 +311,6 @@ img {
     height: auto;
 }
 
-/* Containers */
-
-.container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
-@media (max-width: 575px) {
-    .container {
-        padding: var(--wpdevs-light-padding);
-    }
-}
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-}
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
-}
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-}
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
-}
-
 /************** HOME PAGE *****************/
 
 /* Top Bar Section */
@@ -378,7 +346,7 @@ img {
 /* Main Menu */
 
 .menu-area {
-	background: var( --wpdevs-gray2 );
+	background: gray;
 }
 .main-menu {
     height: 55px;
@@ -521,7 +489,7 @@ img {
     text-align: center;
 }
 .hero-items{
-    padding: var( --wpdevs-light-padding );
+    padding: 4.4rem;
 }
 .hero .overlay{
     // background: rgb(0 0 0 / 27%);
@@ -537,18 +505,18 @@ img {
     color: #FFFFFF;
     padding: 15px 25px;
     display: inline-block;
-    background: var( --wpdevs-light-blue );
+    background: blue;
     margin: 20px 0 0;
 }
 .hero .hero-items a:hover{
-    background: var( --wpdevs-yellow );
+    background: yellow;
     transition: .5s all;
 }
 
 /* Services */
 .services{ 
-    background: var( --wpdevs-deep-blue ); 
-    padding: var( --wpdevs-big-padding ); 
+    background: blue; 
+    padding: $spacing-xl; 
     color: #ffffff; 
 }
 .services .container{
@@ -560,13 +528,13 @@ img {
     flex: 1 1 250px;
 }
 .services-item{
-    padding: var(--wpdevs-light-padding);
+    padding: $spacing-large;
 }
 .services-item p{
     margin-bottom: 40px;
 }
 .services-item figure{ 
-    background: var( --wpdevs-black-blue );
+    background: black;
     padding: 15px; 
 }
 .services h2{ 
@@ -576,7 +544,7 @@ img {
 .services h2::after{
     content: '';
     position: absolute;
-    background-color: var( --wpdevs-light-blue );
+    background-color: blue;
     width: 35px;
     height: 5px;
     right: calc( 50% - 15px);
@@ -597,7 +565,7 @@ img {
 
 /* Home Blog */
 .home .home-blog{
-    padding: var( --wpdevs-big-padding );
+    padding: $spacing-large;
 }
 .home-blog .container article:first-child{
     grid-area: feat-item;
@@ -614,7 +582,7 @@ img {
 .home .home-blog h2::after{
     content: '';
     position: absolute;
-    background-color: var( --wpdevs-light-blue );
+    background-color: blue;
     width: 35px;
     height: 5px;
     right: calc( 50% - 15px);
@@ -651,7 +619,7 @@ img {
 
 /* Footer */
 footer{ 
-    background: var( --wpdevs-deep-blue ); 
+    background: blue; 
     padding: 15px 0; 
     color: #FFFFFF; 
 }
@@ -720,7 +688,7 @@ footer .container .row{
 .blog aside,
 .archive aside{
     padding: 25px;
-    background: var( --wpdevs-gray2 );
+    background: $accent-color;
     height: 100%;
     width: 30%;
 }
@@ -745,11 +713,11 @@ footer .container .row{
     padding: 0;
 }
 #primary > #main{
-    padding: var(--wpdevs-big-padding);
+    padding: $spacing-xl;
 }
 @media screen and (max-width: 991px ) {
     #primary > #main{
-        padding: var(--wpdevs-mobile-padding);
+        padding: $spacing-small;
     }
 }
 .meta-info p{
@@ -814,12 +782,12 @@ article.post h5{
     color: #FFFFFF;
     padding: 15px 25px;
     display: inline-block;
-    background: var( --wpdevs-light-blue );
+    background: blue;
     margin: 20px 0 0; 
     border: none;
 }
 #commentform input[type="submit"]:hover{
-    background: var( --wpdevs-yellow );
+    background: yellow;
     transition: .5s all;
 }
 #commentform label{
@@ -854,7 +822,7 @@ article.post h5{
 .nav-links .page-numbers{
     padding: 10px 15px;
     display: inline-block;
-    background: var( --wpdevs-gray3 );
+    background: $accent-color;
 }
 .nav-links .current{
     background-color: #000000;
