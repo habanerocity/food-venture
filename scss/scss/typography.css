@@ -1,0 +1,60 @@
+body {
+  font-family: 'Source Sans 3', sans-serif; }
+
+h1, h2, h3, h4 {
+  font-family: 'montserrat', sans-serif; }
+
+h1 {
+  font-size: 5.2rem;
+  line-height: 7rem;
+  font-weight: 800;
+  margin: 0.67em 0;
+  color: #252525; }
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 4rem;
+  font-weight: 600; }
+
+h3 {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  font-weight: 600; }
+
+h4 {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-weight: 600; }
+
+p, div {
+  font-size: 2rem;
+  line-height: 1.7rem;
+  font-weight: 400; }
+
+a:hover,
+a:visited {
+  color: #6d6d6d; }
+
+.menu-item {
+  font-family: "montserrat";
+  text-decoration: none;
+  position: relative;
+  font-size: 2.2rem;
+  transition: all .3s ease; }
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    background-color: #333333;
+    left: 0;
+    transition: -webkit-transform .3s ease;
+    transition: width .3s ease; }
+  .menu-item:hover {
+    text-decoration: none; }
+  .menu-item:hover::after {
+    width: 100%; }
+
+/*# sourceMappingURL=typography.css.map */
