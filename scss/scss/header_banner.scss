@@ -1,0 +1,9 @@
+@import "variables";
+
+#menu-main-menu li a {
+    color: $secondary-white;
+}
+
+#menu-main-menu ul li.current_page_item > a::before{
+    color: $secondary-white;
+}

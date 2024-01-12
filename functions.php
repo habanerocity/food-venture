@@ -8,9 +8,80 @@ function wpfoodventure_load_scripts(){
 
 add_action( 'wp_enqueue_scripts', 'wpfoodventure_load_scripts' );
 
-register_nav_menus(
-    array(
-        'wp_foodventure_main_menu' => 'Main Menu',
-        'wp_foodventure_footer_menu' => 'Footer Menu'
-    )
-);
+function wpfoodventure_config(){
+    register_nav_menus(
+        array(
+            'wp_foodventure_main_menu' => 'Main Menu',
+            'wp_foodventure_footer_menu' => 'Footer Menu'
+        )
+    );
+
+    $args = array(
+        'height' => 440,
+        'width' => 1920
+    );
+
+    add_theme_support( 'custom-header', $args );
+}
+
+//upload svg files
+
+function add_file_types_to_uploads($file_types){
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes );
+    return $file_types;
+    }
+    add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+add_action( 'after_setup_theme', 'wpfoodventure_config', 0 );
+
+// Register Sidebars - Footer Columns
+
+add_action('widgets_init', 'wp_foodventure_footer_cols');
+function wp_foodventure_footer_cols(){
+    register_sidebar(
+        array(
+            'name' => 'Footer Column 1',
+            'id' => 'footer-col-1',
+            'description' => 'First column in the footer',
+            'before_widget' => '<div class="footer-menu-section">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="footer-menu-label">',
+            'after_title' => '</h4>'
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Footer Column 2',
+            'id' => 'footer-col-2',
+            'description' => 'Second column in the footer',
+            'before_widget' => '<div class="footer-menu-section">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="footer-menu-label">',
+            'after_title' => '</h4>'
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Footer Column 3',
+            'id' => 'footer-col-3',
+            'description' => 'Third column in the footer',
+            'before_widget' => '<div class="footer-menu-section">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="footer-menu-label">',
+            'after_title' => '</h4>'
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Footer Column 4',
+            'id' => 'footer-col-4',
+            'description' => 'Fourth column in the footer',
+            'before_widget' => '<div class="footer-menu-section">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="footer-menu-label">',
+            'after_title' => '</h4>'
+        )
+    );
+}

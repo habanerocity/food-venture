@@ -28,6 +28,10 @@
     font-size: 62.5%;
     box-sizing: border-box;
   }
+
+  body{
+    margin: 0;
+  }
   
   /* Sections
      ========================================================================== */
@@ -316,7 +320,7 @@ img {
 
 /* Top Bar Section */
 .top-bar{ 
-    background: #ffffff; 
+    background: transparent; 
     color: #000000; 
     padding: 15px 0; 
 }
@@ -340,14 +344,16 @@ img {
     display: flex;
     align-items: center;
     border-radius: 1rem;
-    border: 1px solid $primary-black;
+    border: 1px solid $primary-white;
     width: 17.2rem;
     height: 4rem;
     flex-shrink: 0;
+    background-color: transparent;
     color: $accent-color;
     padding: 0 1rem;
     &::placeholder{
         text-align: left;
+        color: $secondary-white;
     }
 }
 .searchbox input[type="text"]{
@@ -365,7 +371,7 @@ img {
         display: none;
     }
     .top-bar .container{
-        justify-content: center;
+        justify-content: space-between;
     }
 }
 
@@ -389,22 +395,35 @@ img {
     position: relative;
 }
 .main-menu ul li.current_page_item > a{
-    text-decoration: underline 3px solid $secondary-black;
+    text-decoration: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        background-color: $secondary-white;
+        left: 0;
+        transition: -webkit-transform .3s ease;
+        transition: width .3s ease;
+    }
 }
 .main-menu ul li a {
     color: $primary-black;
     font-style: normal;
     font-weight: $fontweight-semibold;
-    padding: 0 1rem;
+    margin: 0 1rem;
     text-decoration: none;
     display: block;
 }
-.main-menu ul li a:hover,
-.main-menu ul li a:active
-{
-    color: var( --wpdevs-gray1 );
-    transition: .5s all;
-}
+// .main-menu ul li a:hover,
+// .main-menu ul li a:active
+// {
+//     color: var( --wpdevs-gray1 );
+//     transition: .5s all;
+// }
 .main-menu ul li a:focus + ul
 {
     display: block;
@@ -455,6 +474,10 @@ img {
     transition: 0.4s;
 }
 @media (max-width: 767px){
+    .logo{
+        z-index: 10;
+        transform: translateX(-4rem);
+    }
     .menu-icon,
     .check-button {
 		display: block;
@@ -466,17 +489,23 @@ img {
     }
 	.main-menu ul{
 		position: absolute;
-		width: 100%;
-		background: #000000;
+        width: 35%;
+        height: 150%;
+		background: $primary-white;
 		left: -999px;
 		text-align: left;
 		transition: all cubic-bezier(.79,.14,.15,.86) .5s;
-        padding: 0;
+        padding: 15rem 2rem 0 2rem;
         margin: 0;
         z-index: 1;
+        transform: translateY(-1.5rem);
 	}
-    .main-menu ul:not(.sub-menu){
-        margin-top: 55px;
+    // .main-menu ul:not(.sub-menu){
+    //     margin-top: 55px;
+    // }
+    .main-menu ul li.current_page_item > a::before{
+        height: 0;
+        background-color: $accent-color;
     }
 	.main-menu ul li{
 		display: block;
@@ -484,7 +513,7 @@ img {
 		line-height: 30px;
 	}
 	.main-menu ul li a {
-		color: #FFFFFF;
+		color: $primary-black;
 	}
     .main-menu ul.sub-menu{
         position: relative;
@@ -643,55 +672,6 @@ img {
 @media (max-width: 768px) {
     .home-blog .container{
         display: block;
-    }
-}
-
-/* Footer */
-footer{ 
-    background: blue; 
-    padding: 15px 0; 
-    color: #FFFFFF; 
-}
-footer .container .row{
-    align-items: center;
-}
-
-/* Footer - Footer Menu */
-.site-footer .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.site-footer .copyright p{
-    margin: 0;
-}
-.footer-menu ul{ 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-}
-.footer-menu ul li{ 
-    display: inline;  
-    margin: 0 15px 0 0;
-}
-.footer-menu ul li:last-child{ 
-    margin: 0; 
-}
-.footer-menu ul li a{  
-    text-decoration: none;
-    color: #FFFFFF;
-}
-.footer-menu ul li.current_page_item a{ 
-    font-weight: bold; 
-}
-@media (max-width: 768px) {
-    .site-footer .container{
-        justify-content: safe;
-    }
-}
-@media (max-width: 575px) {
-    .site-footer .container{
-        flex-wrap: wrap;
     }
 }
 
