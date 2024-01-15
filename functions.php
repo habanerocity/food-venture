@@ -22,6 +22,12 @@ function wpfoodventure_config(){
     );
 
     add_theme_support( 'custom-header', $args );
+    add_theme_support( 'custom-logo', array(
+        'height' => 75,
+        'width' => 75,
+        'flex-height' => true,
+        'flex-width' => true
+    ) );
 }
 
 //upload svg files

@@ -1,8 +1,16 @@
 <header>
-    <nav class="top-bar">
-        <div class="container">
+    <nav class="navbar">
+        <div class="navbar_nav">
             <div class="logo">
-                Logo
+                <?php 
+                if(has_custom_logo()){
+                    the_custom_logo();
+                } else {
+                    ?>
+                    <a href="<?php echo home_url('/'); ?>" style="text-decoration: none;color: #000;"><span><?php bloginfo('name'); ?></span></a>
+                <?php
+                    }
+                 ?>
             </div>
             <nav class="main-menu">
                 <button class="check-button">
@@ -12,7 +20,10 @@
                         <div class="bar3" id=""></div>
                     </div>
                 </button>
-                <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
+                <div class="wp_nav_wrapper">
+                    <img src="http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg" class="sidemenu_logo hidden">
+                    <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
+                </div>
                 <div class="searchbox">
                     <input id="search-field" type="search" name="search" placeholder="Search">
                     <svg id="mag_glass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
