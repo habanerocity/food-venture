@@ -1,17 +1,33 @@
-let dropdown = document.querySelector('.menu'), //ul
+let sideMenu = document.querySelector('.wp_nav_wrapper'), //ul
 submenu = document.querySelector('.sub-menu'), //ul li ul
 sideMenuLogo = document.querySelector('.sidemenu_logo'), //sidemenu logo
 buttonClick = document.querySelector('.check-button'), //button
+searchBox = document.querySelector('.searchbox'), //search field
 hamburger = document.querySelector('.menu-icon'); //burger icon
 
 buttonClick.addEventListener( 'click', () => {
-
-    dropdown.classList.toggle('show-dropdown');
-    if(submenu){
-        submenu.classList.toggle('show-dropdown');
-        sideMenuLogo.classList.toggle('sidemenu_logo');
+    sideMenu.classList.toggle('show-dropdown');
+    // if(sideMenu.classList.contains('show-dropdown')){
+    //     console.log('submenu');
+    // }
+    // Toggle display of searchBox
+    const display = window.getComputedStyle(searchBox).display;
+    if (display === "none") {
+        searchBox.style.display = "flex";
+    } else {
+        searchBox.style.display = "none";
     }
+    sideMenuLogo.classList.toggle('hidden');
     hamburger.classList.toggle('animate-button');
     
 
 })
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 767) {
+        searchBox.style.display = "flex";
+    } else {
+        // Keep the current display state of searchBox when window width is 767px or less
+    }
+});
+
