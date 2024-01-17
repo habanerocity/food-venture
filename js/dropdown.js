@@ -4,19 +4,19 @@ sideMenuLogo = document.querySelector('.sidemenu_logo'), //sidemenu logo
 buttonClick = document.querySelector('.check-button'), //button
 searchBox = document.querySelector('.searchbox'), //search field
 hamburger = document.querySelector('.menu-icon'); //burger icon
+overlay = document.querySelector('.overlay'); //burger icon
 
 buttonClick.addEventListener( 'click', () => {
     sideMenu.classList.toggle('show-dropdown');
-    // if(sideMenu.classList.contains('show-dropdown')){
-    //     console.log('submenu');
-    // }
-    // Toggle display of searchBox
+
     const display = window.getComputedStyle(searchBox).display;
     if (display === "none") {
         searchBox.style.display = "flex";
     } else {
         searchBox.style.display = "none";
     }
+
+    overlay.classList.toggle('hidden');
     sideMenuLogo.classList.toggle('hidden');
     hamburger.classList.toggle('animate-button');
     
