@@ -451,6 +451,13 @@ img {
 @media (min-width: 767px) {
   .sidemenu_logo {
     display: none; } }
+.flex_container-row {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
 @media (max-width: 767px) {
   .logo {
     z-index: 10; }
