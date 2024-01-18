@@ -530,8 +530,71 @@ img {
 
 .flex_container-row{
     @include flex-container;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.our_mission-wrapper{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 44%;
+    text-align:left;
+}
+.about_us_pic-wrapper{
+    display: flex;
+}
+.btn_round-transparent{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    background: transparent;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    
+    &:hover{
+        background: $button-black;
+        color: $primary-white;
+        transition: .2s all ease-in-out;
+    }
 }
 
+.btn_round-solid{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    color: $secondary-white;
+    background: $button-black;
+    padding: 1rem 4rem;
+    cursor: pointer;      
+}
+
+.padding-section{
+    padding: ($spacing-unit * 20) 0;
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+
+.margin-section{
+    margin: ($spacing-unit * 20) 0;
+}
+.our_mission-description{
+    margin: ($spacing-unit * 8) 0;
+}
+.about-pic{
+    max-width: 40rem;
+    border-radius: 3px;
+}
+
+.unstyled-link{
+    text-decoration: none;
+    color: $button-black!important;
+}
+
+.margin_right-xl{
+    margin-right: $spacing-xl;
+}
 @media (max-width: 767px){
     .logo{
         z-index: 10;
@@ -795,13 +858,16 @@ img {
 .home #primary > #main{
     padding: 0;
 }
-#primary > #main{
-    padding: $spacing-xl;
-}
+// #primary > #main{
+//     padding: $spacing-xl;
+// }
 @media screen and (max-width: 991px ) {
     #primary > #main{
         padding: $spacing-small;
     }
+}
+.border-top{
+    border-top: 1px solid #000;
 }
 .meta-info p{
     margin: 0;

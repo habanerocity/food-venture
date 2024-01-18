@@ -30,10 +30,16 @@ h4{
 }
 p, div{
     font-size: 2rem;
-    line-height: 1.7rem;
+    line-height: normal;
     font-weight: $fontweight-regular;
 }
-a:hover,
+button {
+    font-family: $fontfamily-headings;
+
+    &:hover{
+        color: $primary-white!important;
+    }
+}
 a:visited{
     color: #6d6d6d;
 }
