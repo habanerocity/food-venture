@@ -466,6 +466,13 @@ img {
 @media (min-width: 767px) {
   .sidemenu_logo {
     display: none; } }
+.flex-col {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 .flex_container-row {
   display: flex;
   position: relative;
@@ -533,6 +540,20 @@ img {
 .unstyled-link {
   text-decoration: none;
   color: #0A0A0A !important; }
+
+.lost-description {
+  text-align: center; }
+
+.btn-rectangle {
+  border-radius: 3px;
+  border: 1px solid #0A0A0A;
+  background: #0A0A0A;
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 1rem 3rem; }
+
+.lost-pic {
+  max-width: 88rem; }
 
 @media (max-width: 1200px) {
   .about-pic {
@@ -960,8 +981,6 @@ p, div {
 
 button {
   font-family: "montserrat"; }
-  button:hover {
-    color: #ffffff !important; }
 
 a:visited {
   color: #6d6d6d; }

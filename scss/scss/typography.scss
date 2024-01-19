@@ -35,10 +35,6 @@ p, div{
 }
 button {
     font-family: $fontfamily-headings;
-
-    &:hover{
-        color: $primary-white!important;
-    }
 }
 a:visited{
     color: #6d6d6d;

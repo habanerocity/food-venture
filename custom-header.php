@@ -4,7 +4,14 @@
             <?php include 'navbar.php'?>
         </div>
         <div class="header_banner">
-            <h1 class="secondary_white"><?php the_title(); ?></h1>
+            <h1 class="secondary_white">
+            <?php 
+            if(is_404()){
+                echo '404 - Page Not Found!';
+            } else {
+                the_title();
+            }
+            ?></h1>
         </div>
     </div>    
 </div>

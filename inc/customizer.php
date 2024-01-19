@@ -95,6 +95,35 @@ function wp_foodventure_customizer($wp_customize){
             )
             ));
 
+    //404 Section
+    $wp_customize->add_section(
+        'sec_404',
+        array(
+            'title' => '404 Page',
+            'description' => 'Edit the 404 Page'
+        )
+    );
+
+    //404 Image
+    $wp_customize->add_setting(
+        'set_404_image',
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'absint'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Media_Control(
+            $wp_customize, 
+            'set_404_image',
+            array(
+                'label' => '404 Image',
+                'section' => 'sec_404',
+                'mime_type' => 'image'
+            )
+            ));
+
 }
 
 add_action('customize_register', 'wp_foodventure_customizer');

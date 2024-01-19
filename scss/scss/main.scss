@@ -528,6 +528,13 @@ img {
     }
 }
 
+.flex-col{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex_container-row{
     @include flex-container;
     flex-direction: row;
@@ -600,6 +607,23 @@ img {
 .unstyled-link{
     text-decoration: none;
     color: $button-black!important;
+}
+
+.lost-description{
+    text-align: center;
+}
+
+.btn-rectangle{
+    border-radius: 3px;
+    border: 1px solid $button-black;
+    background: $button-black;
+    color: $secondary-white;
+    cursor: pointer;
+    padding: 1rem 3rem;
+}
+
+.lost-pic{
+    max-width: 88rem;
 }
 
 @media (max-width: 1200px){
