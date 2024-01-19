@@ -4,22 +4,17 @@
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <div id="main" class="site-main">
+                    <?php
+                    $contact_image = wp_get_attachment_url(get_theme_mod('set_contact_image'));
+                    ?>
                     <div class="container">
-                        <div class="general-template">
-                            <?php 
-                                if( have_posts() ):
-                                    while( have_posts() ) : the_post();
-                                    ?>
-                                        <article>
-                                            <h1><?php the_title(); ?></h1>
-    
-                                            <?php the_content(); ?>
-                                        </article>
-                                    <?php
-                                    endwhile;
-                                else: ?>
-                                    <p>No posts to be displayed!</p>
-                            <?php endif; ?>
+                        <div class="flex_container-row contact-row padding-section">
+                            <div class="contact-wrapper ">
+                                <img class="contact-pic" src="<?php echo $contact_image  ?>" />
+                            </div>
+                            <div class="contact_form-wrapper">
+                                <?php echo do_shortcode('[contact-form-7 id="57e1d9f" title="Contact form"]'); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

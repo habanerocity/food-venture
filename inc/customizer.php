@@ -124,6 +124,35 @@ function wp_foodventure_customizer($wp_customize){
             )
             ));
 
+    //Contact Section
+    $wp_customize->add_section(
+        'sec_contact',
+        array(
+            'title' => 'Contact Page',
+            'description' => 'Edit the Contact Page'
+        )
+    );
+
+    //Contact Image
+    $wp_customize->add_setting(
+        'set_contact_image',
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'absint'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Media_Control(
+            $wp_customize, 
+            'set_contact_image',
+            array(
+                'label' => 'Contact Image',
+                'section' => 'sec_contact',
+                'mime_type' => 'image'
+            )
+            ));
+
 }
 
 add_action('customize_register', 'wp_foodventure_customizer');

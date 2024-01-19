@@ -623,7 +623,81 @@ img {
 }
 
 .lost-pic{
-    max-width: 88rem;
+    max-width: 80%;
+    border-radius: 3px;
+}
+
+.contact-pic{
+    border-radius: 3px;
+}
+
+.contact-wrapper {
+    // width: 40%;
+    height: 100%;
+}
+
+.contact_form-wrapper{
+    background-color: $secondary-white;
+    width: 40%;
+    height: 100%;
+    @include flex-container;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.contact-row{
+    height: 68rem;
+}
+
+.wpcf7-form-control{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-black;
+    margin-bottom: 2.4rem;
+    // max-width: 20rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.column input {
+    max-width: 17rem;
+}
+
+.contact-pic, .wpcf7-form {
+    height: 100%;
+    object-fit: cover;
+}
+
+.wpcf7-form input[type="submit"]{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    background: transparent;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    
+    &:hover{
+        background: $button-black;
+        color: $primary-white;
+        transition: .2s all ease-in-out;
+    }
+
+}
+
+.banner-text{
+    text-align: center;
 }
 
 @media (max-width: 1200px){

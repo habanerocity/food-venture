@@ -4,7 +4,7 @@
             <?php include 'navbar.php'?>
         </div>
         <div class="header_banner">
-            <h1 class="secondary_white">
+            <h1 class="secondary_white banner-text">
             <?php 
             if(is_404()){
                 echo '404 - Page Not Found!';
