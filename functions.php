@@ -5,6 +5,7 @@ require get_template_directory() . '/inc/customizer.php';
 function wpfoodventure_load_scripts(){
     wp_enqueue_style( 'wpfoodventure-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all' );
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3&display=swap', array(), null );
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
 };
 
@@ -45,6 +46,48 @@ function add_file_types_to_uploads($file_types){
     add_filter('upload_mimes', 'add_file_types_to_uploads');
 
 add_action( 'after_setup_theme', 'wpfoodventure_config', 0 );
+
+// Register Breadcrumbs
+function custom_breadcrumbs() {
+    global $post;
+    echo '<ul id="breadcrumbs">';
+    if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li><li class="separator"> >> </li>';
+        if (is_category() || is_single()) {
+            echo '<li>';
+            the_category(' </li><li class="separator"> >> </li><li> ');
+            if (is_single()) {
+                echo '</li><li class="separator"> >> </li><li>';
+                the_title();
+                echo '</li>';
+            }
+        } elseif (is_page()) {
+            if($post->post_parent){
+                $anc = get_post_ancestors( $post->ID );
+                $title = get_the_title();
+                foreach ( $anc as $ancestor ) {
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator"> >> </li>';
+                }
+                echo $output;
+                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            } else {
+                echo '<li><strong> '.get_the_title().'</strong></li>';
+            }
+        }
+    }
+    elseif (is_tag()) {single_tag_title();}
+    elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+    elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    echo '</ul>';
+}
 
 // Register Sidebars - Footer Columns
 
@@ -91,6 +134,23 @@ function wp_foodventure_footer_cols(){
             'before_widget' => '<div class="footer-menu-section">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class="footer-menu-label">',
+            'after_title' => '</h4>'
+        )
+    );
+}
+
+// Register Sidebars - Blog Article Sidebar
+add_action('widgets_init', 'wp_foodventure_blog_sidebar');
+
+function wp_foodventure_blog_sidebar(){
+    register_sidebar(
+        array(
+            'name' => 'Blog Sidebar',
+            'id' => 'sidebar-blog',
+            'description' => 'Sidebar for blog articles',
+            'before_widget' => '<div class="blog-sidebar-section">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="blog-sidebar-label">',
             'after_title' => '</h4>'
         )
     );

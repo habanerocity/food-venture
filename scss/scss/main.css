@@ -852,6 +852,26 @@ img {
 .contact-wrapper {
   height: 100%; }
 
+#breadcrumbs {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: "montserrat";
+  text-transform: uppercase;
+  font-weight: 600; }
+
+header .meta-info {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #888888; }
+
+img {
+  border-radius: 3px; }
+
+.sidebar {
+  margin-left: 6rem; }
+
 @media (max-width: 1199px) {
   .contact-pic {
     width: 32rem;
