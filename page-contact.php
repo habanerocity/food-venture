@@ -8,7 +8,7 @@
                     $contact_image = wp_get_attachment_url(get_theme_mod('set_contact_image'));
                     ?>
                     <div class="container">
-                        <div class="flex_container-row contact-row padding-section">
+                        <div class="contact_form-container contact-row padding-section">
                             <div class="contact-wrapper ">
                                 <img class="contact-pic" src="<?php echo $contact_image  ?>" />
                             </div>

@@ -541,6 +541,13 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+
+.contact_form-container{
+    @include flex-container;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .our_mission-section{
     @include flex-container;
     flex-direction: row;
@@ -631,7 +638,7 @@ img {
     border-radius: 3px;
 }
 
-.contact-wrapper {
+.contact_pic-wrapper {
     // width: 40%;
     height: 100%;
 }
@@ -655,6 +662,8 @@ img {
     border: none;
     border-bottom: 1px solid $primary-black;
     margin-bottom: 2.4rem;
+    width: 100%;
+    box-sizing: border-box;
     // max-width: 20rem;
 }
 
@@ -665,7 +674,7 @@ img {
 
 .column {
     flex: 1;
-    margin-right: 10px;
+    margin-right: 3.34rem;
 
     &:last-child {
         margin-right: 0;
@@ -687,6 +696,7 @@ img {
     background: transparent;
     padding: 1rem 4rem;
     cursor: pointer;
+    width: auto;
     
     &:hover{
         background: $button-black;
@@ -912,6 +922,10 @@ img {
         max-width: 100%;
     }
 
+    .contact_form-container{
+        flex-direction: column;;
+    }
+
 }
 
 /* Home Blog */
@@ -965,6 +979,62 @@ img {
 @media (max-width: 768px) {
     .home-blog .container{
         display: block;
+    }
+
+    .contact_form-wrapper{
+        width: 32rem;
+        margin-top: 2rem;
+    }
+}
+
+.contact-wrapper{
+    height: 100%;
+}
+
+@media (max-width: 1199px){
+    .contact-pic{
+        width:32rem;
+        height: auto;
+    }
+
+    #wpcf7-f112-o1{
+        padding: 0 2rem;
+    }
+
+    .wpcf7-form h3 {
+        margin-bottom: 0;
+    }
+
+    .wpcf7-form input[type="submit"]{
+        margin-bottom: 0;
+    }
+
+    .row{
+        height: 5rem;
+    }
+    
+    .contact_form-wrapper{
+        height: auto;
+    }
+
+    .wpcf7-form-control{
+        margin-bottom: 0;
+        font-size: 1.4rem;
+    }
+
+    .contact-row{
+        height: auto;
+    }
+
+    .wpcf7-form-control.wpcf7-textarea {
+        height: 12rem; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 376px) {
+
+    .contact_form-wrapper{
+        width: 100%;
     }
 }
 
