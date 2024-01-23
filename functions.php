@@ -5,7 +5,7 @@ require get_template_directory() . '/inc/customizer.php';
 function wpfoodventure_load_scripts(){
     wp_enqueue_style( 'wpfoodventure-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all' );
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3&display=swap', array(), null );
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/9497c4ca6a.js');
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
 };
 
@@ -33,6 +33,7 @@ function wpfoodventure_config(){
     ) );
 
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 }
 
 //upload svg files
