@@ -19,6 +19,7 @@
                         </header>
                         <div class="content">
                             <?php the_content(); ?>
+                            <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                         </div>
                     </article>
                     <?php get_sidebar(); ?>
