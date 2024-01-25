@@ -630,16 +630,18 @@ img {
     background-color: $accent-color;
     width: 100%;
     margin-left: 0;
-    padding: 2rem 0; 
+    padding: 2rem; 
     border-radius: 0 0 3px 3px;
+    box-sizing: border-box;
     
     & > select {
-        width: 80%;
+        width: 100%;
         background: transparent;
         border: 1px solid $primary-white;
         border-radius: 3px;
         color: $primary-white;
         padding: 5px;
+        box-sizing: border-box;
     }
 
 }

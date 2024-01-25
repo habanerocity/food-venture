@@ -549,15 +549,17 @@ img {
   background-color: #888888;
   width: 100%;
   margin-left: 0;
-  padding: 2rem 0;
-  border-radius: 0 0 3px 3px; }
+  padding: 2rem;
+  border-radius: 0 0 3px 3px;
+  box-sizing: border-box; }
   #select__categories-sidebar > select, #archive-sidebar > select {
-    width: 80%;
+    width: 100%;
     background: transparent;
     border: 1px solid #ffffff;
     border-radius: 3px;
     color: #ffffff;
-    padding: 5px; }
+    padding: 5px;
+    box-sizing: border-box; }
 
 .comment__section-container {
   border-top: 1px solid #252525; }
