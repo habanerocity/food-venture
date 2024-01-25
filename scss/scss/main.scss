@@ -571,7 +571,7 @@ img {
 }
 
 #featured_post_thumbnails-sidebar{
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     background-color: $accent-color;
     display: flex;
     flex-direction: column;
@@ -583,7 +583,7 @@ img {
 }
 
 .thumbnail{
-    display: inline-block;
+    box-sizing: border-box;
 }
 
 .thumbnail-container {
@@ -594,7 +594,7 @@ img {
     }
     .thumb__overlay {
         position: absolute;
-        bottom: 17%; // position the overlay at the bottom of the thumbnail
+        bottom: 6%; // position the overlay at the bottom of the thumbnail
         left: 0;
         width: 100%;
         height: 21%; // set the height to 30% of the thumbnail
