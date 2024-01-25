@@ -559,6 +559,9 @@ img {
     color: #ffffff;
     padding: 5px; }
 
+.comment__section-container {
+  border-top: 1px solid #252525; }
+
 .newsletter-signup-form {
   background: url("http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_3541.jpg") no-repeat center center/cover;
   padding-left: 3rem;
@@ -1011,6 +1014,9 @@ img {
   font-family: "montserrat";
   text-transform: uppercase;
   font-weight: 600; }
+  #breadcrumbs > li > a {
+    color: #252525;
+    text-decoration: none; }
 
 header .meta-info {
   padding-bottom: 2.5rem;
@@ -1155,12 +1161,12 @@ article.post h5 {
     flex-wrap: wrap; } }
 /* Comments */
 #commentform input[type="submit"] {
-  color: #FFFFFF;
-  padding: 15px 25px;
-  display: inline-block;
-  background: blue;
-  margin: 20px 0 0;
-  border: none; }
+  background-color: #0A0A0A;
+  padding: 1rem 2rem;
+  font-family: "montserrat";
+  border-radius: 3px;
+  color: #f5f5f5 !important;
+  text-decoration: none; }
 
 #commentform input[type="submit"]:hover {
   background: yellow;
@@ -1179,9 +1185,10 @@ article.post h5 {
   border: 1px solid #C6C6C6;
   width: 100%; }
 
-.comments-area #reply-title {
-  border-top: 1px solid #ebebeb;
-  padding: 20px 0 0; }
+#reply-title {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 3rem; }
 
 /* Pagination */
 .wpdevs-pagination {
