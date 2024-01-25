@@ -21,11 +21,22 @@
                             <?php the_content(); ?>
                             <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                         </div>
+                        
                     </article>
                     <?php get_sidebar(); ?>
                     <?php
                 endwhile;
                 ?>
+            </div>
+            <div class="post-navigation">
+                <div class="container padding-section" style="display: flex; justify-content: space-between;">
+                    <div class="prev-post">
+                        <?php previous_post_link('%link', 'Previous Post', TRUE); ?>
+                    </div>
+                    <div class="next-post">
+                        <?php next_post_link('%link', 'Next Post', TRUE); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
