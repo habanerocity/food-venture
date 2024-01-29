@@ -9,7 +9,7 @@
             if(is_404()){
                 echo '404 - Page Not Found!';
             } else {
-                the_title();
+                wp_title('');
             }
             ?></h1>
         </div>

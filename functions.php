@@ -59,6 +59,13 @@ function custom_breadcrumbs() {
         echo 'Home';
         echo '</a></li><li class="separator"> >> </li>';
         if (is_category() || is_single()) {
+            if (is_single()) {
+                echo '<li><a href="';
+                echo get_permalink( get_option( 'page_for_posts' ) );
+                echo '">';
+                echo 'Blog';
+                echo '</a></li><li class="separator"> >> </li>';
+            }
             echo '<li>';
             the_category(' </li><li class="separator"> >> </li><li> ');
             if (is_single()) {
@@ -89,6 +96,12 @@ function custom_breadcrumbs() {
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
     echo '</ul>';
 }
+
+// Custom Excerpt Length
+function custom_excerpt_length( $length ) {
+    return 30; 
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Register Sidebars - Footer Columns
 

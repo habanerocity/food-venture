@@ -513,6 +513,11 @@ img {
 .thumbnail {
   box-sizing: border-box; }
 
+.featured-thumbnail {
+  width: 100%; }
+  .featured-thumbnail > img {
+    width: 100%; }
+
 .thumbnail-container {
   position: relative; }
   .thumbnail-container img {
@@ -535,6 +540,79 @@ img {
       text-transform: uppercase;
       text-align: center;
       line-height: 1.6rem; }
+
+.blog .blog-items {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0 !important; }
+
+#blog-categories {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 0;
+  padding-bottom: 2rem;
+  border-radius: 0 0 3px 3px;
+  box-sizing: border-box; }
+  #blog-categories > select {
+    width: 84%; }
+
+.blog-input__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; }
+
+#blog-archive {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 0;
+  padding-bottom: 2rem;
+  border-radius: 0 0 3px 3px;
+  box-sizing: border-box; }
+  #blog-archive > select {
+    width: 84%; }
+
+.blog-container {
+  display: flex;
+  flex-direction: column; }
+
+.article__card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  max-width: 30%; }
+  .article__card > p {
+    margin-top: 0;
+    margin-bottom: 1.2rem; }
+  .article__card > h4 {
+    margin-top: 2.4rem;
+    margin-bottom: 8px;
+    color: #252525; }
+  .article__card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+  .article__card-footer_link {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "montserrat";
+    font-size: 1.6rem; }
+  .article__card a {
+    text-decoration: none;
+    color: #252525; }
+    .article__card a:visited {
+      color: #252525; }
 
 .blog-sidebar-section > h3 {
   border-radius: 3px 3px 0px 0px;
@@ -1015,7 +1093,8 @@ img {
   margin-bottom: 1rem;
   font-family: "montserrat";
   text-transform: uppercase;
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 1.8rem; }
   #breadcrumbs > li > a {
     color: #252525;
     text-decoration: none; }
@@ -1079,7 +1158,7 @@ img {
   margin-top: 0; }
 
 .blog article {
-  margin-bottom: 20px; }
+  margin-bottom: 0; }
 
 .blog aside,
 .archive aside {

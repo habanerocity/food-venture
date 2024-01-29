@@ -1,22 +1,56 @@
 <?php get_header(); ?>
+<?php include 'custom-header.php'  ?>
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <h1>Blog</h1>
-                    <div class="container">
+                    <div class="container padding-section blog-container">
+                    <div class="blog-input__container">
+                        <div id="blog-categories" >
+                            <?php 
+                                // Dropdown of categories
+                                wp_dropdown_categories( array(
+                                    'show_option_none' => 'Categories',
+                                    'orderby'          => 'name',
+                                    'echo'             => 1,
+                                    'hierarchical'     => 1,
+                                ) );
+                            ?>
+                        </div>
+                        <div id="blog-archive" >
+                            <?php 
+    
+                                // Dropdown of categories
+                                $archives = wp_get_archives( array(
+                                    'type'            => 'monthly',
+                                    'format'          => 'option',
+                                    'show_post_count' => true,
+                                    'echo'            => 0
+                                ) );
+    
+                                if($archives) {
+                                    echo '<select onchange="document.location.href=this.options[this.selectedIndex].value;" >';
+                                    echo '<option value="">Select Month</option>';
+                                    echo $archives;
+                                    echo '</select>';
+                                }
+                            ?>
+                        </div>
+                    </div>
                         <div class="blog-items">
                             <?php 
                                 if( have_posts() ):
                                     while( have_posts() ) : the_post();
                                     ?>
-                                        <article>
-                                            <h2><?php the_title(); ?></h2>
-                                            <div class="meta-info">
-                                                <p>Posted on <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                                                <p>Categories: <?php the_category( ' ' ); ?></p>
-                                                <p>Tags: <?php the_tags( '', ', ' ); ?></p>
+                                        <article class="article__card">
+                                            <div class="featured-thumbnail">
+                                                <?php the_post_thumbnail('medium'); ?>
                                             </div>
-                                            <?php the_content(); ?>
+                                            <h4><?php the_title(); ?></h4>
+                                            <?php the_excerpt(); ?>
+                                            <div class="article__card-footer">
+                                                <span><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                            </div>
                                         </article>
                                     <?php
                                     endwhile;

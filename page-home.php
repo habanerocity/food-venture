@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<div class="container">
+    <?php include 'navbar.php'?>
+</div>
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <div id="main" class="site-main">

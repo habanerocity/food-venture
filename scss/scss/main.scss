@@ -586,6 +586,14 @@ img {
     box-sizing: border-box;
 }
 
+.featured-thumbnail{
+    width:100%;
+
+    & > img{
+        width: 100%;
+}
+}
+
 .thumbnail-container {
     position: relative;
     img {
@@ -612,6 +620,102 @@ img {
         }
     }
 }
+
+.blog .blog-items{
+    display: flex;
+    justify-content: space-between;
+    padding-right:0!important;
+}
+
+#blog-categories{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+    padding-bottom: 2rem;
+    border-radius: 0 0 3px 3px;
+    box-sizing: border-box;
+
+    & > select {
+        width: 84%;
+    }
+}
+
+.blog-input__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+
+#blog-archive{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+    padding-bottom: 2rem;
+    border-radius: 0 0 3px 3px;
+    box-sizing: border-box;
+
+    & > select {
+        width: 84%;
+    }
+}
+
+.blog-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.article__card{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 30%;
+
+    & > p{
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+    }
+
+    & > h4 {
+        margin-top: 2.4rem;
+        margin-bottom: 8px;
+        color: $primary-black;
+    }
+
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    } 
+
+    &-footer_link{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $fontfamily-headings;
+        font-size: 1.6rem;
+    }
+
+   a {
+    text-decoration: none;
+    color: $primary-black;
+    
+    &:visited{
+        color: $primary-black;
+        
+    }
+}
+}
+
 
 .blog-sidebar-section {
 
@@ -1184,6 +1288,7 @@ img {
     font-family: $fontfamily-headings;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 1.8rem;
 
     & > li > a{
         color: $primary-black;
@@ -1269,7 +1374,7 @@ img{
     margin-top: 0;
 }
 .blog article{
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 .blog aside,
 .archive aside{
