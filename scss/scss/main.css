@@ -301,6 +301,21 @@ img {
     text-align: left;
     color: #f5f5f5; }
 
+#home-search-field {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid #252525;
+  width: 17.2rem;
+  height: 4rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  color: #333333;
+  padding: 0 1rem; }
+  #home-search-field::placeholder {
+    text-align: left;
+    color: #333333; }
+
 .searchbox input[type="text"] {
   padding: 7px 10px;
   border: 1px solid #C6C6C6; }
@@ -344,6 +359,9 @@ img {
   z-index: 14;
   /* Place the overlay above other content */ }
 
+.home__logo {
+  width: 7.5rem; }
+
 /* Main Menu */
 .menu-area {
   background: gray; }
@@ -376,7 +394,27 @@ img {
     transition: -webkit-transform .3s ease;
     transition: width .3s ease; }
 
-.main-menu ul li a {
+#home-main-menu ul li.current-menu-item > a {
+  text-decoration: none; }
+  #home-main-menu ul li.current-menu-item > a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    background-color: #252525;
+    left: 0;
+    transition: -webkit-transform .3s ease;
+    transition: width .3s ease; }
+
+@media (max-width: 767px) {
+  #home-main-menu ul li.current-menu-item > a {
+    text-decoration: none; }
+    #home-main-menu ul li.current-menu-item > a::before {
+      content: "";
+      width: 0; } }
+.main-menu ul li a, #home-main-menu ul li a {
   color: #252525;
   font-style: normal;
   font-weight: 600;
@@ -428,6 +466,16 @@ img {
   width: 28px;
   height: 3px;
   background-color: #ffffff;
+  border-radius: 3px;
+  margin: 5px 0;
+  transition: 0.4s; }
+
+#home-menu-icon .bar1,
+#home-menu-icon .bar2,
+#home-menu-icon .bar3 {
+  width: 28px;
+  height: 3px;
+  background-color: #252525;
   border-radius: 3px;
   margin: 5px 0;
   transition: 0.4s; }

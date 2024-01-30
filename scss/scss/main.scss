@@ -356,6 +356,22 @@ img {
         color: $secondary-white;
     }
 }
+#home-search-field{
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid $primary-black;
+    width: 17.2rem;
+    height: 4rem;
+    flex-shrink: 0;
+    background-color: transparent;
+    color: $secondary-black;
+    padding: 0 1rem;
+    &::placeholder{
+        text-align: left;
+        color: $secondary-black;
+    }
+}
 .searchbox input[type="text"]{
     padding: 7px 10px;
     border: 1px solid #C6C6C6;
@@ -404,6 +420,10 @@ img {
     z-index: 14; /* Place the overlay above other content */
 }
 
+.home__logo{
+    width: 7.5rem;
+}
+
 /* Main Menu */
 
 .menu-area {
@@ -423,6 +443,7 @@ img {
     line-height: 55px;
     position: relative;
 }
+
 .main-menu ul li.current_page_item, .main-menu ul li.current-menu-item > a{
     text-decoration: none;
 
@@ -439,13 +460,44 @@ img {
         transition: width .3s ease;
     }
 }
-.main-menu ul li a {
+
+#home-main-menu ul li.current-menu-item > a {
+    text-decoration:none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        background-color: $primary-black;
+        left: 0;
+        transition: -webkit-transform .3s ease;
+        transition: width .3s ease;
+    }
+}
+
+@media(max-width: 767px){
+    #home-main-menu ul li.current-menu-item > a {
+        text-decoration:none;
+    
+        &::before {
+            content: "";
+            width: 0;
+        }
+    }
+}
+
+.main-menu ul li a, #home-main-menu ul li a {
     color: $primary-black;
     font-style: normal;
     font-weight: $fontweight-semibold;
     margin: 0 1rem;
     text-decoration: none;
     display: block;
+
+    
 }
 // .main-menu ul li a:hover,
 // .main-menu ul li a:active
@@ -498,6 +550,17 @@ img {
     width: 28px;
     height: 3px;
     background-color: $primary-white;
+    border-radius: $border-radius;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+#home-menu-icon .bar1, 
+#home-menu-icon .bar2, 
+#home-menu-icon .bar3 {
+    width: 28px;
+    height: 3px;
+    background-color: $primary-black;
     border-radius: $border-radius;
     margin: 5px 0;
     transition: 0.4s;

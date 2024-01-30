@@ -118,6 +118,14 @@ function add_current_nav_class($classes, $item) {
 }
 add_filter('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 
+//Limit the Number of Blog Posts on Blog section to 9 per page
+function limit_posts_per_page( $query ) {
+    if ( $query->is_main_query() && !is_admin() && is_home() ) {
+        $query->set( 'posts_per_page', 9 );
+    }
+}
+add_action( 'pre_get_posts', 'limit_posts_per_page' );
+
 // Register Sidebars - Footer Columns
 
 add_action('widgets_init', 'wp_foodventure_footer_cols');

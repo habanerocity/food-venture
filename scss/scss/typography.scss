@@ -67,6 +67,25 @@ a:visited{
         width: 100%;
     }
 }
+
+#home-main-menu li{
+    &:hover{
+        text-decoration: none;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        background-color: $primary-black;
+        left: 0;
+        transition: -webkit-transform .3s ease;
+        transition: width .3s ease;
+    }
+}
 .secondary_white{
     color: $secondary-white;
 }
