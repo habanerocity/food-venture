@@ -423,7 +423,7 @@ img {
     line-height: 55px;
     position: relative;
 }
-.main-menu ul li.current_page_item > a{
+.main-menu ul li.current_page_item, .main-menu ul li.current-menu-item > a{
     text-decoration: none;
 
     &::before {

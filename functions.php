@@ -103,6 +103,21 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+//Make 'Blog' Active When Viewing Single Posts
+function add_current_nav_class($classes, $item) {
+    // Getting the current post details
+    global $post;
+
+    // Check if the current page is a single post
+    if (is_single() && $item->title == 'Blog') {
+        $classes[] = 'current-menu-item';
+    }
+
+    // Return the corrected set of classes to be added to the menu item
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+
 // Register Sidebars - Footer Columns
 
 add_action('widgets_init', 'wp_foodventure_footer_cols');
