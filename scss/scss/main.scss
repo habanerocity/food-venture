@@ -602,7 +602,7 @@ img {
     @include flex-container;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .flex_container{
@@ -1277,6 +1277,57 @@ img {
         flex-direction: column;;
     }
 
+}
+
+.logo{
+    display: flex;
+}
+
+// Hero Section
+.hero-post{
+    display: flex;
+    height: 66rem;
+}
+
+.hero__text_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > * {
+        margin-top:0;
+    }
+}
+
+.hero__post-image{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    & > img{
+        width: 76%;
+        height: auto;
+    }
+}
+
+// Home Page Latest Articles
+section.latest__articles{
+    padding: 0;
+}
+
+.latest__articles-heading{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.section__title{
+    margin-top: 0;
+}
+
+hr.section__title-divider{
+    width: 78%;
 }
 
 /* Home Blog */
