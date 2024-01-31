@@ -37,7 +37,7 @@
                         wp_reset_query();
                         ?>
                     </section>
-                    <section class="latest__articles container">
+                    <section class="latest__articles">
                         <div class="latest__articles-wrapper">
                             <div class="latest__articles-heading">
                                 <h4 class="section__title">Latest Articles</h4>
@@ -70,6 +70,16 @@
                                         <p>No posts to be displayed!</p>
                                 <?php endif; ?>
                             </div>
+                        </div>
+                    </section>
+                    <section class="newsletter__signup padding-section">
+                        <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
+                    </section>
+                    <section class="latest__recipes">
+                        <div class="latest__articles-heading">
+                            <h4 class="section__title">Latest Recipes</h4>
+                            <hr class="section__title-divider" />
+                            <a>See all</a>
                         </div>
                     </section>
                 </div>
