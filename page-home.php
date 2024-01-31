@@ -46,7 +46,10 @@
                             </div>
                             <div class="flex_container-row">
                                 <?php 
-                                    $args = array( 'posts_per_page' => 3);
+                                    $args = array( 
+                                        'posts_per_page' => 3,
+                                        'offset' => 1
+                                    );
                                     $query = new WP_Query( $args);
 
                                     if( $query->have_posts() ):
