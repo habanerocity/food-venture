@@ -192,3 +192,43 @@ function wp_foodventure_blog_sidebar(){
         )
     );
 }
+
+//Add Custom Post Types
+
+add_action('init', 'wp_foodventure_custom_post_types');
+
+function wp_foodventure_custom_post_types(){
+    //Register blog recipes post type
+    register_post_type('blog_recipes',
+        array(
+            'labels' => array(
+                'name' => 'Blog Recipes',
+                'singular_name' => 'Blog Recipe',
+                'add_new' => 'Add New Blog Recipe',
+                'add_new_item' => 'Add New Blog Recipe',
+                'edit_item' => 'Edit Blog Recipe',
+                'new_item' => 'New Blog Recipe',
+                'view_item' => 'View Blog Recipe',
+                'search_items' => 'Search Blog Recipes',
+                'not_found' => 'No Blog Recipes Found',
+                'not_found_in_trash' => 'No Blog Recipes Found in Trash'
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'blog_recipes'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+            'show_in_rest' => true,
+            'taxonomies' => array('category', 'post_tag'),
+        )
+    );
+}
+
+//Add Recipe Post Types to Recipe Page
+add_action('pre_get_posts', 'add_my_post_types_to_query');
+
+function add_my_post_types_to_query($query) {
+    if (is_category('Recipes') && empty($query->query_vars['suppress_filters'])) {
+        $query->set('post_type', 'blog_recipes');
+        return $query;
+    }
+}

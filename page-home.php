@@ -42,7 +42,7 @@
                             <div class="latest__articles-heading">
                                 <h4 class="section__title">Latest Articles</h4>
                                 <hr class="section__title-divider" />
-                                <a>See all</a>
+                                <a class="see_blog-link" href="<?php echo get_bloginfo('url') . '/blog';  ?>">See all</a>
                             </div>
                             <div class="flex_container-row">
                                 <?php 
@@ -82,7 +82,34 @@
                         <div class="latest__articles-heading">
                             <h4 class="section__title">Latest Recipes</h4>
                             <hr class="section__title-divider" />
-                            <a>See all</a>
+                            <a class="see_blog-link" href="#">See all</a>
+                        </div>
+                        <div class="flex_container-row">
+                            <?php 
+                            $args = array(
+                                'post_type' => 'blog_recipes',
+                                'posts_per_page' => 3,
+                            );
+                            $query = new WP_Query($args);
+
+                            if($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+
+                                // Get the image URL
+                                $image_url = get_field('recipe_thumbnail-home_page');
+
+                                // Render the image
+                                if (!empty($image_url)) {
+                                    echo '<div class="latest__recipes-thumbnail_wrapper">';
+                                    echo '<img class="latest__recipes-thumbnail" src="' . esc_url($image_url) . '">';
+                                    echo '</div>';
+                                }
+
+                            endwhile;
+                            endif;
+
+                            // Reset post data
+                            wp_reset_postdata();
+                            ?>
                         </div>
                     </section>
                 </div>

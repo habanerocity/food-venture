@@ -591,6 +591,7 @@ img {
 
 .blog .blog-items {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-right: 0 !important; }
 
@@ -1116,6 +1117,15 @@ section.latest__articles {
 
 hr.section__title-divider {
   width: 78%; }
+
+.see_blog-link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: capitalize; }
+
+.latest__recipes-thumbnail {
+  max-width: 25%; }
 
 /* Home Blog */
 .home .home-blog {
