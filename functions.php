@@ -67,7 +67,24 @@ function custom_breadcrumbs() {
                 echo '</a></li><li class="separator"> >> </li>';
             }
             echo '<li>';
-            the_category(' </li><li class="separator"> >> </li><li> ');
+            if(get_post_type() == 'blog_recipes') {
+                echo '<a href="'; 
+                echo get_post_type_archive_link('blog_recipes'); 
+                echo '">Recipes</a></li><li class="separator"> >> </li>'; 
+                $terms = get_the_terms( $post->ID, 'recipe_category' );
+                if ($terms && ! is_wp_error($terms)) {
+                    $term_links_arr = array();
+                    foreach ($terms as $term) {
+                        $term_link = get_term_link($term);
+                        if (!is_wp_error($term_link)) {
+                            $term_links_arr[] = '<a href="' . esc_url($term_link) . '">' . $term->name . '</a>';
+                        }
+                    }
+                    echo join(" </li><li class='separator'> >> </li><li> ", $term_links_arr);
+                }
+            } else {
+                the_category(' </li><li class="separator"> >> </li><li> ');
+            }
             if (is_single()) {
                 echo '</li><li class="separator"> >> </li><li>';
                 the_title();
@@ -218,7 +235,7 @@ function wp_foodventure_custom_post_types(){
             'rewrite' => array('slug' => 'blog_recipes'),
             'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
             'show_in_rest' => true,
-            'taxonomies' => array('category', 'post_tag'),
+            'taxonomies' => array('recipe_category', 'recipe_tag'),
         )
     );
 }
@@ -232,3 +249,72 @@ function add_my_post_types_to_query($query) {
         return $query;
     }
 }
+
+//Add categories for Recipe Post Type
+function create_recipe_taxonomies() {
+    // Add new taxonomy, make it hierarchical (like categories)
+    $labels = array(
+        'name'              => _x( 'Recipe Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Recipe Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Recipe Categories' ),
+        'all_items'         => __( 'All Recipe Categories' ),
+        'parent_item'       => __( 'Parent Recipe Category' ),
+        'parent_item_colon' => __( 'Parent Recipe Category:' ),
+        'edit_item'         => __( 'Edit Recipe Category' ),
+        'update_item'       => __( 'Update Recipe Category' ),
+        'add_new_item'      => __( 'Add New Recipe Category' ),
+        'new_item_name'     => __( 'New Recipe Category Name' ),
+        'menu_name'         => __( 'Recipe Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'recipe-category' ),
+    );
+
+    register_taxonomy( 'recipe_category', array( 'blog_recipes' ), $args );
+}
+
+add_action( 'init', 'create_recipe_taxonomies', 0 );
+
+// Add tags for Recipe Post Type
+function create_recipe_tags() {
+    // Add tags to recipe post type
+    $labels = array(
+        'name' => _x('Recipe Tags', 'taxonomy general name'),
+        'singular_name' => _x('Recipe Tag', 'taxonomy singular name'),
+        'search_items' => __('Search Recipe Tags'),
+        'popular_items' => __('Popular Recipe Tags'),
+        'all_items' => __('All Recipe Tags'),
+        'edit_item' => __('Edit Recipe Tag'),
+        'update_item' => __('Update Recipe Tag'),
+        'add_new_item' => __('Add New Recipe Tag'),
+        'new_item_name' => __('New Recipe Tag Name'),
+        'separate_items_with_commas' => __('Separate recipe tags with commas'),
+        'add_or_remove_items' => __('Add or remove recipe tags'),
+        'choose_from_most_used' => __('Choose from the most used recipe tags'),
+        'not_found' => __('No recipe tags found.'),
+        'menu_name' => __('Recipe Tags'),
+    );
+
+    $args = array(
+        'hierarchical' => false,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var' => true,
+        'rewrite' => array('slug' => 'recipe-tag'),
+    );
+
+    register_taxonomy('recipe_tag', 'blog_recipes', $args);
+}
+
+add_action('init', 'create_recipe_tags', 0);

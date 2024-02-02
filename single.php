@@ -13,8 +13,24 @@
                             <div class="meta-info">
                                 <?php custom_breadcrumbs(); ?>
                                 <p><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                                <p>Categories: <?php the_category( ' '); ?></p>
-                                <p>Tags: <?php the_tags( '', ', '); ?></p>
+                                <p>Categories: 
+                                    <?php
+                                        if(get_post_type() == 'blog_recipes'){
+                                            echo get_the_term_list( $post->ID, 'recipe_category', '', ', ' );
+                                        } else {
+                                            the_category(' ');
+                                        }
+                                    ?>
+                                </p>
+                                <p>Tags: 
+                                <?php 
+                                    if(get_post_type() == 'blog_recipes') {
+                                        echo get_the_term_list( $post->ID, 'recipe_tag', '', ', ' ); 
+                                    } else {
+                                        the_tags( '', ', ' ); 
+                                    }
+                                ?>
+                                </p>
                             </div>
                         </header>
                         <div class="content">
