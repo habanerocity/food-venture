@@ -40,7 +40,7 @@
                     <section class="latest__articles">
                         <div class="latest__articles-wrapper">
                             <div class="latest__articles-heading">
-                                <h4 class="section__title">Latest Articles</h4>
+                                <h3 class="section__title">Latest Articles</h3>
                                 <hr class="section__title-divider" />
                                 <a class="see_blog-link" href="<?php echo get_bloginfo('url') . '/blog';  ?>">See all</a>
                             </div>
@@ -80,7 +80,7 @@
                     </section>
                     <section class="latest__recipes">
                         <div class="latest__articles-heading">
-                            <h4 class="section__title">Latest Recipes</h4>
+                            <h3 class="section__title">Latest Recipes</h3>
                             <hr class="section__title-divider" />
                             <a class="see_blog-link" href="#">See all</a>
                         </div>
@@ -88,7 +88,7 @@
                             <?php 
                             $args = array(
                                 'post_type' => 'blog_recipes',
-                                'posts_per_page' => 3,
+                                'posts_per_page' => 4,
                             );
                             $query = new WP_Query($args);
 
@@ -99,8 +99,21 @@
 
                                 // Render the image
                                 if (!empty($image_url)) {
-                                    echo '<div class="latest__recipes-thumbnail_wrapper">';
+                                    echo '<div class="latest__recipes-thumbnail_container">';
+                                    echo '<a href="' . get_permalink() . '">';
                                     echo '<img class="latest__recipes-thumbnail" src="' . esc_url($image_url) . '">';
+                                
+                                    echo '<div class="latest__recipes-thumbnail_overlay">';
+                                    $heading = get_post_meta(get_the_ID(), 'recipe_thumbnail-heading', true);
+                                    $subheading = get_post_meta(get_the_ID(), 'recipe_thumbnail-subheading', true);
+                                    echo '<div class="latest__recipes-thumbnail_headings">';
+                                    echo '<h4 class="latest__recipes-thumbnail_title">' . esc_html($heading) . '</h4>';
+                                    echo '<h5 class="latest__recipes-thumbnail_subtitle">' . esc_html($subheading) . '</h5>';
+                                    echo '<div class="latest__recipes-thumbnail_heading_bar">';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</a>';
                                     echo '</div>';
                                 }
 
