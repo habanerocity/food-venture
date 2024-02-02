@@ -80,7 +80,8 @@ function custom_breadcrumbs() {
                             $term_links_arr[] = '<a href="' . esc_url($term_link) . '">' . $term->name . '</a>';
                         }
                     }
-                    echo join(" </li><li class='separator'> >> </li><li> ", $term_links_arr);
+                    echo '<li>' . join(" </li><li class='separator'> >> </li><li> ", $term_links_arr) . '</li>';
+                    
                 }
             } else {
                 the_category(' </li><li class="separator"> >> </li><li> ');
