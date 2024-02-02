@@ -1109,6 +1109,35 @@ hr.section__title-divider {
   font-size: 2rem;
   text-transform: capitalize; }
 
+.blog__article-categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .blog__article-categories a {
+    padding: 3px 1rem;
+    background-color: #252525;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 1.4rem; }
+
+.blog__article-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .blog__article-tags a {
+    padding: 3px 1rem;
+    background-color: #888888;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 1.4rem; }
+
+.meta-info > .blog__article-date {
+  margin-bottom: 2px; }
+.meta-info > .blog__article-categories {
+  margin-bottom: 4px; }
+
 .latest__recipes-thumbnail {
   max-width: 25%; }
 
