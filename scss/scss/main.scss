@@ -333,9 +333,9 @@ img {
     height: 1.7rem;
     width: 1.7rem;
     position: absolute;
-    right: 1rem; // adjust as needed
+    right: 1rem;
     top: 50%;
-    transform: translateY(-50%); // vertically center the element
+    transform: translateY(-50%); 
 }
 .searchbox{
     display: flex;
@@ -746,6 +746,7 @@ img {
     align-items: flex-start;
     position: relative;
     max-width: 30%;
+    height: 56rem;
 
     & > p{
         margin-top: 0;

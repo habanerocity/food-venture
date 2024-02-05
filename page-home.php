@@ -27,9 +27,11 @@
                                             <a href="<?php echo get_permalink($post_id); ?>"><button class="btn_round-transparent">Read More</button></a>
                                         </div>
                                     </div>
-                                    <div class="hero__post-image">
-                                        <img src="<?php echo $hero_image['url']; ?>" alt="" />
-                                    </div>
+                                    <!-- <div class="hero__post-image_wrapper"> -->
+                                        <a class="hero__post-image">
+                                            <img src="<?php echo $hero_image['url']; ?>" alt="" />
+                                        </a>
+                                    <!-- </div> -->
                                 </div>
                                 <?php
                                 }
