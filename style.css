@@ -294,12 +294,16 @@ img {
 #mag_glass {
   height: 1.7rem;
   width: 1.7rem;
-  transform: translateX(-3rem); }
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%); }
 
 .searchbox {
   display: flex;
   align-items: center;
-  padding-left: 2rem; }
+  padding-left: 2rem;
+  position: relative; }
 
 #search-field {
   display: flex;
@@ -589,7 +593,7 @@ img {
       text-align: center;
       line-height: 1.6rem; }
 
-.blog .blog-items {
+.blog-items {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

@@ -82,7 +82,7 @@
                         <div class="latest__articles-heading">
                             <h3 class="section__title">Latest Recipes</h3>
                             <hr class="section__title-divider" />
-                            <a class="see_blog-link" href="#">See all</a>
+                            <a class="see_blog-link" href="<?php echo get_bloginfo('url') . '/blog_recipes';  ?>">See all</a>
                         </div>
                         <div class="flex_container-row">
                             <?php 

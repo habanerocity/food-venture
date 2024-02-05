@@ -332,12 +332,16 @@ img {
 #mag_glass{
     height: 1.7rem;
     width: 1.7rem;
-    transform: translateX(-3rem);
+    position: absolute;
+    right: 1rem; // adjust as needed
+    top: 50%;
+    transform: translateY(-50%); // vertically center the element
 }
 .searchbox{
     display: flex;
     align-items: center;
     padding-left:2rem;
+    position: relative;
 }
 
 #search-field{   
@@ -684,7 +688,7 @@ img {
     }
 }
 
-.blog .blog-items{
+.blog-items{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
