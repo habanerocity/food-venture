@@ -1154,9 +1154,15 @@ hr.section__title-divider {
 .meta-info > .blog__article-categories {
   margin-bottom: 4px; }
 
+.latest__recipes {
+  padding-bottom: 8rem; }
+
 .latest__recipes-thumbnail_container {
   position: relative;
-  max-width: 25%; }
+  max-width: 23%;
+  transition: all .2s ease-in; }
+  .latest__recipes-thumbnail_container:hover {
+    transform: translateY(-5px); }
 
 .latest__recipes-thumbnail_overlay {
   position: absolute;
@@ -1182,16 +1188,15 @@ hr.section__title-divider {
   .latest__recipes-thumbnail_headings > * {
     margin: 0;
     text-align: left; }
-
-.latest__recipes-thumbnail_heading_bar::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 3px;
-  height: 100%;
-  bottom: 0;
-  background-color: #888888;
-  left: 0; }
+  .latest__recipes-thumbnail_headings::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 100%;
+    bottom: 0;
+    background-color: #888888;
+    left: 0; }
 
 /* Home Blog */
 .home .home-blog {

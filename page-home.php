@@ -109,8 +109,6 @@
                                     echo '<div class="latest__recipes-thumbnail_headings">';
                                     echo '<h4 class="latest__recipes-thumbnail_title">' . esc_html($heading) . '</h4>';
                                     echo '<h5 class="latest__recipes-thumbnail_subtitle">' . esc_html($subheading) . '</h5>';
-                                    echo '<div class="latest__recipes-thumbnail_heading_bar">';
-                                    echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</a>';

@@ -13,7 +13,7 @@
                             <div class="meta-info">
                                 <?php custom_breadcrumbs(); ?>
                                 <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                                <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories: 
+                                <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
                                     <?php
                                         if(get_post_type() == 'blog_recipes'){
                                             echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_category', '', ', ' );
@@ -22,7 +22,7 @@
                                         }
                                     ?>
                                 </p>
-                                <p class="blog__article-tags"><i class="fas fa-tags"></i>Tags: 
+                                <p class="blog__article-tags"><i class="fas fa-tags"></i>Tags:&nbsp; 
                                 <?php 
                                     if(get_post_type() == 'blog_recipes') {
                                         echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' ); 

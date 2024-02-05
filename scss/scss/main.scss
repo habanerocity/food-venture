@@ -1384,9 +1384,18 @@ hr.section__title-divider{
     }
 }
 
+.latest__recipes{
+    padding-bottom: 8rem;
+}
+
 .latest__recipes-thumbnail_container{
     position: relative;
-    max-width: 25%;
+    max-width: 23%;
+    transition:all .2s ease-in;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
 }
 
 .latest__recipes-thumbnail_overlay{
@@ -1419,10 +1428,6 @@ hr.section__title-divider{
         text-align:left;
     }
 
-    
-}
-
-.latest__recipes-thumbnail_heading_bar{
     &::before{
         content: "";
         position: absolute;
@@ -1433,6 +1438,8 @@ hr.section__title-divider{
         background-color: $accent-color;
         left: 0;
     }
+
+    
 }
 
 /* Home Blog */
