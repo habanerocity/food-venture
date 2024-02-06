@@ -371,10 +371,17 @@ img {
     background-color: transparent;
     color: $secondary-black;
     padding: 0 1rem;
+    
+
     &::placeholder{
         text-align: left;
         color: $secondary-black;
+
+        @media (max-width: 1200px){
+            font-size: 1.6rem;
+        }
     }
+
 }
 .searchbox input[type="text"]{
     padding: 7px 10px;
@@ -739,6 +746,11 @@ img {
     flex-direction: column;
 }
 
+.hero__text-link{
+    text-decoration: none;
+    color: $primary-black;
+}
+
 .article__card{
     @include flex-container;
     flex-direction: column;
@@ -748,15 +760,27 @@ img {
     max-width: 30%;
     height: 56rem;
 
+    @media(max-width: 1200px){
+        height: 44rem;
+    }
+
     & > p{
         margin-top: 0;
         margin-bottom: 1.2rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.6rem;
+        }
     }
 
     & > h4 {
         margin-top: 2.4rem;
         margin-bottom: 8px;
         color: $primary-black;
+
+        @media(max-width: 1200px){
+            font-size: 1.8rem;
+        }
     }
 
     &-footer{
@@ -764,6 +788,7 @@ img {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+
     } 
 
     &-footer_link{
@@ -772,6 +797,16 @@ img {
         text-decoration: none;
         font-family: $fontfamily-headings;
         font-size: 1.6rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+        }
+    }
+
+    &-footer_date{
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+        }
     }
 
    a {
@@ -836,6 +871,10 @@ section{
     flex-direction: column;
     justify-content: center;
 
+    @media (max-width: 1200px){
+        height: 28rem;
+    }
+
     label{
         font-size: 2.2rem;
     }
@@ -856,6 +895,10 @@ section{
             background: $primary-white!important;
             color: $primary-black!important;
             transition: .2s all ease-in-out;
+        }
+
+        @media (max-width: 1200px){
+            margin-top: 1.6rem;
         }
     }
 
@@ -938,6 +981,10 @@ section{
         color: $primary-white;
         transition: .2s all ease-in-out;
     }
+
+    @media (max-width: 1200px){
+        font-size: 1.6rem;
+    }
 }
 
 .btn_round-solid{
@@ -951,6 +998,10 @@ section{
 
 .padding-section{
     padding: ($spacing-unit * 20) 0;
+
+    @media (max-width: 1200px){
+        padding: ($spacing-unit * 15) 0;
+    }
 }
 
 .mb-0{
@@ -1234,6 +1285,40 @@ section{
     transition: .5s all;
 }
 
+.hero-summary{
+    width: 71%;
+
+    @media (max-width: 1200px){
+        font-size: 1.6rem;
+    }
+}
+
+.hero-title{
+    margin-top: 0;
+    display: inline-block;
+    
+    @media (max-width: 1200px){
+        font-size: 4.4rem;
+    }
+}
+
+.hero__text-link{
+    display: inline-block;
+    max-width:71%;
+}
+
+.image-container{
+    height: 100%;
+
+    & > a{
+        height: 100%;
+    }
+    
+    & > a > img {
+        height: 100%;
+    }
+}
+
 /* Services */
 .services{ 
     background: blue; 
@@ -1297,6 +1382,10 @@ section{
 .hero-post{
     display: flex;
     height: 66rem;
+
+    @media (max-width: 1200px){
+        height: 40rem;
+    }
 }
 
 .hero__text_content{
@@ -1307,6 +1396,10 @@ section{
     & > * {
         margin-top:0;
     }
+}
+
+.hero__post-image_wrapper{
+    width: 100%;
 }
 
 .hero__post-image{
@@ -1331,14 +1424,26 @@ section.latest__articles{
     justify-content: space-between;
     flex-direction: row;
     margin-bottom:3.6rem;
+
+    @media(max-width: 1200px){
+        margin-bottom: 3.2rem;
+    }
 }
 
 .section__title{
     margin: 0;
+
+    @media(max-width: 1200px){
+        font-size: 2rem;
+    }
 }
 
 hr.section__title-divider{
     width: 72%;
+
+    @media (max-width: 1200px){
+        width: 63%;
+    }
 }
 
 .see_blog-link{
@@ -1346,6 +1451,10 @@ hr.section__title-divider{
     font-weight: bold;
     font-size: 2rem;
     text-transform: capitalize;
+
+    @media (max-width: 1200px){
+        font-size: 1.8rem;
+    }
 }
 
 .blog__article-categories{
@@ -1424,9 +1533,17 @@ hr.section__title-divider{
     &>h4{
         text-transform: uppercase;
         color: $primary-black;
+
+        @media (max-width: 1200px){
+            font-size: 1.8rem;
+        }
     }
     &>h5{
         color: $secondary-black;
+
+        @media (max-width: 1200px){
+            font-size: 1.2rem;
+        }
     }
     &> *{
         margin: 0;

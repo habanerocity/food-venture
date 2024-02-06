@@ -17,9 +17,11 @@
                             ?>
                                 <div class="hero-post">
                                     <div class="hero__text_content">
-                                        <h1 class="hero-title">
-                                            <?php echo get_the_title($post_id); ?>
-                                        </h1>
+                                        <a class="hero__text-link" href="<?php echo get_permalink($post_id); ?>">
+                                            <h1 class="hero-title">
+                                                <?php echo get_the_title($post_id); ?>
+                                            </h1>
+                                        </a>
                                         <p class="hero-summary">
                                             <?php echo get_the_excerpt($post_id); ?>
                                         </p>
@@ -27,11 +29,13 @@
                                             <a href="<?php echo get_permalink($post_id); ?>"><button class="btn_round-transparent">Read More</button></a>
                                         </div>
                                     </div>
-                                    <!-- <div class="hero__post-image_wrapper"> -->
-                                        <a class="hero__post-image">
-                                            <img src="<?php echo $hero_image['url']; ?>" alt="" />
-                                        </a>
-                                    <!-- </div> -->
+                                    <div class="hero__post-image_wrapper">
+                                        <div class="image-container">
+                                            <a href="<?php echo get_permalink($post_id); ?>">
+                                                <img src="<?php echo $hero_image['url']; ?>" alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <?php
                                 }
@@ -64,7 +68,7 @@
                                                 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                                 <?php the_excerpt(); ?>
                                                 <div class="article__card-footer">
-                                                    <span><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                    <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
                                                     <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
                                                 </div>
                                             </article>

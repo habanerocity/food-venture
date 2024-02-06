@@ -319,6 +319,9 @@ img {
   #home-search-field::placeholder {
     text-align: left;
     color: #333333; }
+    @media (max-width: 1200px) {
+      #home-search-field::placeholder {
+        font-size: 1.6rem; } }
 
 .searchbox input[type="text"] {
   padding: 7px 10px;
@@ -620,6 +623,10 @@ img {
   display: flex;
   flex-direction: column; }
 
+.hero__text-link {
+  text-decoration: none;
+  color: #252525; }
+
 .article__card {
   display: flex;
   position: relative;
@@ -629,13 +636,22 @@ img {
   position: relative;
   max-width: 30%;
   height: 56rem; }
+  @media (max-width: 1200px) {
+    .article__card {
+      height: 44rem; } }
   .article__card > p {
     margin-top: 0;
     margin-bottom: 1.2rem; }
+    @media (max-width: 1200px) {
+      .article__card > p {
+        font-size: 1.6rem; } }
   .article__card > h4 {
     margin-top: 2.4rem;
     margin-bottom: 8px;
     color: #252525; }
+    @media (max-width: 1200px) {
+      .article__card > h4 {
+        font-size: 1.8rem; } }
   .article__card-footer {
     display: flex;
     justify-content: space-between;
@@ -647,6 +663,12 @@ img {
     text-decoration: none;
     font-family: "montserrat";
     font-size: 1.6rem; }
+    @media (max-width: 1200px) {
+      .article__card-footer_link {
+        font-size: 1.3rem; } }
+  @media (max-width: 1200px) {
+    .article__card-footer_date {
+      font-size: 1.3rem; } }
   .article__card a {
     text-decoration: none;
     color: #252525; }
@@ -693,6 +715,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  @media (max-width: 1200px) {
+    .newsletter-signup-form {
+      height: 28rem; } }
   .newsletter-signup-form label {
     font-size: 2.2rem; }
   .newsletter-signup-form input {
@@ -708,6 +733,9 @@ section {
       background: #ffffff !important;
       color: #252525 !important;
       transition: .2s all ease-in-out; }
+    @media (max-width: 1200px) {
+      .newsletter-signup-form input[type="submit"] {
+        margin-top: 1.6rem; } }
   .newsletter-signup-form input::placeholder {
     color: #f5f5f5;
     font-size: 1.8rem; }
@@ -777,6 +805,9 @@ section {
     background: #0A0A0A;
     color: #ffffff;
     transition: .2s all ease-in-out; }
+  @media (max-width: 1200px) {
+    .btn_round-transparent {
+      font-size: 1.6rem; } }
 
 .btn_round-solid {
   border-radius: 25px;
@@ -788,6 +819,9 @@ section {
 
 .padding-section {
   padding: 80px 0; }
+  @media (max-width: 1200px) {
+    .padding-section {
+      padding: 60px 0; } }
 
 .mb-0 {
   margin-bottom: 0; }
@@ -1021,6 +1055,30 @@ section {
   background: yellow;
   transition: .5s all; }
 
+.hero-summary {
+  width: 71%; }
+  @media (max-width: 1200px) {
+    .hero-summary {
+      font-size: 1.6rem; } }
+
+.hero-title {
+  margin-top: 0;
+  display: inline-block; }
+  @media (max-width: 1200px) {
+    .hero-title {
+      font-size: 4.4rem; } }
+
+.hero__text-link {
+  display: inline-block;
+  max-width: 71%; }
+
+.image-container {
+  height: 100%; }
+  .image-container > a {
+    height: 100%; }
+  .image-container > a > img {
+    height: 100%; }
+
 /* Services */
 .services {
   background: blue;
@@ -1077,6 +1135,9 @@ section {
 .hero-post {
   display: flex;
   height: 66rem; }
+  @media (max-width: 1200px) {
+    .hero-post {
+      height: 40rem; } }
 
 .hero__text_content {
   display: flex;
@@ -1084,6 +1145,9 @@ section {
   justify-content: center; }
   .hero__text_content > * {
     margin-top: 0; }
+
+.hero__post-image_wrapper {
+  width: 100%; }
 
 .hero__post-image {
   display: flex;
@@ -1102,18 +1166,30 @@ section.latest__articles {
   justify-content: space-between;
   flex-direction: row;
   margin-bottom: 3.6rem; }
+  @media (max-width: 1200px) {
+    .latest__articles-heading {
+      margin-bottom: 3.2rem; } }
 
 .section__title {
   margin: 0; }
+  @media (max-width: 1200px) {
+    .section__title {
+      font-size: 2rem; } }
 
 hr.section__title-divider {
   width: 72%; }
+  @media (max-width: 1200px) {
+    hr.section__title-divider {
+      width: 63%; } }
 
 .see_blog-link {
   text-decoration: none;
   font-weight: bold;
   font-size: 2rem;
   text-transform: capitalize; }
+  @media (max-width: 1200px) {
+    .see_blog-link {
+      font-size: 1.8rem; } }
 
 .blog__article-categories {
   display: flex;
@@ -1173,8 +1249,14 @@ hr.section__title-divider {
   .latest__recipes-thumbnail_headings > h4 {
     text-transform: uppercase;
     color: #252525; }
+    @media (max-width: 1200px) {
+      .latest__recipes-thumbnail_headings > h4 {
+        font-size: 1.8rem; } }
   .latest__recipes-thumbnail_headings > h5 {
     color: #333333; }
+    @media (max-width: 1200px) {
+      .latest__recipes-thumbnail_headings > h5 {
+        font-size: 1.2rem; } }
   .latest__recipes-thumbnail_headings > * {
     margin: 0;
     text-align: left; }

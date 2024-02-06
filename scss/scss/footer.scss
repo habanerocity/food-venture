@@ -90,14 +90,29 @@ footer .container .row{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-@media (max-width: 575px) {
-    .site-footer .container{
-        flex-wrap: wrap;
+
+    & > ul > li > a{
+        font-size: 1.6rem;
+    }
+
+    & > h4{
+        @media (max-width: 1200px){
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .site-footer .container{
+            flex-wrap: wrap;
+        }
     }
 }
 
 #footer-logo{
     margin-top: 2.926rem;
     width: 15rem;
+
+    @media (max-width: 1200px){
+        width: 10rem;
+    }
 }
