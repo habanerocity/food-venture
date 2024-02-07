@@ -25,6 +25,10 @@ footer{
     padding: ($spacing-unit * 12.5) 0; 
     color: $primary-black; 
     border-top:1px solid $primary-black;
+
+    @media (max-width: 767px){
+        padding: 9px;
+    }
 }
 footer .container .row{
     align-items: center;
@@ -75,10 +79,10 @@ footer .container .row{
 }
 @media (max-width: 768px) {
     .site-footer .container{
-        justify-content: safe;
+        justify-content: space-between;
         display: flex;
         justify-self: flex-start;
-        flex-direction: column;
+        flex-direction: row;
     }
 }
 .footer-menu-label{

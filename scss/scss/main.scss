@@ -433,6 +433,10 @@ img {
 
 .home__logo{
     width: 7.5rem;
+
+    @media(max-width: 575px){
+       width: 5rem;
+    }
 }
 
 /* Main Menu */
@@ -614,6 +618,7 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .flex_container{
@@ -764,6 +769,14 @@ img {
         height: 44rem;
     }
 
+    @media(max-width: 767px){
+        max-width: 47%;
+
+        &:nth-child(3){
+            margin-top: 3.2rem;
+        }
+    }
+
     & > p{
         margin-top: 0;
         margin-bottom: 1.2rem;
@@ -801,11 +814,19 @@ img {
         @media(max-width: 1200px){
             font-size: 1.3rem;
         }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
+        }
     }
 
     &-footer_date{
         @media(max-width: 1200px){
             font-size: 1.3rem;
+        }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
         }
     }
 
@@ -875,6 +896,10 @@ section{
         height: 28rem;
     }
 
+    @media(max-width: 767px){
+        height: 23rem;
+    }
+
     label{
         font-size: 2.2rem;
     }
@@ -884,6 +909,10 @@ section{
         width: 30%;
         outline: none;
         color: $secondary-white;
+
+        @media(max-width: 767px){
+            width: 43%;
+        }
     }
 
     input[type="submit"]{
@@ -985,6 +1014,10 @@ section{
     @media (max-width: 1200px){
         font-size: 1.6rem;
     }
+
+    @media (max-width: 575px){
+        font-size: 1.4rem;
+    }
 }
 
 .btn_round-solid{
@@ -1001,6 +1034,10 @@ section{
 
     @media (max-width: 1200px){
         padding: ($spacing-unit * 15) 0;
+    }
+
+    @media (max-width: 767px){
+        padding: ($spacing-unit * 8) 0;
     }
 }
 
@@ -1291,6 +1328,10 @@ section{
     @media (max-width: 1200px){
         font-size: 1.6rem;
     }
+
+    @media (max-width: 575px){
+        font-size: 1.4rem;
+    }
 }
 
 .hero-title{
@@ -1299,6 +1340,15 @@ section{
     
     @media (max-width: 1200px){
         font-size: 4.4rem;
+    }
+
+    @media (max-width: 767px){
+        margin-top: 2.8rem;
+    }
+
+    @media (max-width: 575px){
+        margin-top: $spacing-unit * 4;
+        font-size:2.2rem;
     }
 }
 
@@ -1316,6 +1366,15 @@ section{
     
     & > a > img {
         height: 100%;
+
+        @media (max-width: 767px){
+            height: auto;
+            width: 43.5rem;
+        }
+
+        @media (max-width: 767px){
+            width: 32.5rem;
+        }
     }
 }
 
@@ -1386,6 +1445,11 @@ section{
     @media (max-width: 1200px){
         height: 40rem;
     }
+
+    @media (max-width: 767px){
+        height: auto;
+        flex-direction: column-reverse;
+    }
 }
 
 .hero__text_content{
@@ -1396,10 +1460,21 @@ section{
     & > * {
         margin-top:0;
     }
+
+    @media (max-width: 767px){
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .hero__post-image_wrapper{
     width: 100%;
+
+    @media (max-width: 767px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .hero__post-image{
@@ -1443,6 +1518,10 @@ hr.section__title-divider{
 
     @media (max-width: 1200px){
         width: 63%;
+    }
+
+    @media (max-width: 767px){
+        width: 57%;
     }
 }
 
@@ -1500,6 +1579,10 @@ hr.section__title-divider{
 
 .latest__recipes{
     padding-bottom: 8rem;
+
+    @media (max-width: 767px){
+        padding-bottom: ($spacing-unit * 8);
+    }
 }
 
 .latest__recipes-thumbnail_container{
@@ -1510,6 +1593,22 @@ hr.section__title-divider{
     &:hover{
         transform: translateY(-5px);
     }
+
+    @media(max-width: 1200px){
+        max-width: 45%;
+
+        &:nth-child(1), &:nth-child(2){
+            margin-bottom: 3.2rem;
+        }
+       
+    }
+
+    @media(max-width: 767px){
+        &:nth-child(1), &:nth-child(2){
+            margin-bottom: 2.4rem;
+        }
+    }
+
 }
 
 .latest__recipes-thumbnail_overlay{
@@ -1748,15 +1847,15 @@ img{
 .archive-description p{
     font-size: 85%;
 }
-.home #primary > #main{
-    padding: 0;
-}
+// .home #primary > #main{
+//     padding: 0;
+// }
 // #primary > #main{
 //     padding: $spacing-xl;
 // }
 @media screen and (max-width: 991px ) {
     #primary > #main{
-        padding: $spacing-small;
+        padding: $spacing-xl;
     }
 }
 .border-top{
