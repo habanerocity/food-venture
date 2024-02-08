@@ -366,10 +366,8 @@ img {
     #search-field::placeholder {
       color: #888888; }
 
-  #mag_glass {
-    transform: translate(-3.25rem, 0rem); }
-    #mag_glass > path {
-      fill: #252525; } }
+  #mag_glass > path {
+    fill: #252525; } }
 .overlay {
   position: fixed;
   top: 0;
@@ -380,6 +378,9 @@ img {
   /* Semi-transparent black color */
   z-index: 14;
   /* Place the overlay above other content */ }
+  @media (min-width: 768px) {
+    .overlay {
+      display: none; } }
 
 .home__logo {
   width: 7.5rem; }
@@ -669,7 +670,9 @@ img {
       height: auto;
       margin-top: 0; }
       .article__card:first-child {
-        margin-bottom: 2.2rem; } }
+        margin-bottom: 2.2rem; }
+      .article__card:nth-child(3) {
+        margin-top: 2.2rem; } }
   .article__card > p {
     margin-top: 0;
     margin-bottom: 1.2rem; }
@@ -1010,7 +1013,8 @@ section {
 
   .menu-icon,
   .check-button {
-    display: block; }
+    display: block;
+    position: fixed; }
 
   .check-button {
     border: none;
@@ -1129,6 +1133,9 @@ section {
     .hero-title {
       margin-top: 16px;
       font-size: 2.2rem; } }
+  @media (max-width: 435px) {
+    .hero-title {
+      line-height: normal; } }
 
 .hero__text-link {
   display: inline-block;
@@ -1269,6 +1276,18 @@ hr.section__title-divider {
   @media (max-width: 767px) {
     hr.section__title-divider {
       width: 57%; } }
+  @media (max-width: 511px) {
+    hr.section__title-divider {
+      max-width: 50%; } }
+  @media (max-width: 454px) {
+    hr.section__title-divider {
+      max-width: 40%; } }
+  @media (max-width: 381px) {
+    hr.section__title-divider {
+      max-width: 30%; } }
+  @media (max-width: 329px) {
+    hr.section__title-divider {
+      max-width: 20%; } }
 
 .see_blog-link {
   text-decoration: none;
@@ -1328,6 +1347,11 @@ hr.section__title-divider {
   @media (max-width: 767px) {
     .latest__recipes-thumbnail_container:nth-child(1), .latest__recipes-thumbnail_container:nth-child(2) {
       margin-bottom: 2.4rem; } }
+  @media (max-width: 398px) {
+    .latest__recipes-thumbnail_container {
+      max-width: 100%; }
+      .latest__recipes-thumbnail_container:nth-child(3) {
+        margin-bottom: 2.4rem; } }
 
 .latest__recipes-thumbnail_overlay {
   position: absolute;
@@ -1748,7 +1772,7 @@ a:visited {
 
 @media (max-width: 575px) {
   .container {
-    padding: 0 24px; } }
+    padding: 0 16px; } }
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
