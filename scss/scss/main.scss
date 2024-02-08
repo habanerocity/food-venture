@@ -777,6 +777,16 @@ img {
         }
     }
 
+    @media(max-width: 511px){
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+
+        &:first-child{
+            margin-bottom: 2.2rem;
+        }
+    }
+
     & > p{
         margin-top: 0;
         margin-bottom: 1.2rem;
@@ -793,6 +803,10 @@ img {
 
         @media(max-width: 1200px){
             font-size: 1.8rem;
+        }
+
+        @media(max-width: 511px){
+            margin-top: 1.6rem;
         }
     }
 
@@ -1503,6 +1517,10 @@ section.latest__articles{
     @media(max-width: 1200px){
         margin-bottom: 3.2rem;
     }
+
+    @media(max-width: 511px){
+        margin-bottom: 2rem;
+    }
 }
 
 .section__title{
@@ -1855,7 +1873,7 @@ img{
 // }
 @media screen and (max-width: 991px ) {
     #primary > #main{
-        padding: $spacing-xl;
+        padding: 0 $spacing-xl;
     }
 }
 .border-top{
