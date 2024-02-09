@@ -381,6 +381,17 @@ img {
             font-size: 1.6rem;
         }
     }
+    @media (max-width: 439px){
+        width:15.2rem;
+    }
+
+    @media (max-width: 381px){
+        width:13.2rem;
+    }
+
+    @media (max-width: 330px){
+        width:11.2rem;
+    }
 
 }
 .searchbox input[type="text"]{
@@ -802,6 +813,10 @@ img {
         @media(max-width: 1200px){
             font-size: 1.6rem;
         }
+
+        @media (max-width: 575px){
+            margin-bottom: $spacing-unit * 2;
+        }
     }
 
     & > h4 {
@@ -907,7 +922,7 @@ section{
 
 .newsletter-signup-form{
     background: url('http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_6966-2.jpg') no-repeat center center / cover;
-    padding-left:3rem;
+    padding:3rem;
     color: $secondary-white;
     height: 40rem;
     display:flex;
@@ -933,7 +948,7 @@ section{
         color: $secondary-white;
 
         @media(max-width: 767px){
-            width: 43%;
+            width: 60%;
         }
     }
 
@@ -1240,7 +1255,7 @@ section{
     .menu-icon,
     .check-button {
 		display: block;
-        position: fixed;
+        // position: fixed;
 	}
     .check-button{
         border: none;
@@ -1353,7 +1368,7 @@ section{
     }
 
     @media (max-width: 575px){
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -1370,7 +1385,8 @@ section{
     }
 
     @media (max-width: 575px){
-        margin-top: $spacing-unit * 4;
+        margin-top: $spacing-unit * 3.5;
+        margin-bottom: $spacing-unit * 3;
         font-size:2.2rem;
     }
 
@@ -1661,8 +1677,8 @@ hr.section__title-divider{
     @media(max-width: 398px){
         max-width: 100%;
 
-        &:nth-child(3){
-            margin-bottom: 2.4rem;
+        &:nth-child(1), &:nth-child(2), &:nth-child(3){
+            margin-bottom: $spacing-unit * 5;
         }
     }
 
