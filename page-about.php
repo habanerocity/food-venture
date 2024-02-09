@@ -9,7 +9,9 @@
                     ?>
                     <div class="general-template">
                         <div class="container">
-                            <h3 class="about-description margin-section"><?php echo get_theme_mod( 'set_description', 'Hi, we are foodies interesting in exploring the sights and flavors of the world, one bite at a time. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum.' ); ?></h3>
+                            <div class="padding-section">
+                                <h3 class="about-description"><?php echo get_theme_mod( 'set_description', 'Hi, we are foodies interesting in exploring the sights and flavors of the world, one bite at a time. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum.' ); ?></h3>
+                            </div>
                         </div>
                         <div class="flex_container-row border-top">
                             <div class="container">
