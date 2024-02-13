@@ -936,8 +936,26 @@ img {
     }
 }
 
+#about__me-heading{
+    margin-top:0;
+}
+
+.author-gravatar{
+    display: flex;
+    width: 100%;
+
+    & > img{
+        width: 100%;
+    }
+}
+
+.wp-block-heading{
+    // margin-top: 0;
+    width: 100%;
+}
 
 .blog-sidebar-section {
+    width: 100%;
 
     & > h3{
         border-radius: 3px 3px 0px 0px;
@@ -2047,7 +2065,7 @@ img{
 }
 article{ 
     display: inline-block;  
-    width: 100%; 
+    width: 66.6667%; 
 }
 
 article.post h2{

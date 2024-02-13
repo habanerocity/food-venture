@@ -765,10 +765,24 @@ img {
   .blog-articles {
     padding: 36px 0; } }
 
-.blog-sidebar-section > h3 {
-  border-radius: 3px 3px 0px 0px;
-  background: #252525;
-  color: #ffffff; }
+#about__me-heading {
+  margin-top: 0; }
+
+.author-gravatar {
+  display: flex;
+  width: 100%; }
+  .author-gravatar > img {
+    width: 100%; }
+
+.wp-block-heading {
+  width: 100%; }
+
+.blog-sidebar-section {
+  width: 100%; }
+  .blog-sidebar-section > h3 {
+    border-radius: 3px 3px 0px 0px;
+    background: #252525;
+    color: #ffffff; }
 
 #select__categories-sidebar, #archive-sidebar {
   display: flex;
@@ -1633,7 +1647,7 @@ img {
     width: 100%; } }
 article {
   display: inline-block;
-  width: 100%; }
+  width: 66.6667%; }
 
 article.post h2 {
   line-height: 3rem;
