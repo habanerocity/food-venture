@@ -36,6 +36,10 @@ p, div{
     font-size: 2rem;
     line-height: normal;
     font-weight: $fontweight-regular;
+
+    @media(max-width: 575px){
+        font-size: 1.6rem;
+    }
 }
 button {
     font-family: $fontfamily-headings;

@@ -3,7 +3,7 @@
     <div class="overlay hidden"></div>
     <div id="primary ">
         <div id="main">
-            <div class="container padding-section" style="display: flex;">
+            <div class="container padding-section blog__wrapper" style="display: flex;">
                 <?php
                 while( have_posts()):
                     the_post();
