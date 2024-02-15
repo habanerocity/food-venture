@@ -8,13 +8,42 @@
                             <div class="blog-input__container">
                                 <div id="blog-categories" >
                                     <?php 
+                                        // Get current category
+                                        $current_category = get_query_var('category_name');
+
+                                        // If no category is selected, set the selected option to "Select Category"
+                                        $selected_option = $current_category ? $current_category : '-1';
+
                                         // Dropdown of categories
-                                        wp_dropdown_categories( array(
-                                            'show_option_none' => 'Categories',
-                                            'orderby'          => 'name',
-                                            'echo'             => 1,
-                                            'hierarchical'     => 1,
+                                        $categories = wp_dropdown_categories( array(
+                                            'show_option_none'  => 'Select Category', // This line adds "Select Category" as the first option
+                                            'show_option_all'   => 'All Categories',
+                                            'orderby'           => 'name',
+                                            'echo'              => 0, // Don't echo the dropdown immediately
+                                            'hierarchical'      => 1,
+                                            'value_field'       => 'slug', // Use slugs as the option values
+                                            'selected'          => $selected_option, // Set the selected option
                                         ) );
+
+                                        if($categories){
+                                            // Add onchange event to the dropdown
+                                            $categories = str_replace('<select', '<select onchange="if(this.value && this.value != \'-1\') { window.location.href=\''.get_home_url().'/category/\'+this.value; } else if(this.value == \'\') { window.location.href=\''.get_home_url().'/\' }"', $categories);
+                                            echo $categories;
+                                        }
+
+                                        // Set the title
+                                        if($current_category){
+                                            $title = $current_category;
+                                        } else if($selected_option == ''){
+                                            $title = 'All Categories';
+                                        } else {
+                                            $title = 'Select Category';
+                                        }
+
+                                        // Set the page title in the custom header
+                                        add_filter('pre_get_document_title', function($original_title) use ($title) {
+                                            return $title;
+                                        });
                                     ?>
                                 </div>
                                 <div id="blog-archive" >
@@ -46,11 +75,15 @@
                                                     <div class="featured-thumbnail">
                                                         <?php the_post_thumbnail('medium'); ?>
                                                     </div>
-                                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                                    <?php the_excerpt(); ?>
-                                                    <div class="article__card-footer">
-                                                        <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
-                                                        <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                                    <div class="article__card-content">
+                                                        <div class="article__card-title&excerpt">
+                                                            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                                            <?php the_excerpt(); ?>
+                                                        </div>
+                                                        <div class="article__card-footer">
+                                                            <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                            <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                                        </div>
                                                     </div>
                                                 </article>
                                             <?php

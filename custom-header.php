@@ -4,14 +4,25 @@
             <?php include 'navbar.php'?>
         </div>
         <div class="header_banner">
-            <h1 class="secondary_white banner-text">
+        <h1 class="secondary_white banner-text">
             <?php 
             if(is_404()){
                 echo '404 - Page Not Found!';
+            } elseif(is_category()) {
+                single_cat_title();
+            } elseif(is_home() || is_front_page()) {
+                echo 'All Categories';
+            } elseif(is_archive()) {
+                if(is_month()) {
+                    echo get_the_date('F Y');
+                } else {
+                    the_archive_title();
+                }
             } else {
-                wp_title('');
+                the_title();
             }
-            ?></h1>
+            ?>
+        </h1>
         </div>
     </div>    
 </div>

@@ -846,7 +846,7 @@ img {
 .article__card{
     @include flex-container;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     position: relative;
     max-width: 30%;

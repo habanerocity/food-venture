@@ -700,7 +700,7 @@ img {
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   position: relative;
   max-width: 30%;
