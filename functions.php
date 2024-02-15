@@ -121,13 +121,13 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-//Make 'Blog' Active When Viewing Single Posts
+//Make 'Blog' Active When Viewing Single Posts, Categories, or Archives
 function add_current_nav_class($classes, $item) {
     // Getting the current post details
     global $post;
 
     // Check if the current page is a single post
-    if (is_single() && $item->title == 'Blog') {
+    if ((is_single() || is_archive() || is_home()) && $item->title == 'Blog') {
         $classes[] = 'current-menu-item';
     }
 
