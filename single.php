@@ -35,6 +35,11 @@
                         </header>
                         <div class="content">
                             <?php the_content(); ?>
+                            <?php 
+                                if(get_post_type() == 'blog_recipes'){
+                                    echo '<h1>RECIPE CARD HERE</h1>';
+                                }
+                            ?>
                             <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                         </div>
                         
