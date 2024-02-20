@@ -37,7 +37,7 @@
                             <?php the_content(); ?>
                             <?php 
                                 if(get_post_type() == 'blog_recipes'){
-                                    echo '<h1>RECIPE CARD HERE</h1>';
+                                    include 'recipe-card.php';
                                 }
                             ?>
                             <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
