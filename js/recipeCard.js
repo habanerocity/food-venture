@@ -40,42 +40,54 @@ function shareOnPinterest() {
 }
 
 //Increasing serving size
-
 let ingredientQuantities = document.querySelectorAll('.ingredientQuantity');
+
+let originalQuantities = Array.from(ingredientQuantities, el => el.innerText); // Store the original quantities
 
 function parseFraction(fraction) {
     let [numerator, denominator] = fraction.split('/');
     return numerator / denominator;
 }
 
-function doubleIngredientQuantity(qty){
-    let doubled = qty * 2;
-    console.log(doubled);
-    return doubled;
+function changeIngredientQuantity(qty, multiplier){
+    let changed = qty * multiplier;
+    console.log(changed);
+    return changed;
 }
 
 const doubleButton = document.getElementById('doubleBtn');
+const tripleButton = document.getElementById('tripleBtn');
+const resetButton = document.getElementById('resetBtn');
 
 doubleButton.addEventListener('click', function(){
+    changeQuantities(2);
+});
+
+tripleButton.addEventListener('click', function(){
+    changeQuantities(3);
+});
+
+resetButton.addEventListener('click', function(){
     for (let i = 0; i < ingredientQuantities.length; i++) {
-        // Get the current quantity
-        let ingredientQuantity = ingredientQuantities[i].innerText;
+        // Reset the quantity in the DOM to the original quantity
+        ingredientQuantities[i].innerText = originalQuantities[i];
+    }
+});
+
+function changeQuantities(multiplier) {
+    for (let i = 0; i < ingredientQuantities.length; i++) {
+        
+        let ingredientQuantity = originalQuantities[i]; // Get the original quantity
 
         let ingredientQuantityNumber;
         if (ingredientQuantity.includes('/')) {
-            // The quantity is a fraction
-            ingredientQuantityNumber = parseFraction(ingredientQuantity);
+            ingredientQuantityNumber = parseFraction(ingredientQuantity); // The quantity is a fraction, conver to a decimal
         } else {
-            // The quantity is not a fraction
-            ingredientQuantityNumber = Number(ingredientQuantity);
+            ingredientQuantityNumber = Number(ingredientQuantity); // The quantity is not a fraction, convert to a number
         }
-        console.log(ingredientQuantityNumber);
 
-        // Double the quantity of ingredients
-        let doubled = doubleIngredientQuantity(ingredientQuantityNumber);
-        console.log(doubled);
+        let changed = changeIngredientQuantity(ingredientQuantityNumber, multiplier); // Change the quantity
 
-        // Update the quantity in the DOM
-        ingredientQuantities[i].innerText = doubled;
+        ingredientQuantities[i].innerText = changed; // Update the quantity in the DOM
     }
-});
+}
