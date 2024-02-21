@@ -1995,9 +1995,20 @@ a:visited {
   border-bottom: 1px solid #000;
   margin: 20px 0;
   padding: 0; }
+  @media (max-width: 420px) {
+    .recipe__card-ingredient_divider {
+      flex-direction: column;
+      padding: 16px 0; } }
 
 .recipe__card-ingredient_divider h3 {
   text-transform: uppercase; }
+  @media (max-width: 420px) {
+    .recipe__card-ingredient_divider h3 {
+      margin: 0; } }
+
+@media (max-width: 420px) {
+  .recipe__card-ingredients_heading {
+    margin-bottom: 8px !important; } }
 
 .recipe__card-ingredients {
   margin: 0;
@@ -2007,7 +2018,7 @@ a:visited {
 .recipe__card-ingredients_multipliers {
   display: flex;
   flex-direction: row;
-  width: 20%;
+  max-width: 40%;
   justify-content: space-evenly;
   align-items: center; }
 
@@ -2060,11 +2071,14 @@ a:visited {
 .recipe__card-attributes {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   color: #fff;
   list-style-type: none;
   padding: 0;
-  margin-top: 0; }
+  margin-top: 0;
+  margin-bottom: 16px; }
 
 .recipe__card-ratings {
   color: #fff; }
@@ -2091,11 +2105,13 @@ a:visited {
   align-items: center;
   justify-content: flex-end;
   height: 34rem;
-  margin-bottom: 24px; }
+  padding: 24px; }
 
 .recipe__card-subheading {
   padding: 20px 0;
   background-color: #333;
+  color: #fff;
+  font-family: 'montserrat';
   width: 100%; }
 
 .recipe__card-pic {
@@ -2137,7 +2153,7 @@ a:visited {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  aligh-items: center;
+  align-items: center;
   width: 100%; }
 
 #printBtn {
@@ -2166,6 +2182,10 @@ a:visited {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center; }
+  .post-ratings > em {
+    margin-top: 8px;
+    color: #f5f5f5;
+    font-family: 'montserrat'; }
 
 .star-wrapper {
   display: flex;

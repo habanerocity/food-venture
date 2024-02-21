@@ -84,6 +84,9 @@ if ( $recipe_steps) :
             // Save the modified HTML
             $ratings = $doc->saveHTML();
 
+            // Remove parentheses
+            $ratings = str_replace(array('(', ')'), '', $ratings);
+
             echo $ratings; // Output the modified content
         }
         ?>
@@ -96,10 +99,10 @@ if ( $recipe_steps) :
     </div>
   <div class="recipe__card-subheading">
     <div class="recipe__card-row">
-      <div class="recipe__card-attributes">
+      <!-- <div class="recipe__card-attributes"> -->
         <i class="fas fa-user" style="color: #fff;"></i>
         <b>&nbsp;Servings:</b>&nbsp;<span class="recipe__card-servings"><?php echo esc_html($recipe_servings); ?></span>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
   <div class="recipe__card-body">
@@ -135,7 +138,7 @@ if ( $recipe_steps) :
     </div>
     <div class="recipe__card-row">
       <div class="recipe__card-ingredient_divider">
-        <h3>Ingredients</h3>
+        <h3 class="recipe__card-ingredients_heading">Ingredients</h3>
         <div class="recipe__card-ingredients_multipliers">          <button id="resetBtn" class="recipe__card-ingredient_multiplier">            1x
          </button>
          <button id="doubleBtn" class="recipe__card-ingredient_multiplier">            2x
