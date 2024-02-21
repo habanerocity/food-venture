@@ -36,10 +36,12 @@
                         <div class="content">
                             <?php the_content(); ?>
                             <?php 
-                                if(get_post_type() == 'blog_recipes'){
+                                if(get_post_type() == 'blog_recipes'):
                                     include 'recipe-card.php';
-                                }
-                            ?>
+                                endif;
+                            ?> 
+                        </div>
+                        <div class="newsletter_banner">
                             <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                         </div>
                         

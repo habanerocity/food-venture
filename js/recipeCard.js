@@ -42,8 +42,7 @@ function shareOnPinterest() {
 //Increasing serving size
 let ingredientQuantities = document.querySelectorAll('.ingredientQuantity');
 
-// Store the original quantities
-let originalQuantities = Array.from(ingredientQuantities, el => el.innerText);
+let originalQuantities = Array.from(ingredientQuantities, el => el.innerText);  // Store the original quantities
 
 function parseFraction(fraction) {
     let [numerator, denominator] = fraction.split('/');
@@ -103,10 +102,12 @@ const resetButton = document.getElementById('resetBtn');
 
 doubleButton.addEventListener('click', function(){
     changeQuantities(2);
+    convertUnitsToPlural();
 });
 
 tripleButton.addEventListener('click', function(){
     changeQuantities(3);
+    convertUnitsToPlural();
 });
 
 resetButton.addEventListener('click', function(){
@@ -114,6 +115,7 @@ resetButton.addEventListener('click', function(){
         // Reset the quantity in the DOM to the original quantity
         ingredientQuantities[i].innerText = originalQuantities[i];
     }
+    convertUnitsToPlural();
 });
 
 function changeQuantities(multiplier) {
@@ -149,3 +151,26 @@ function changeQuantities(multiplier) {
         }
     }
 }
+
+//Convert units to plural
+function convertUnitsToPlural() {
+    let ingredientUnits = document.querySelectorAll('.measurement');
+
+    for (let i = 0; i < ingredientQuantities.length; i++) {
+        // Get the quantity and unit
+        let quantity = Number(ingredientQuantities[i].innerText);
+        let unit = ingredientUnits[i].innerText;
+
+        // If the quantity is greater than 1 and the unit does not already end with an 's', add an 's' to the end of the unit
+        if (quantity > 1 && !unit.endsWith('s')) {
+            unit += 's';
+        } else if (quantity <= 1 && unit.endsWith('s')) {
+            // If the quantity is 1 or less and the unit ends with an 's', remove the 's' at the end of the unit
+            unit = unit.slice(0, -1);
+        }
+
+        // Update the unit in the DOM
+        ingredientUnits[i].innerText = unit;
+    }
+}
+

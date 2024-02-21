@@ -1,26 +1,40 @@
+<?php
+$prep_time = get_post_meta($post->ID, 'recipe_card-prep_time', true);
+$cooking_time = get_post_meta($post->ID, 'recipe_card-cooking_time', true);
+$recipe_category = get_post_meta($post->ID, 'recipe_card-category', true);
+$recipe_origin = get_post_meta($post->ID, 'recipe_card-origin', true);
+$recipe_servings = get_post_meta($post->ID, 'recipe_card-servings', true);
+$recipe_intro = get_post_meta($post->ID, 'recipe_card-intro', true);
+$recipe_ingredients = get_post_meta($post->ID, 'recipe_card-ingredients', true);
+$recipe_steps = get_post_meta($post->ID, 'recipe_card-steps', true);
+if( $recipe_ingredients) :
+    $ingredients_array = explode("\n", $recipe_ingredients);
+if ( $recipe_steps) :
+    $steps_array = explode("\n", $recipe_steps);
+?>
 <div class="recipe__card">
     <div class="recipe__card-header">
       <div class="recipe__card-pic"></div>
-      <h1 class="recipe__card-name">RECIPE NAME</h1>
+      <h1 class="recipe__card-name"><?php esc_html(the_title()); ?></h1>
       <div class="recipe__card-row">
         <ul class="recipe__card-attributes">
           <li class="recipe__card-attribute">
             <i class="fas fa-clock" style="color: #ffffff;">
             </i>
-            <b>&nbsp;Prep:</b>&nbsp;30 mins
+            <b>&nbsp;Prep:</b>&nbsp;<?php echo esc_html($prep_time); ?>
           </li>
           <li>
             <i class="fas fa-clock" style="color: #ffffff;">             </i>  
-            <b>&nbsp;Cook:</b>&nbsp;20 mins
+            <b>&nbsp;Cook:</b>&nbsp;<?php echo esc_html($cooking_time); ?>
           </li>
           <li>
             <i class="fas fa-utensils"style="color:#ffffff;">  
             </i>
-            <b>&nbsp;Category:</b>&nbsp;Seafood
+            <b>&nbsp;Category:</b>&nbsp;<?php echo esc_html($recipe_category); ?>
           </li>
           <li>
             <i class="fas fa-globe" style="color: #ffffff;">             </i>
-            &nbsp;Country
+            &nbsp;<?php echo esc_html($recipe_origin); ?>
           </li>
         </ul>
       </div>
@@ -43,7 +57,7 @@
     <div class="recipe__card-row">
       <div class="recipe__card-attributes">
         <i class="fas fa-user" style="color: #fff;"></i>
-        <b>&nbsp;Servings:</b>&nbsp;5
+        <b>&nbsp;Servings:</b>&nbsp;<?php echo esc_html($recipe_servings); ?>
       </div>
     </div>
   </div>
@@ -75,16 +89,7 @@
     </div>
     <div class="recipe__card-row">
       <div class="recipe__card-intro">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore 
-magna aliqua. Ut enim ad minim veniam, quis nostrud 
-exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-consequat. 
-
-Duis aute irure dolor in reprehenderit in 
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in 
-culpa qui officia deserunt mollit anim id est laborum.
+      <?php echo esc_html($recipe_intro); ?>
       </div>
     </div>
     <div class="recipe__card-row">
@@ -101,27 +106,27 @@ culpa qui officia deserunt mollit anim id est laborum.
     </div>
       <div class="recipe__card-row">
         <ul class="recipe__card-ingredients">
-          <li><span class="ingredientQuantity">1</span>lb fresh tuna (or your preferred high-quality fish), cut into bite-sized pieces</li>
-          <li><span class="ingredientQuantity">1/2</span> cup of the finest cane vinegar or coconut vinegar, for that authentic Filipino touch</li>
-          <li>Juice of <span class="ingredientQuantity">3</span> calamansi, to introduce a citrusy zest, reminiscent of my ceviche experiences</li>
-          <li><span class="ingredientQuantity">1</span> small red onion, thinly sliced, for a hint of sharpness</li>
-          <li><span class="ingredientQuantity">1</span> thumb-sized ginger, minced, to add a warm, spicy undertone</li>
-          <li><span class="ingredientQuantity">2</span>-<span class="ingredientQuantity">3</span> sili labuyo, finely chopped, to bring in that exhilarating heat</li>
-          <li><span class="ingredientQuantity">1</span> medium cucumber, sliced into thin half-moons, for a refreshing crunch</li>
-          <li>A pinch of sea salt and a twist of freshly ground black pepper, to taste</li>
-          <li>A handful of fresh cilantro leaves, for garnish, adding a burst of color and freshness</li>
+          <?php foreach($ingredients_array as $ingredient): ?>
+            <?php 
+            $ingredient = preg_replace('/(\d+\/\d+|\d+)/', '<span class="ingredientQuantity">$1</span>', trim($ingredient)); 
+            $ingredient = preg_replace('/(cup|lb|tablespoon|teaspoon)\b/', '<span class="measurement">$1</span>', $ingredient);
+            ?>
+            <li><?php echo wp_kses($ingredient, array('span' => array('class' => array()))); ?></li>
+          <?php endforeach; ?>
         </ul>
-      </div>
-      <div class="recipe__card-row">
+    </div>
+    <div class="recipe__card-row">
         <div class="recipe__card-ingredient_divider">
-        <h3>Instructions</h3>
-      </div>
-  </div>
+            <h3>Instructions</h3>
+        </div>
+    </div>
     <div class="recipe__card-row">
         <ol class="recipe__card-steps">
-          <li>Combine vinegar and calamansi juice in a bowl, whisking in salt and pepper. Submerge the fish cubes in this mixture and let them marinate in the fridge for 10-15 minutes. This process, akin to cooking, imbues the fish with a vibrant tanginess.</li>
-          <li>After marination, drain the fish and mix in the onion, ginger, cucumber, and the fiery sili labuyo. The blend of these ingredients with the tender fish creates a mosaic of flavors that are both invigorating and comforting.</li>
-          <li>Serve the Kinilaw on a plate, garnished with cilantro leaves. The dish, with its myriad of flavors and textures, is a reflection of the Philippines itself—vibrant, diverse, and utterly enchanting.</li>
+            <?php foreach($steps_array as $step): ?>
+                <li><?php echo esc_html(trim($step)); ?></li>
+            <?php endforeach; ?>
+            <?php endif; ?>
         </ol>
+        <?php endif; ?>
     </div>
   </div>

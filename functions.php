@@ -7,6 +7,7 @@ function wpfoodventure_load_scripts(){
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3&display=swap', array(), null );
     wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/9497c4ca6a.js');
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
+    wp_enqueue_script( 'recipeCard', get_template_directory_uri() . '/js/recipeCard.js', array(), '1.0', true);
 };
 
 add_action( 'wp_enqueue_scripts', 'wpfoodventure_load_scripts' );
