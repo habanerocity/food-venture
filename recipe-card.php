@@ -39,25 +39,66 @@ if ( $recipe_steps) :
         </ul>
       </div>
       <div class="recipe__card-row">
-        <ul class="recipe__card-stars">
+        <!-- <ul class="recipe__card-stars">
           <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
           <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
           <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
           <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
           <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-        </ul>
+        </ul> -->
+        <?php
+        if(function_exists('the_ratings')) { 
+            ob_start(); // Start output buffering
+            the_ratings(); 
+            $ratings = ob_get_clean(); // Get the output into a variable and clean the buffer
+
+            // Create a new DOMDocument and load the HTML
+            $doc = new DOMDocument();
+            @$doc->loadHTML($ratings);
+
+            // Find the 'post-ratings' div
+            $divs = $doc->getElementsByTagName('div');
+            $postRatings = null;
+            foreach ($divs as $div) {
+                if ($div->getAttribute('class') == 'post-ratings') {
+                    $postRatings = $div;
+                    break;
+                }
+            }
+
+            if ($postRatings) {
+                // Create a new div
+                $wrapper = $doc->createElement('div');
+                $wrapper->setAttribute('class', 'star-wrapper');
+
+                // Find all img tags in 'post-ratings' and move them to the new div
+                $imgs = $postRatings->getElementsByTagName('img');
+                while ($imgs->length > 0) {
+                    $wrapper->appendChild($imgs->item(0));
+                }
+
+                // Append the new div to 'post-ratings'
+                $postRatings->appendChild($wrapper);
+            }
+
+            // Save the modified HTML
+            $ratings = $doc->saveHTML();
+
+            echo $ratings; // Output the modified content
+        }
+        ?>
       </div>
-      <div class="recipe__card-row">
+      <!-- <div class="recipe__card-row">
         <span class="recipe__card-ratings">
         5.0 from 10 votes
         </span>
-      </div>
+      </div> -->
     </div>
   <div class="recipe__card-subheading">
     <div class="recipe__card-row">
       <div class="recipe__card-attributes">
         <i class="fas fa-user" style="color: #fff;"></i>
-        <b>&nbsp;Servings:</b>&nbsp;<?php echo esc_html($recipe_servings); ?>
+        <b>&nbsp;Servings:</b>&nbsp;<span class="recipe__card-servings"><?php echo esc_html($recipe_servings); ?></span>
       </div>
     </div>
   </div>

@@ -67,10 +67,11 @@
     font-size: 20px;
   }
   
-  .recipe__card-ingredient_multiplier:hover{
+  .recipe__card-ingredient_multiplier:hover, .recipe__card-ingredient_multiplier.clicked {
     cursor: pointer;
-    background-color: #888;
-  }
+    background-color: #454545;
+    color: #fff;
+}
   
   .recipe__card-steps{
     text-align: left;
@@ -232,15 +233,42 @@
     cursor: pointer;
     background-color: transparent;
   }
-  
-  @media print {
-    body {
-      visibility: hidden; /* Hide everything in the body */
-    }
-    .recipe__card-pic{
-      display: none;
-    }
-    .recipe__card, .recipe__card * {
-      visibility: visible; /* Make the recipe card and its children visible */
+
+  .post-ratings{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .star-wrapper{
+    display:flex;
+    flex-direction: row;
+
+    & > img{
+      width: 3rem;
+      // height: 2rem;
+      margin-right: 0.5rem;
     }
   }
+  
+  @media print {
+    /* Hide all elements */
+    .non-print-content {
+        // visibility: hidden;
+        display: none; /* Add this line */
+    }
+
+    /* Show the recipe card and its necessary children */
+    .recipe-card, .recipe-card * {
+        visibility: visible;
+        display: block; /* Add this line */
+    }
+
+    /* Position the recipe card at the top of the page */
+    .recipe-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

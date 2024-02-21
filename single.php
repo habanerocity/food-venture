@@ -10,43 +10,51 @@
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="meta-info">
-                            <div class="meta-info">
-                                <?php custom_breadcrumbs(); ?>
-                                <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
-                                <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
-                                    <?php
-                                        if(get_post_type() == 'blog_recipes'){
-                                            echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_category', '', ', ' );
+                            <div class="non-print-content">
+                                <div class="meta-info">
+                                    <?php custom_breadcrumbs(); ?>
+                                    <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+                                    <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
+                                        <?php
+                                            if(get_post_type() == 'blog_recipes'){
+                                                echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_category', '', ', ' );
+                                            } else {
+                                                the_category(' ');
+                                            }
+                                        ?>
+                                    </p>
+                                    <p class="blog__article-tags"><i class="fas fa-tags"></i>Tags:&nbsp; 
+                                    <?php 
+                                        if(get_post_type() == 'blog_recipes') {
+                                            echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' ); 
                                         } else {
-                                            the_category(' ');
+                                            the_tags( '', ', ' ); 
                                         }
                                     ?>
-                                </p>
-                                <p class="blog__article-tags"><i class="fas fa-tags"></i>Tags:&nbsp; 
-                                <?php 
-                                    if(get_post_type() == 'blog_recipes') {
-                                        echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' ); 
-                                    } else {
-                                        the_tags( '', ', ' ); 
-                                    }
-                                ?>
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </header>
                         <div class="content">
+                        <div class="non-print-content">
                             <?php the_content(); ?>
+                        </div>
                             <?php 
                                 if(get_post_type() == 'blog_recipes'):
                                     include 'recipe-card.php';
                                 endif;
                             ?> 
                         </div>
-                        <div class="newsletter_banner">
-                            <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
+                        <div class="non-print-content">
+                            <div class="newsletter_banner">
+                                <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
+                            </div>
                         </div>
                         
                     </article>
+                    <!-- <div class="non-print-content"> -->
                     <?php get_sidebar(); ?>
+                    <!-- </div> -->
                     
             </div>
             <?php
@@ -54,6 +62,7 @@
             $next_link = get_next_post_link('%link', 'Next Post', TRUE);
 
             if ($prev_link || $next_link) : ?>
+            <div class="non-print-content">
                 <div class="post-navigation">
                     <div class="container padding-section" style="display: flex; justify-content: space-between;">
                         <div class="prev-post">
@@ -64,12 +73,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <?php endif; ?>
             <?php
             if (comments_open() || get_comments_number()) {
+                echo '<div class="non-print-content">';
                 echo '<div class="comment__section-container">';
                 echo '<div class="container padding-section">';
                 comments_template();
+                echo '</div>';
                 echo '</div>';
                 echo '</div>';
             }
@@ -80,4 +92,6 @@
                 ?>
         </div>
     </div>
-<?php get_footer(); ?>
+    <div class="non-print-content">
+        <?php get_footer(); ?>
+    </div>

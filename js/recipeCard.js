@@ -102,12 +102,12 @@ const resetButton = document.getElementById('resetBtn');
 
 doubleButton.addEventListener('click', function(){
     changeQuantities(2);
-    convertUnitsToPlural();
+    // convertUnitsToPlural();
 });
 
 tripleButton.addEventListener('click', function(){
     changeQuantities(3);
-    convertUnitsToPlural();
+    // convertUnitsToPlural();
 });
 
 resetButton.addEventListener('click', function(){
@@ -115,7 +115,7 @@ resetButton.addEventListener('click', function(){
         // Reset the quantity in the DOM to the original quantity
         ingredientQuantities[i].innerText = originalQuantities[i];
     }
-    convertUnitsToPlural();
+    // convertUnitsToPlural();
 });
 
 function changeQuantities(multiplier) {
@@ -152,25 +152,47 @@ function changeQuantities(multiplier) {
     }
 }
 
+
+//Dynamically add 'clicked' class to the multiplier buttons, and remove it from the others. Initialize 1x box as active.
+let multiplierButtons = document.querySelectorAll('.recipe__card-ingredient_multiplier');
+// Add 'clicked' class to the 1x multiplier button
+multiplierButtons[0].classList.add('clicked');
+let servingsElement = document.querySelector('.recipe__card-servings');
+let baseServings = Number(servingsElement.textContent); // Get the base servings count
+
+multiplierButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        multiplierButtons.forEach(btn => btn.classList.remove('clicked')); // Remove 'clicked' class from all buttons
+
+        this.classList.add('clicked'); // Add 'clicked' class to the clicked button
+
+        let multiplier = Number(this.textContent.replace('x', '')); // Get the multiplier from the button's text
+
+        let newServings = baseServings * multiplier; // Calculate the new servings count
+
+        servingsElement.textContent = newServings; // Update the servings count in the DOM
+    });
+});
+
 //Convert units to plural
-function convertUnitsToPlural() {
-    let ingredientUnits = document.querySelectorAll('.measurement');
+// function convertUnitsToPlural() {
+//     let ingredientUnits = document.querySelectorAll('.measurement');
 
-    for (let i = 0; i < ingredientQuantities.length; i++) {
-        // Get the quantity and unit
-        let quantity = Number(ingredientQuantities[i].innerText);
-        let unit = ingredientUnits[i].innerText;
+//     for (let i = 0; i < ingredientQuantities.length; i++) {
 
-        // If the quantity is greater than 1 and the unit does not already end with an 's', add an 's' to the end of the unit
-        if (quantity > 1 && !unit.endsWith('s')) {
-            unit += 's';
-        } else if (quantity <= 1 && unit.endsWith('s')) {
-            // If the quantity is 1 or less and the unit ends with an 's', remove the 's' at the end of the unit
-            unit = unit.slice(0, -1);
-        }
+//         let quantity = Number(ingredientQuantities[i].innerText);
+//         let unit = ingredientUnits[i].innerText;
 
-        // Update the unit in the DOM
-        ingredientUnits[i].innerText = unit;
-    }
-}
+
+//         if (quantity > 1 && !unit.endsWith('s')) {
+//             unit += 's';
+//         } else if (quantity <= 1 && unit.endsWith('s')) {
+     
+//             unit = unit.slice(0, -1);
+//         }
+
+       
+//         ingredientUnits[i].innerText = unit;
+//     }
+// }
 
