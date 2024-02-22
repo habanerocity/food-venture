@@ -1,0 +1,31 @@
+.useful_notes-box{
+  height: auto;
+  border: 3px solid black;
+  position: relative;
+  margin-top: 6rem;
+  padding: 2rem 4rem;
+}
+
+.useful_notes-heading_box{
+  font-family: 'montserrat';
+  background-color: #d9d9d9;
+  height: 3rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: -2.7rem;
+/*   right: 70.5rem; */
+  left: 1rem;
+}
+
+.useful_notes-notes ul{
+  padding: 0;
+}
+
+.useful_notes-notes li{
+  margin-bottom: 8px;
+  padding: 0;
+}
