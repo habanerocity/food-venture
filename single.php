@@ -41,8 +41,11 @@
                         </div>
                             <?php 
                                 if(get_post_type() == 'blog_recipes'):
+                                    
                                     include 'useful-notes.php';
+                                     
                                     include 'recipe-card.php';
+                                    
                                 endif;
                             ?> 
                         </div>

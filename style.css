@@ -2143,14 +2143,17 @@ a:visited {
   width: 100%; }
 
 .recipe__card-pic {
-  width: 20rem;
-  height: 20rem;
+  width: 25rem;
+  height: 25rem;
   position: absolute;
-  top: -10rem;
+  top: -13rem;
   border-radius: 50%;
-  background: url("https://i.ibb.co/370NTdF/IMG-8823.jpg");
   background-size: cover;
   background-position: center; }
+  @media (max-width: 365px) {
+    .recipe__card-pic {
+      width: 20rem;
+      height: 20rem; } }
 
 .recipe__card-name {
   color: #fff;

@@ -10,14 +10,19 @@ if( $recipe_useful_notes) :
             <h4 class="useful_notes-heading_box_title">useful notes</h4>
         </div>
         <div class="useful_notes-notes">
-            <ul>
-                <?php foreach($useful_notes_array as $note) : ?>
-                    <li>
-                        <?php echo $note; ?>
-                    </li>
-                <?php endforeach; ?>
-                <?php endif; ?>
-            </ul>
+            <?php if (!empty($useful_notes_array)) : ?>
+                <ul>
+                    <?php foreach($useful_notes_array as $note) : ?>
+                        <li>
+                            <?php echo $note; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else : ?>
+                <p>No useful notes available.</p>
+            <?php endif; ?>
         </div>
     </div>
 </div>
+
+<?php endif; ?>
