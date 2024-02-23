@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<div class="overlay hidden"></div>
 <?php include 'custom-header.php'  ?>
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
@@ -66,12 +67,12 @@
                                     ?>
                                 </div>
                             </div>
-                                <div class="blog-items">
+                                <div class="blog__items-grid">
                                     <?php 
                                         if( have_posts() ):
                                             while( have_posts() ) : the_post();
                                             ?>
-                                                <article class="article__card">
+                                                <article class="article__card-index">
                                                     <div class="featured-thumbnail">
                                                         <?php the_post_thumbnail('medium'); ?>
                                                     </div>
@@ -80,7 +81,7 @@
                                                             <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                                             <?php the_excerpt(); ?>
                                                         </div>
-                                                        <div class="article__card-footer">
+                                                        <div class="article__card-index-footer">
                                                             <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
                                                             <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
                                                         </div>
