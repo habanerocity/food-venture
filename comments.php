@@ -22,6 +22,16 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
+	<?php
+			comment_form(
+				array(
+					'title_reply' => 'Leave a Comment',
+					'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+					'title_reply_after'  => '</h2>',
+				)
+			);
+			?>
+
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
@@ -48,17 +58,18 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 				wp_list_comments(
 					array(
-						'style'       => 'ol',
+						'style'       => 'ul',
 						'short_ping'  => true,
-						'avatar_size' => 42,
+						'avatar_size' => 84,
+						'callback'    => 'my_custom_comment',
 					)
 				);
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php the_comments_navigation(); ?>
 
@@ -70,14 +81,5 @@ if ( post_password_required() ) {
 		?>
 	<p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
 	<?php endif; ?>
-
-	<?php
-		comment_form(
-			array(
-				'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-				'title_reply_after'  => '</h2>',
-			)
-		);
-		?>
 
 </div><!-- .comments-area -->

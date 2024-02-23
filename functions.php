@@ -320,3 +320,28 @@ function create_recipe_tags() {
 }
 
 add_action('init', 'create_recipe_tags', 0);
+
+//Customize comments by adding a wrapper div and custom classes
+
+function my_custom_comment($comment, $args, $depth) {
+    ?>
+    <div id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+        <div class="my-custom-comment-header">
+            <div class="comment-author-avatar">
+                <?php echo get_avatar( $comment, 76 ); // 64 is the size of the avatar in pixels ?>
+            </div>
+            <div class="comment__info-wrapper">
+                <h3><?php comment_author(); ?></h3>
+                <span><?php comment_date(); ?></span>
+            </div>
+        </div>
+        <div class="my-custom-comment-body">
+            <?php comment_text(); ?>
+        </div>
+        <div class="my-custom-comment-footer">
+            <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+        </div>
+    </div>
+    <?php
+}
+?>
