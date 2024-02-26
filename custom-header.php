@@ -17,7 +17,7 @@
         <div class="navbar_wrapper secondary_white">
             <?php include 'navbar.php'?>
         </div>
-        <div class="header_banner">
+        <div class="header__banner">
         <h1 class="secondary_white banner-text">
             <?php 
             if(is_404()){
