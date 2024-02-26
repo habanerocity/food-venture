@@ -58,7 +58,7 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ul class="comment-list">
+		<ul class="comment__list">
 			<?php
 				wp_list_comments(
 					array(
