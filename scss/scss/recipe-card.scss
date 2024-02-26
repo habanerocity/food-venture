@@ -1,291 +1,261 @@
 .recipe__card{
     width: 100%;
     height: auto;
-    background-color: #252525;
+    background-color: $primary-black;
     margin-top: 15rem;
     margin-bottom: 6rem;
     position: relative;
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .recipe__card-body{
-    background-color: #f5f5f5;
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 24px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .recipe__card-intro{
-    margin-top: 16px;
-    font-style: italic;
-    font-weight: 300;
-  }
-  
-  .recipe__card-ingredient_divider{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    margin: 20px 0;
-    padding: 0;
 
-    @media(max-width: 420px){
-      flex-direction: column;
-      padding: 16px 0;
+    &-attributes{
+      @include flex-center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      color: $primary-white;
+      list-style-type: none;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: $spacing-xl;
     }
-  }
-  
-  .recipe__card-ingredient_divider h3{
-    text-transform: uppercase;
 
-    @media(max-width: 420px){
+    &-ingredient_divider{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-top: 1px solid $primary-black;
+      border-bottom: 1px solid $primary-black;
+      margin: 2rem 0;
+      padding: 0;
+  
+      @media(max-width: 420px){
+        flex-direction: column;
+        padding: $spacing-xl 0;
+      }
+    }
+
+    &-ingredients{
       margin: 0;
+      padding-left: 3.5rem;
+      font-weight: 300;
     }
-  }
 
-  .recipe__card-ingredients_heading{
-    @media(max-width: 420px){
-      margin-bottom: 8px!important;
+    &-ingredient_divider h3{
+      text-transform: uppercase;
+  
+      @media(max-width: 420px){
+        margin: 0;
+      }
     }
+  
+    &-ingredients_heading{
+      @media(max-width: 420px){
+        margin-bottom: $spacing-medium!important;
+      }
+    }
+    
+    &-intro{
+      margin-top: $spacing-xl;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    &-body{
+      background-color: $secondary-white;
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 2.4rem;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-ingredient_multiplier{
+      padding: 6px;
+      background-color: #999;
+      margin-left: $spacing-small;
+      border: none;
+      font-size: 2rem;
+    }
+
+    &-ingredient_multiplier:hover, &-ingredient_multiplier.clicked {
+      cursor: pointer;
+      background-color: #454545;
+      color: $primary-white;
   }
-  
-  .recipe__card-ingredients{
-    margin: 0;
-    padding-left: 35px;
-    font-weight: 300;
-  }
-  
-  .recipe__card-ingredients_multipliers{
-    display: flex;
-    flex-direction: row;
-    max-width: 40%;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  
-  .recipe__card-ingredient_multiplier{
-    padding: 6px;
-    background-color: #999;
-    margin-left: 4px;
-    border: none;
-    font-size: 20px;
-  }
-  
-  .recipe__card-ingredient_multiplier:hover, .recipe__card-ingredient_multiplier.clicked {
-    cursor: pointer;
-    background-color: #454545;
-    color: #fff;
-}
-  
-  .recipe__card-steps{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  
-  .recipe__card-steps{
-    counter-reset: item; 
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
-  }
-  
-  .recipe__card-steps li{
-    counter-increment: item;
-    font-weight: 300;
-    margin-bottom: 16px;
-  }
-  
-  .recipe__card-steps li:last-child{
-    margin-bottom: 0;
-  }
-  
-  .recipe__card-steps li:before{
-    content: counter(item);
-      margin-right: 10px; 
-      font-weight: bold; 
-      color: #000; 
-      background-color: #d9d9d9;
+    
+    &-ingredients_multipliers{
+      display: flex;
+      flex-direction: row;
+      max-width: 40%;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    &-sm_icon > button {
+      border:none;
+      padding: 0;
+      cursor: pointer;
+      background-color: transparent;
+    }
+    
+    &-steps{
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      counter-reset: item; 
+      list-style-type: none; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    &-steps li{
+      counter-increment: item;
+      font-weight: 300;
+      margin-bottom: $spacing-xl;
+    }
+    
+    &-steps li:last-child{
+      margin-bottom: 0;
+    }
+
+    &-steps li:before{
+      content: counter(item);
+        margin-right: 1rem; 
+        font-weight: bold; 
+        color: $primary-black; 
+        background-color: $comment-color;
+        border-radius: 50%;
+        padding: 5px; 
+        display: inline-block; 
+        width: $spacing-unit * 7; 
+        text-align: center;
+        font-family: $fontfamily-headings;
+    }
+
+    &-ratings{
+      color: $primary-white;
+    }
+    
+    &-stars{
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    &-stars li i{
+      width: 3rem;
+    }
+    
+    &-attributes li{
+      margin-right: $spacing-unit * 3;
+    }
+    
+    &-header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 34rem;
+      padding: 2.4rem;
+    }
+    
+    &-subheading{
+      padding: 2rem 0;
+      background-color: $secondary-black;
+      color: $primary-white;
+      font-family: $fontfamily-headings;
+      width: 100%;
+    }
+
+    &-pic{
+      width: 25rem;
+      height: 25rem;
+      position: absolute;
+      top: -13rem;
       border-radius: 50%;
-      padding: 5px; 
-      display: inline-block; 
-      width: 28px; 
-      text-align: center;
-      font-family: 'montserrat';
-  }
+      background-size: cover;
+      background-position: center;
   
-  .recipe__card-attributes{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
-  
-  .recipe__card-ratings{
-    color: #fff;
-  }
-  
-  .recipe__card-stars{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
+      @media(max-width: 365px){
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+    
+    &-name{
+      color: $primary-white;
+      text-transform: uppercase;
+      font-weight: $fontweight-regular;
+      font-size: 5rem;
+      margin: 0 0 $spacing-xl 0;
+    }
+    
+    &-pill{
+      padding: $spacing-small 19px;
+      border-radius: $btn__round-border-radius;
+      font-weight: $fontweight-semibold;
+      background-color: $comment-color;
+      margin-right: $spacing-medium;
+      border: none;
+      font-size: 2rem;
+    }
+    
+    &-sm_icon{
+      @include flex-center;
+      margin-right: $spacing-medium;
+    }
+    
+    &-row{
+      @include flex-center;
+      flex-direction: row;
+      width: 100%;
+    }
+}
+
+  .sm{
+    font-size: 2.6rem;
   }
   
   .star{
-    font-size: 3rem
-  }
-  
-  .recipe__card-stars li i{
-    width: 3rem;
-  }
-  
-  .recipe__card-attributes li{
-    margin-right: 12px;
-  }
-  
-  .recipe__card-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height: 34rem;
-    padding: 24px;
-  }
-  
-  .recipe__card-subheading{
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    font-family: 'montserrat';
-    width: 100%;
-  }
-  
-  .recipe__card-pic{
-    width: 25rem;
-    height: 25rem;
-    position: absolute;
-    top: -13rem;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
+    font-size: 3rem;
 
-    @media(max-width: 365px){
-      width: 20rem;
-      height: 20rem;
+    &-wrapper{
+      display:flex;
+      flex-direction: row;
+  
+      & > img{
+        width: 3rem;
+        margin-right: 0.5rem;
+      }
     }
-  }
-  
-  .recipe__card-name{
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 5rem;
-    margin: 0 0 16px 0;
-  }
-  
-  .recipe__card-pill{
-    padding: 4px 19px;
-    border-radius: 15px;
-    font-weight: 600;
-    background-color: #d9d9d9;
-    margin-right: 8px;
-    border: none;
-    font-size: 20px;
-  }
-  
-  .recipe__card-sm_icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
-  }
-  
-  .sm{
-    font-size: 26px;
-  }
-  
-  .recipe__card-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  #printBtn{
-    cursor: pointer;
-  }
-  
-  #fb{
-    border:none;
-    padding: 0;
-    cursor: pointer;
-    background-color: transparent;
-  }
-  
-  #whatsApp{
-    border:none;
-    padding: 0;
-    cursor: pointer;
-    background-color: transparent;
-  }
-  
-  #pinterest{
-    border:none;
-    padding: 0;
-    cursor: pointer;
-    background-color: transparent;
   }
 
   .post-ratings{
-    display: flex;
+    @include flex-center;
     flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
     
-
     & > em{
-      margin-top: 8px;
-      color: #f5f5f5;
-      font-family: 'montserrat';
+      margin-top: $spacing-medium;
+      color: $secondary-white;
+      font-family: $fontfamily-headings;
     }
   }
 
-  .star-wrapper{
-    display:flex;
-    flex-direction: row;
-
-    & > img{
-      width: 3rem;
-      // height: 2rem;
-      margin-right: 0.5rem;
-    }
+  #printBtn{
+    cursor: pointer;
   }
-  
+
   @media print {
     /* Hide all elements */
     .non-print-content {
-        // visibility: hidden;
         display: none; /* Add this line */
     }
 

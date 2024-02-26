@@ -3,6 +3,12 @@
     position: relative;
   }
 
+@mixin flex-center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin article__card{
   flex-direction: column;
   justify-content: flex-start;
