@@ -1,0 +1,129 @@
+.contact_form-container{
+    @include flex-container;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media(max-width: 768px){
+        flex-direction: column;
+    }
+}
+
+.contact-pic{
+    border-radius: 3px;
+
+    @media (max-width: 1199px){
+        width:32rem;
+        height: auto;
+    }
+
+    @media (max-width: 767px){
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+.contact_pic-wrapper {
+    height: 100%;
+}
+
+.contact_form-wrapper{
+    background-color: $secondary-white;
+    width: 40%;
+    height: 100%;
+    @include flex-container;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+
+    @media(max-width: 768px){
+        width: 80%;
+        height: auto;
+    }
+}
+
+.contact-row{
+    height: 68rem;
+
+    @media(max-width: 1199px){
+        height: 48rem;
+    }
+
+    @media(max-width: 767px){
+        height: auto;
+    }
+}
+
+.wpcf7-form-control{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-black;
+    margin-bottom: 2.4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-pic, .wpcf7-form {
+    height: 100%;
+    object-fit: cover;
+}
+
+.wpcf7-form input[type="submit"]{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    background: transparent;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    width: auto;
+    
+    &:hover{
+        background: $button-black;
+        color: $primary-white;
+        transition: .2s all ease-in-out;
+    }
+
+}
+
+.contact-wrapper{
+    height: 100%;
+
+    @media(max-width: 767px){
+        width: 80%;
+    }
+}
+
+@media (max-width: 1199px){
+
+    #wpcf7-f112-o1{
+        padding: 0 2rem;
+    }
+
+    .wpcf7-form h3 {
+        margin-bottom: 0;
+    }
+
+    .wpcf7-form input[type="submit"]{
+        margin-bottom: 0;
+    }
+
+    .row{
+        height: 5rem;
+    }
+    
+    .contact_form-wrapper{
+        height: auto;
+    }
+
+    .wpcf7-form-control{
+        margin-bottom: 0;
+        font-size: 1.4rem;
+    }
+
+    .contact-row{
+        height: auto;
+    }
+
+    .wpcf7-form-control.wpcf7-textarea {
+        height: 12rem; /* Adjust as needed */
+    }
+}

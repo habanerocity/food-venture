@@ -18,10 +18,19 @@ Tags: one-column, custom-menu, custom-logo, featured-images, translation-ready
 @import "scss/mixins";
 @import "scss/variables";
 @import "scss/typography";
+@import "scss/button";
+@import "scss/contact";
+@import "scss/hero";
 @import "scss/container";
+@import "scss/nav";
 @import "scss/header_banner";
-@import "scss/useful-notes.scss";
-@import "scss/recipe-card.scss";
+@import "scss/blog";
+@import "scss/sidebar";
+@import "scss/latest_recipes";
+@import "scss/useful-notes";
+@import "scss/recipe-card";
+@import "scss/comments";
+@import "scss/pagination";
 @import "scss/footer";
 
 

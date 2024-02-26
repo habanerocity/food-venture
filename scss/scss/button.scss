@@ -1,0 +1,47 @@
+.btn_round-transparent{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    background: transparent;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    
+    &:hover{
+        background: $button-black;
+        color: $primary-white;
+        transition: .2s all ease-in-out;
+    }
+
+    @media (max-width: 1200px){
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 575px){
+        font-size: 1.4rem;
+    }
+}
+
+.btn_round-solid{
+    border-radius: 25px;
+    border: 2px solid $button-black;
+    color: $secondary-white;
+    background: $button-black;
+    padding: 1rem 4rem;
+    cursor: pointer;    
+    
+    @media (max-width: 1200px){
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 575px){
+        font-size: 1.4rem;
+    }
+}
+
+.btn-rectangle{
+    border-radius: 3px;
+    border: 1px solid $button-black;
+    background: $button-black;
+    color: $secondary-white;
+    cursor: pointer;
+    padding: 1rem 3rem;
+}
