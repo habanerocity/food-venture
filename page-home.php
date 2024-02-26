@@ -26,7 +26,7 @@
                                             <?php echo get_the_excerpt($post_id); ?>
                                         </p>
                                         <div class="hero-btn_wrapper">
-                                            <a href="<?php echo get_permalink($post_id); ?>"><button class="btn_round-transparent">Read More</button></a>
+                                            <a href="<?php echo get_permalink($post_id); ?>"><button class="btn__round-transparent">Read More</button></a>
                                         </div>
                                     </div>
                                     <div class="hero__post-image_wrapper">

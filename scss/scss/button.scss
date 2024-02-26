@@ -1,47 +1,99 @@
-.btn_round-transparent{
-    border-radius: 25px;
-    border: 2px solid $button-black;
-    background: transparent;
-    padding: 1rem 4rem;
-    cursor: pointer;
-    
-    &:hover{
+button{
+    @media (max-width: 450px){
+        font-size: 1.6rem;
+    }
+}
+
+.btn{
+    &__rectangular{
+        border-radius: $border-radius;
+        border: 1px solid $button-black;
         background: $button-black;
-        color: $primary-white;
-        transition: .2s all ease-in-out;
+        color: $secondary-white;
+        cursor: pointer;
+        padding: 1rem 3rem;
     }
 
-    @media (max-width: 1200px){
-        font-size: 1.6rem;
-    }
-
-    @media (max-width: 575px){
-        font-size: 1.4rem;
-    }
-}
-
-.btn_round-solid{
-    border-radius: 25px;
-    border: 2px solid $button-black;
-    color: $secondary-white;
-    background: $button-black;
-    padding: 1rem 4rem;
-    cursor: pointer;    
+    &__round-solid, &__round-transparent{
+        @include btn-round;
+        color: $secondary-white;
+        background: $button-black;
+        
+        @media (max-width: 1200px){
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+        }
     
-    @media (max-width: 1200px){
-        font-size: 1.6rem;
+        @media (max-width: 575px){
+            font-size: 1.4rem;
+        }
+    
+        @media (max-width: 342px){
+            margin-top: 1.2rem;
+            width: 100%;
+        }
     }
 
-    @media (max-width: 575px){
-        font-size: 1.4rem;
+    &__round-transparent{
+        color: $button-black;
+        background: transparent;
+        
+        &:hover{
+            background: $button-black;
+            color: $primary-white;
+            transition: .2s all ease-in-out;
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        @media (max-width: 342px){
+            flex-direction: column;
+            width: 100%;
+        }
     }
 }
 
-.btn-rectangle{
-    border-radius: 3px;
-    border: 1px solid $button-black;
-    background: $button-black;
-    color: $secondary-white;
-    cursor: pointer;
-    padding: 1rem 3rem;
+.post-navigation{
+    border-top: 1px solid $primary-black;
+
+    @media(max-width: 575px){
+        padding: 3.2rem 0;
+        margin-top: 3.2rem;
+    }
+
+    .prev-post a, .next-post a{
+        background-color: $button-black;
+        padding: 1rem 2rem;
+        font-family: $fontfamily-headings;
+        border-radius: $border-radius;
+        color: $secondary-white!important;
+        text-decoration: none;
+
+        @media(max-width: 461px){
+            font-size: 1.4rem;
+        }
+
+        @media(max-width: 325px){
+            font-size: 1.2rem;
+        }
+    }
+
+    .next-post a{
+        &::after {
+            content: ">"; // replace this with icon's unicode
+            font-family: "Font Awesome";
+            padding-left: $spacing-medium;
+        }
+    }
+
+    .prev-post a{
+        &::before {
+            content: "<"; // replace this with icon's unicode
+            padding-right: $spacing-medium;
+        }
+    }
 }

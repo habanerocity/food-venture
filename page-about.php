@@ -22,12 +22,12 @@
                                     <div class="our_mission-wrapper">
                                         <h2 class="mb-0 mt-0"><?php echo get_theme_mod( 'set_our_mission_title', 'Our Mission' ); ?></h2>
                                         <p class="our_mission-description"><?php echo get_theme_mod('set_our_mission_description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Pharetra et ultrices neque ornare aenean euismod elementum.') ?></p>
-                                        <div class="our_mission-btn_wrapper">
+                                        <div class="btn__wrapper">
                                         <a class="unstyled-link" href="<?php echo get_permalink(get_page_by_title('Contact')); ?>">
-                                            <button class="btn_round-transparent margin_right-xl">Contact</button>
+                                            <button class="btn__round-transparent margin_right-xl">Contact</button>
                                         </a>
                                         <a class="unstyled-link" href="<?php echo get_permalink(get_page_by_title('Blog')) ?>">
-                                            <button class="btn_round-solid">View Blog</button>
+                                            <button class="btn__round-solid">View Blog</button>
                                         </a>
                                         </div>
                                     </div>

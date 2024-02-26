@@ -13,7 +13,7 @@
                                 <img src="<?php echo $lost_image ?>" alt="404 Picture" class="lost-pic" />
                                 <h3 class="lost-description">It looks like you're lost...</h3>
                                 <a href="<?php echo get_permalink(get_page_by_title('Home'));  ?>">
-                                    <button class="btn-rectangle">RETURN HOME</button>
+                                    <button class="btn__rectangular">RETURN HOME</button>
                                 </a>
                             </div>
                         </div>
