@@ -4,10 +4,10 @@
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <div class="container padding-section blog-container">
-                        <div class="blog-articles">
-                            <div class="blog-input__container">
-                                <div id="blog-categories" >
+                    <div class="container padding-section blog__container">
+                        <div class="blog__articles">
+                            <div class="blog__input_container">
+                                <div id="blog__categories" >
                                     <?php 
                                         // Get current category
                                         $current_category = get_query_var('category_name');
@@ -47,7 +47,7 @@
                                         });
                                     ?>
                                 </div>
-                                <div id="blog-archive" >
+                                <div id="blog__archive" >
                                     <?php 
             
                                         // Dropdown of categories
