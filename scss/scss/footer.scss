@@ -1,45 +1,7 @@
-@import "variables";
-
-.wp-block-heading{
-    margin-bottom: 0;
-}
-
-.footer-menu-section > ul{
-    list-style: none;
-    padding: 0;
-}
-
-.footer-menu-section > ul > li{
-    margin-bottom: $spacing-xl;
-    font-weight: $fontweight-x-light;
-}
-
-.footer-menu-section > ul > li > a {
-    text-decoration: none;
-    color: $primary-black;
-}
-
 .footer-column{
     margin-right: $spacing-unit * 5;
 }
 
-/* Footer */
-footer{ 
-    // background: blue; 
-    padding: ($spacing-unit * 12.5) 0; 
-    color: $primary-black; 
-    border-top:1px solid $primary-black;
-
-    @media (max-width: 767px){
-        padding: 0;
-        padding-top: 9px;
-    }
-}
-footer .container .row{
-    align-items: center;
-}
-
-/* Footer - Footer Menu */
 .site-footer .container{
     display: flex;
     flex-wrap: wrap;
@@ -47,49 +9,11 @@ footer .container .row{
     align-items: flex-start;
     justify-content: space-between;
 
-}
-.site-footer .copyright p{
-    margin: 0;
-}
-.footer-menu ul{ 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-}
-.footer-menu ul li{ 
-    display: inline;  
-    margin: 0 15px 0 0;
-    margin-top: 1.6rem;
-}
-.footer-menu ul li:last-child{ 
-    margin: 0; 
-}
-.footer-menu ul li a{  
-    text-decoration: none;
-    color: $primary-black;
-    font-weight: $fontweight-regular;
-}
-// .footer-menu ul li.current_page_item a{ 
-//     font-weight: bold; 
-// }
-#menu-footer-menu{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: flex-start;
-
-    &>li{
-        color: $primary-black;
-    }
-}
-@media (max-width: 768px) {
-    .site-footer .container{
-        justify-content: space-between;
-        display: flex;
+    @media (max-width: 768px){
         justify-self: flex-start;
-        flex-direction: row;
     }
 }
+
 .footer-menu-label{
     font-weight: $fontweight-semibold;
     margin-bottom: $spacing-xl;
@@ -100,8 +24,20 @@ footer .container .row{
     justify-content: center;
     align-items: flex-start;
 
+    & > ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    & > ul > li{
+        margin-bottom: $spacing-xl;
+        font-weight: $fontweight-x-light;
+    }
+
     & > ul > li > a{
         font-size: 2rem;
+        text-decoration: none;
+        color: $primary-black;
 
         @media(max-width: 575px){
             font-size: 1.6rem;
@@ -118,6 +54,64 @@ footer .container .row{
         .site-footer .container{
             flex-wrap: wrap;
         }
+    }
+}
+
+footer{ 
+    padding: ($spacing-unit * 12.5) 0; 
+    color: $primary-black; 
+    border-top:1px solid $primary-black;
+
+    & .container .row{
+        align-items: center;
+    }
+
+    @media (max-width: 767px){
+        padding: 0;
+        padding-top: 9px;
+    }
+}
+
+.site-footer .copyright p{
+    margin: 0;
+}
+
+.footer-menu{
+    & ul{ 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+
+    & ul li{ 
+        display: inline;  
+        margin: 0 1.5rem 0 0;
+        margin-top: 1.6rem;
+    }
+
+    & ul li:last-child{ 
+        margin: 0; 
+    }
+    
+    & ul li a{  
+        text-decoration: none;
+        color: $primary-black;
+        font-weight: $fontweight-regular;
+    }
+}
+
+.wp-block-heading{
+    margin-bottom: 0;
+}
+
+#menu-footer-menu{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+
+    &>li{
+        color: $primary-black;
     }
 }
 

@@ -1,103 +1,63 @@
-.wp-block-heading {
-  margin-bottom: 0; }
+/*
+Error: Undefined variable: "$spacing-unit".
+        on line 2 of /Users/apple/Local Sites/wp-food-venture/app/public/wp-content/themes/wp-food-venture/scss/scss/footer.scss
 
-.footer-menu-section > ul {
-  list-style: none;
-  padding: 0; }
+1: .footer-column{
+2:     margin-right: $spacing-unit * 5;
+3: }
+4: 
+5: .site-footer .container{
+6:     display: flex;
+7:     flex-wrap: wrap;
 
-.footer-menu-section > ul > li {
-  margin-bottom: 16px;
-  font-weight: 100; }
-
-.footer-menu-section > ul > li > a {
-  text-decoration: none;
-  color: #252525; }
-
-.footer-column {
-  margin-right: 20px; }
-
-/* Footer */
-footer {
-  padding: 50px 0;
-  color: #252525;
-  border-top: 1px solid #252525; }
-  @media (max-width: 767px) {
-    footer {
-      padding: 0;
-      padding-top: 9px; } }
-
-footer .container .row {
-  align-items: center; }
-
-/* Footer - Footer Menu */
-.site-footer .container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between; }
-
-.site-footer .copyright p {
-  margin: 0; }
-
-.footer-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-
-.footer-menu ul li {
-  display: inline;
-  margin: 0 15px 0 0;
-  margin-top: 1.6rem; }
-
-.footer-menu ul li:last-child {
-  margin: 0; }
-
-.footer-menu ul li a {
-  text-decoration: none;
-  color: #252525;
-  font-weight: 400; }
-
-#menu-footer-menu {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: flex-start; }
-  #menu-footer-menu > li {
-    color: #252525; }
-
-@media (max-width: 768px) {
-  .site-footer .container {
-    justify-content: space-between;
-    display: flex;
-    justify-self: flex-start;
-    flex-direction: row; } }
-.footer-menu-label {
-  font-weight: 600;
-  margin-bottom: 16px; }
-
-.footer-menu-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; }
-  .footer-menu-section > ul > li > a {
-    font-size: 2rem; }
-    @media (max-width: 575px) {
-      .footer-menu-section > ul > li > a {
-        font-size: 1.6rem; } }
-  @media (max-width: 1200px) {
-    .footer-menu-section > h4 {
-      font-size: 1.8rem; } }
-  @media (max-width: 575px) {
-    .footer-menu-section .site-footer .container {
-      flex-wrap: wrap; } }
-
-#footer-logo {
-  margin-top: 2.926rem;
-  width: 15rem; }
-  @media (max-width: 1200px) {
-    #footer-logo {
-      width: 10rem; } }
-
-/*# sourceMappingURL=footer.css.map */
+Backtrace:
+/Users/apple/Local Sites/wp-food-venture/app/public/wp-content/themes/wp-food-venture/scss/scss/footer.scss:2
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/operation.rb:67:in `_perform'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `load'
+/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$spacing-unit\".\A         on line 2 of /Users/apple/Local Sites/wp-food-venture/app/public/wp-content/themes/wp-food-venture/scss/scss/footer.scss\A \A 1: .footer-column{\A 2:     margin-right: $spacing-unit * 5;\A 3: }\A 4: \A 5: .site-footer .container{\A 6:     display: flex;\A 7:     flex-wrap: wrap;"; }
