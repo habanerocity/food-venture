@@ -572,6 +572,9 @@ section {
 .row {
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 1199px) {
+    .row {
+      height: 5rem; } }
 
 .column {
   flex: 1;

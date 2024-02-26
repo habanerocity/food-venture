@@ -8,11 +8,11 @@
                     $contact_image = wp_get_attachment_url(get_theme_mod('set_contact_image'));
                     ?>
                     <div class="container">
-                        <div class="contact_form-container contact-row padding-section">
-                            <div class="contact-wrapper ">
-                                <img class="contact-pic" src="<?php echo $contact_image  ?>" />
+                        <div class="contact__form-container contact__row padding-section">
+                            <div class="contact__wrapper ">
+                                <img class="contact__pic" src="<?php echo $contact_image  ?>" />
                             </div>
-                            <div class="contact_form-wrapper">
+                            <div class="contact__form-wrapper">
                                 <?php echo do_shortcode('[contact-form-7 id="57e1d9f" title="Contact form"]'); ?>
                             </div>
                         </div>

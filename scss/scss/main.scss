@@ -732,6 +732,10 @@ section{
 .row {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1199px){
+        height: 5rem;
+    }
 }
 
 .column {
