@@ -15,14 +15,14 @@
                             $hero_image = get_field('hero_image', $post_id);
                             if($hero_image){ // Check if the 'hero_image' field exists
                             ?>
-                                <div class="hero-post">
-                                    <div class="hero__text_content">
+                                <div class="hero__post">
+                                    <div class="hero__post-text_content">
                                         <a class="hero__text-link" href="<?php echo get_permalink($post_id); ?>">
-                                            <h1 class="hero-title">
+                                            <h1 class="hero__title">
                                                 <?php echo get_the_title($post_id); ?>
                                             </h1>
                                         </a>
-                                        <p class="hero-summary">
+                                        <p class="hero__summary">
                                             <?php echo get_the_excerpt($post_id); ?>
                                         </p>
                                         <div class="hero-btn_wrapper">
@@ -30,7 +30,7 @@
                                         </div>
                                     </div>
                                     <div class="hero__post-image_wrapper">
-                                        <div class="image-container">
+                                        <div class="hero__post-image_container">
                                             <a href="<?php echo get_permalink($post_id); ?>">
                                                 <img src="<?php echo $hero_image['url']; ?>" alt="" />
                                             </a>

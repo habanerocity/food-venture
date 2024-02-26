@@ -1060,128 +1060,86 @@ a:visited {
     height: 12rem;
     /* Adjust as needed */ } }
 
-/* Hero */
-.hero {
-  background-size: cover;
-  background-position: center center;
-  color: #FFFFFF;
-  text-align: center; }
-
-.hero-items {
-  padding: 4.4rem; }
-
-.hero .overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.hero .hero-items h1 {
-  margin-top: 0;
-  font-weight: normal; }
-
-.hero .hero-items a {
-  color: #FFFFFF;
-  padding: 15px 25px;
-  display: inline-block;
-  background: blue;
-  margin: 20px 0 0; }
-
-.hero .hero-items a:hover {
-  background: yellow;
-  transition: .5s all; }
-
-.hero-summary {
+.hero__summary {
   width: 71%; }
   @media (max-width: 1200px) {
-    .hero-summary {
+    .hero__summary {
       font-size: 1.6rem;
       margin-bottom: 16px; } }
   @media (max-width: 767px) {
-    .hero-summary {
+    .hero__summary {
       margin-bottom: 12px; } }
   @media (max-width: 575px) {
-    .hero-summary {
+    .hero__summary {
       font-size: 1.6rem; } }
-
-.hero-title {
+.hero__text-link {
+  display: inline-block;
+  max-width: 71%;
+  text-decoration: none;
+  color: #252525; }
+.hero__title {
   margin-top: 0;
   display: inline-block; }
   @media (max-width: 1200px) {
-    .hero-title {
+    .hero__title {
       font-size: 4.4rem;
       margin-bottom: 12px; } }
   @media (max-width: 767px) {
-    .hero-title {
+    .hero__title {
       margin-top: 2.8rem;
       margin-bottom: 8px; } }
   @media (max-width: 575px) {
-    .hero-title {
+    .hero__title {
       margin-top: 14px;
       margin-bottom: 12px;
       font-size: 2.2rem; } }
   @media (max-width: 435px) {
-    .hero-title {
+    .hero__title {
       line-height: normal; } }
 
-.hero__text-link {
-  display: inline-block;
-  max-width: 71%; }
-
-.image-container {
-  height: 100%; }
-  .image-container > a {
-    height: 100%; }
-  .image-container > a > img {
-    height: 100%; }
-    @media (max-width: 767px) {
-      .image-container > a > img {
-        height: auto;
-        width: 43.5rem; } }
-    @media (max-width: 767px) {
-      .image-container > a > img {
-        width: 32.5rem; } }
-
-.hero-post {
+.hero__post {
   display: flex;
   height: 66rem; }
+  .hero__post-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .hero__post-image > img {
+      width: 76%;
+      height: auto; }
+  .hero__post-image_container {
+    height: 100%; }
+    .hero__post-image_container > a {
+      height: 100%; }
+    .hero__post-image_container > a > img {
+      height: 100%; }
+      @media (max-width: 767px) {
+        .hero__post-image_container > a > img {
+          width: 32.5rem; } }
+  .hero__post-image_wrapper {
+    width: 100%; }
+    @media (max-width: 767px) {
+      .hero__post-image_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
+  .hero__post-text_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .hero__post-text_content > * {
+      margin-top: 0; }
+    @media (max-width: 767px) {
+      .hero__post-text_content {
+        align-items: center;
+        text-align: center; } }
   @media (max-width: 1200px) {
-    .hero-post {
+    .hero__post {
       height: 40rem; } }
   @media (max-width: 767px) {
-    .hero-post {
+    .hero__post {
       height: auto;
       flex-direction: column-reverse; } }
-
-.hero__text_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-  .hero__text_content > * {
-    margin-top: 0; }
-  @media (max-width: 767px) {
-    .hero__text_content {
-      align-items: center;
-      text-align: center; } }
-
-.hero__post-image_wrapper {
-  width: 100%; }
-  @media (max-width: 767px) {
-    .hero__post-image_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center; } }
-
-.hero__post-image {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-  .hero__post-image > img {
-    width: 76%;
-    height: auto; }
-
-.hero__text-link {
-  text-decoration: none;
-  color: #252525; }
 
 .container {
   width: 100%;
