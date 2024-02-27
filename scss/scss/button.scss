@@ -47,9 +47,7 @@ button{
     }
 
     &__wrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
     
         @media (max-width: 342px){
             flex-direction: column;

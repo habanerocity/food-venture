@@ -17,9 +17,7 @@
     }
 
     &__info-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-center;
     }
 
     &__info-wrapper h3{
@@ -44,8 +42,8 @@
     }
 
     &-author-avatar img{
-            height: 100%;
-            border-radius: 50%;
+        height: 100%;
+        border-radius: 50%;
     }
 
     &-reply-link {

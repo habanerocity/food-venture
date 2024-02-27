@@ -84,9 +84,7 @@
         width: 100%;
     
         @media (max-width: 767px){
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex-center;
         }
     }
 
