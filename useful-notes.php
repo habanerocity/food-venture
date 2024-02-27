@@ -4,12 +4,12 @@ if( $recipe_useful_notes) :
     $useful_notes_array = explode("\n", $recipe_useful_notes);
 ?>
 
-<div class="useful_notes-box">
-    <div class="userful_notes-content_wrapper">
-        <div class="useful_notes-heading_box">
-            <h4 class="useful_notes-heading_box_title">useful notes</h4>
+<div class="useful__notes-box">
+    <div class="userful__notes-content_wrapper">
+        <div class="useful__notes-heading_box">
+            <h4 class="useful__notes-heading_box_title">useful notes</h4>
         </div>
-        <div class="useful_notes-notes">
+        <div class="useful__notes-notes">
             <?php if (!empty($useful_notes_array)) : ?>
                 <ul>
                     <?php foreach($useful_notes_array as $note) : ?>

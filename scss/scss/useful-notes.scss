@@ -1,31 +1,28 @@
-.useful_notes-box{
+.useful__notes-box{
   height: auto;
-  border: 3px solid black;
+  border: 3px solid $primary-black;
   position: relative;
   margin-top: 6rem;
   padding: 2rem 4rem;
 }
 
-.useful_notes-heading_box{
-  font-family: 'montserrat';
-  background-color: #d9d9d9;
+.useful__notes-heading_box{
+  font-family: $fontfamily-headings;
+  background-color: $comment-color;
   height: 3rem;
   padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   text-transform: uppercase;
   position: absolute;
   top: -2.7rem;
-/*   right: 70.5rem; */
   left: 1rem;
 }
 
-.useful_notes-notes ul{
+.useful__notes-notes ul{
   padding: 0;
 }
 
-.useful_notes-notes li{
-  margin-bottom: 8px;
+.useful__notes-notes li{
+  margin-bottom: $spacing-medium;
   padding: 0;
 }
