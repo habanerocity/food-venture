@@ -82,8 +82,8 @@
                                                             <?php the_excerpt(); ?>
                                                         </div>
                                                         <div class="article__card-index-footer">
-                                                            <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
-                                                            <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                                            <span class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                            <span class="article__card-index-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
                                                         </div>
                                                     </div>
                                                 </article>

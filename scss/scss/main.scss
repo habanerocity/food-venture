@@ -400,6 +400,9 @@ img {
         align-items: center;
         width: 100%;
 
+        @media(max-width: 1200px){
+            font-size: 1.4rem;
+        }
     } 
 
     &-footer_link{
@@ -411,6 +414,7 @@ img {
 
         @media(max-width: 1200px){
             font-size: 1.3rem;
+            text-transform: uppercase;
         }
 
         @media(max-width: 767px){
@@ -515,6 +519,9 @@ img {
         align-items: center;
         width: 100%;
 
+        @media(max-width: 1200px){
+            font-size: 1.4rem;
+        }
     } 
 
     &-footer_link{
@@ -549,7 +556,6 @@ img {
     
     &:visited{
         color: $primary-black;
-        
     }
 }
 }
@@ -755,7 +761,6 @@ section{
     margin-right: $spacing-xl;
 }
 
-
 .section__title{
     margin: 0;
 
@@ -874,7 +879,6 @@ section.latest__articles{
     & > li > a{
         color: $primary-black;
         text-decoration: none;
-    
     }
 }
 

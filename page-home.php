@@ -68,8 +68,8 @@
                                                 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                                 <?php the_excerpt(); ?>
                                                 <div class="article__card-home-footer">
-                                                    <span class="article__card-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
-                                                    <span class="article__card-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                                    <span class="article__card-home-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                    <span class="article__card-home-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
                                                 </div>
                                             </article>
                                         <?php
