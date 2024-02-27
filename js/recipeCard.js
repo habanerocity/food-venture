@@ -1,53 +1,32 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-//Selecting DOM Nodes
-const printButton = document.getElementById('printBtn');
-if(printButton){
-    printButton.addEventListener('click', printRecipe);
-    
+document.addEventListener('DOMContentLoaded', () => {
+//Selecting DOM Nodes and adding event listeners, plus callbacks
+const addButtonListener = (buttonId, callback) => {
+    const button = document.getElementById(buttonId);
+    if(button){
+        button.addEventListener('click', callback);
+    }
 }
-
-const fbButton = document.getElementById('fb');
-if(fbButton){
-    fbButton.addEventListener('click', shareOnFacebook );
-
-}
-
-const whatsAppButton = document.getElementById('whatsApp');
-if(whatsAppButton){
-    whatsAppButton.addEventListener('click', shareOnWhatsApp );
-}
-
-const pinterestButton = document.getElementById('pinterest');
-if(pinterestButton){
-    pinterestButton.addEventListener('click', shareOnPinterest );
-}
-
-// printButton.addEventListener('click', printRecipe);
-// fbButton.addEventListener('click', shareOnFacebook );
-// whatsAppButton.addEventListener('click', shareOnWhatsApp );
-// pinterestButton.addEventListener('click', shareOnPinterest );
 
 //Print and share buttons
+const printRecipe = () => {
+    window.print();
+  };
 
-function printRecipe(){
-  window.print();
-};
-
-function shareOnFacebook(){
+const shareOnFacebook = () => {
   const pageUrl = encodeURIComponent(window.location.href);
   const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
 
   window.open(shareUrl, '_blank', 'width=600,height=400');
 };
 
-function shareOnWhatsApp() {
-  const text = "Check out this amazing recipe! " +             encodeURIComponent(window.location.href);
+const shareOnWhatsApp = () => {
+  const text =`Check out this interesting recipe! ${encodeURIComponent(window.location.href)}`;
   const whatsappUrl = `https://web.whatsapp.com/send?text=${encodeURIComponent(text)}`;
 
   window.open(whatsappUrl, '_blank');
 }
 
-function shareOnPinterest() {
+const shareOnPinterest = () => {
   const pageUrl = encodeURIComponent(window.location.href); 
   const imageUrl = encodeURIComponent('URL_OF_THE_IMAGE_TO_SHARE'); 
   const description = encodeURIComponent('DESCRIPTION_OF_THE_CONTENT'); 
@@ -57,17 +36,21 @@ function shareOnPinterest() {
   window.open(pinterestUrl, '_blank');
 }
 
+addButtonListener('printBtn', printRecipe);
+addButtonListener('fb', shareOnFacebook);
+addButtonListener('whatsApp', shareOnWhatsApp);
+addButtonListener('pinterest', shareOnPinterest);
+
 //Increasing serving size
-let ingredientQuantities = document.querySelectorAll('.ingredientQuantity');
+const ingredientQuantities = document.querySelectorAll('.ingredientQuantity');
+const originalQuantities = Array.from(ingredientQuantities, el => el.innerText);  // Store the original quantities
 
-let originalQuantities = Array.from(ingredientQuantities, el => el.innerText);  // Store the original quantities
-
-function parseFraction(fraction) {
-    let [numerator, denominator] = fraction.split('/');
+const parseFraction = (fraction) => {
+    const [numerator, denominator] = fraction.split('/');
     return numerator / denominator;
 }
 
-function decimalToFraction(decimal, tolerance = 0.01) {
+const decimalToFraction = (decimal, tolerance = 0.01) => {
     let numerator = 1;
     let h1 = 0;
     let denominator = 0;
@@ -91,10 +74,11 @@ function decimalToFraction(decimal, tolerance = 0.01) {
     return `${numerator}/${denominator}`;
 }
 
-function fractionToMixedNumber(fraction) {
-    let [numerator, denominator] = fraction.split('/').map(Number);
-    let wholeNumber = Math.floor(numerator / denominator);
-    let remainder = numerator % denominator;
+const fractionToMixedNumber = (fraction) => {
+    const [numerator, denominator] = fraction.split('/').map(Number);
+    const wholeNumber = Math.floor(numerator / denominator);
+    const remainder = numerator % denominator;
+
     if (wholeNumber === 0) {
         return `${remainder}/${denominator}`;
     } else if (remainder === 0) {
@@ -104,66 +88,22 @@ function fractionToMixedNumber(fraction) {
     }
 }
 
-function isMixedNumber(number) {
-    return number.includes(' ') && number.includes('/');
+const resetQuantities = () => {
+    for (let i = 0; i < ingredientQuantities.length; i++) {
+        // Reset the quantity in the DOM to the original quantity
+        ingredientQuantities[i].innerText = originalQuantities[i];
+    }
 }
 
-function changeIngredientQuantity(qty, multiplier){
-    let changed = qty * multiplier;
-    console.log(changed);
+const changeIngredientQuantity = (qty, multiplier) => {
+    const changed = qty * multiplier;
     return changed;
 }
 
-const doubleButton = document.getElementById('doubleBtn');
-if(doubleButton){
-    doubleButton.addEventListener('click', function(){
-        changeQuantities(2);
-        // convertUnitsToPlural();
-    });
-}
-
-const tripleButton = document.getElementById('tripleBtn');
-if(tripleButton){
-    tripleButton.addEventListener('click', function(){
-        changeQuantities(3);
-        // convertUnitsToPlural();
-    });
-}
-
-const resetButton = document.getElementById('resetBtn');
-if(resetButton){
-    resetButton.addEventListener('click', function(){
-        for (let i = 0; i < ingredientQuantities.length; i++) {
-            // Reset the quantity in the DOM to the original quantity
-            ingredientQuantities[i].innerText = originalQuantities[i];
-        }
-        // convertUnitsToPlural();
-    });
-}
-
-
-// doubleButton.addEventListener('click', function(){
-//     changeQuantities(2);
-//     // convertUnitsToPlural();
-// });
-
-// tripleButton.addEventListener('click', function(){
-//     changeQuantities(3);
-//     // convertUnitsToPlural();
-// });
-
-// resetButton.addEventListener('click', function(){
-//     for (let i = 0; i < ingredientQuantities.length; i++) {
-//         // Reset the quantity in the DOM to the original quantity
-//         ingredientQuantities[i].innerText = originalQuantities[i];
-//     }
-//     // convertUnitsToPlural();
-// });
-
-function changeQuantities(multiplier) {
+const changeQuantities = (multiplier) => {
     for (let i = 0; i < ingredientQuantities.length; i++) {
         // Get the original quantity
-        let ingredientQuantity = originalQuantities[i];
+        const ingredientQuantity = originalQuantities[i];
 
         let ingredientQuantityNumber;
         if (ingredientQuantity.includes('/')) {
@@ -173,17 +113,15 @@ function changeQuantities(multiplier) {
             // The quantity is not a fraction
             ingredientQuantityNumber = Number(ingredientQuantity);
         }
-        console.log(ingredientQuantityNumber);
 
         // Change the quantity
-        let changed = changeIngredientQuantity(ingredientQuantityNumber, multiplier);
-        console.log(changed);
+        const changed = changeIngredientQuantity(ingredientQuantityNumber, multiplier);
       
         if (!Number.isInteger(changed)) {
-            let converted = decimalToFraction(changed);
-            let [numerator, denominator] = converted.split('/').map(Number);
+            const converted = decimalToFraction(changed);
+            const [numerator, denominator] = converted.split('/').map(Number);
             if (numerator > denominator) {
-                let mixedNumber = fractionToMixedNumber(converted);
+                const mixedNumber = fractionToMixedNumber(converted);
                 ingredientQuantities[i].innerText = mixedNumber;
             } else {
                 ingredientQuantities[i].innerText = converted;
@@ -194,16 +132,18 @@ function changeQuantities(multiplier) {
     }
 }
 
+addButtonListener('doubleBtn', () => changeQuantities(2));
+addButtonListener('tripleBtn', () => changeQuantities(3));
+addButtonListener('resetBtn', resetQuantities);
 
 //Dynamically add 'clicked' class to the multiplier buttons, and remove it from the others. Initialize 1x box as active.
-let multiplierButtons = document.querySelectorAll('.recipe__card-ingredient_multiplier');
+const multiplierButtons = document.querySelectorAll('.recipe__card-ingredient_multiplier');
 
 if(multiplierButtons && multiplierButtons.length > 0){
     // Add 'clicked' class to the 1x multiplier button
     multiplierButtons[0].classList.add('clicked');
 
-    let servingsElement = document.querySelector('.recipe__card-servings');
-
+    const servingsElement = document.querySelector('.recipe__card-servings');
     let baseServings;
 
     if(servingsElement){
@@ -216,34 +156,10 @@ if(multiplierButtons && multiplierButtons.length > 0){
     
             this.classList.add('clicked'); // Add 'clicked' class to the clicked button
     
-            let multiplier = Number(this.textContent.replace('x', '')); // Get the multiplier from the button's text
-    
-            let newServings = baseServings * multiplier; // Calculate the new servings count
+            const multiplier = Number(this.textContent.replace('x', '')); // Get the multiplier from the button's text
+            const newServings = baseServings * multiplier; // Calculate the new servings count
     
             servingsElement.textContent = newServings; // Update the servings count in the DOM
         });
     });
-}
-
-//Convert units to plural
-// function convertUnitsToPlural() {
-//     let ingredientUnits = document.querySelectorAll('.measurement');
-
-//     for (let i = 0; i < ingredientQuantities.length; i++) {
-
-//         let quantity = Number(ingredientQuantities[i].innerText);
-//         let unit = ingredientUnits[i].innerText;
-
-
-//         if (quantity > 1 && !unit.endsWith('s')) {
-//             unit += 's';
-//         } else if (quantity <= 1 && unit.endsWith('s')) {
-     
-//             unit = unit.slice(0, -1);
-//         }
-
-       
-//         ingredientUnits[i].innerText = unit;
-//     }
-// }
-});
+}});

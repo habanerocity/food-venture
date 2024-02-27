@@ -1880,7 +1880,8 @@ button {
     @media (max-width: 365px) {
       .recipe__card-pic {
         width: 20rem;
-        height: 20rem; } }
+        height: 20rem;
+        top: -10rem; } }
   .recipe__card-name {
     color: #ffffff;
     text-transform: uppercase;
