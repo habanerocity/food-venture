@@ -798,7 +798,7 @@ body {
   font-family: 'Source Sans 3', sans-serif; }
 
 h1, h2, h3, h4 {
-  font-family: 'montserrat', sans-serif; }
+  font-family: "montserrat", sans-serif; }
 
 h1 {
   font-size: 5.2rem;
@@ -833,50 +833,8 @@ p, div {
     p, div {
       font-size: 1.6rem; } }
 
-button {
-  font-family: "montserrat"; }
-
 a:visited {
   color: #6d6d6d; }
-
-#menu-main-menu li {
-  font-family: "montserrat";
-  text-decoration: none;
-  position: relative;
-  font-size: 2.2rem;
-  transition: all .3s ease; }
-  @media (max-width: 1200px) {
-    #menu-main-menu li {
-      font-size: 1.8rem; } }
-  #menu-main-menu li::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    background-color: #f5f5f5;
-    left: 0;
-    transition: -webkit-transform .3s ease;
-    transition: width .3s ease; }
-  #menu-main-menu li:hover {
-    text-decoration: none; }
-  #menu-main-menu li:hover::before {
-    width: 100%; }
-
-#home-main-menu li:hover {
-  text-decoration: none; }
-#home-main-menu li::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 3px;
-  bottom: 0;
-  background-color: #252525;
-  left: 0;
-  transition: -webkit-transform .3s ease;
-  transition: width .3s ease; }
 
 .secondary_white {
   color: #f5f5f5; }
@@ -884,27 +842,11 @@ a:visited {
 .wp-block-heading {
   margin-bottom: 0; }
 
-@media screen and (max-width: 767px) {
-  #menu-main-menu li::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    background-color: #888888;
-    left: 0;
-    margin-top: 1.2rem;
-    transform: translateY(4px); }
-
-  #menu-main-menu li a {
-    color: #252525 !important; }
-
-  .container {
-    width: auto !important; } }
-@media (max-width: 450px) {
-  button {
-    font-size: 1.6rem; } }
+button {
+  font-family: "montserrat"; }
+  @media (max-width: 450px) {
+    button {
+      font-size: 1.6rem; } }
 
 .btn__rectangular {
   border-radius: 3px;
@@ -1262,9 +1204,6 @@ a:visited {
     .home__logo {
       width: 5rem; } }
 
-.menu-area {
-  background: gray; }
-
 .main-menu {
   height: 55px;
   display: flex;
@@ -1360,6 +1299,23 @@ a:visited {
     #home-main-menu ul li.current-menu-item > a::before {
       content: "";
       width: 0; } }
+@media screen and (max-width: 767px) {
+  #menu-main-menu li::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    background-color: #888888;
+    left: 0;
+    margin-top: 12px;
+    transform: translateY(4px); }
+
+  #menu-main-menu li a {
+    color: #252525 !important; }
+    #menu-main-menu li a:before {
+      display: none; } }
 .main-menu ul li a, #home-main-menu ul li a {
   color: #252525;
   font-style: normal;
@@ -1393,22 +1349,38 @@ a:visited {
   margin: 5px 0;
   transition: 0.4s; }
 
-.header_banner {
-  height: 77.5%;
-  width: 100%;
+.header__banner {
+  height: 69%;
   display: flex;
   justify-content: center;
   align-items: center; }
 
-#nav_logo {
-  display: none; }
-
 .wp_nav_wrapper {
   display: flex; }
+  @media (max-width: 767px) {
+    .wp_nav_wrapper {
+      position: fixed;
+      width: 40%;
+      height: 100vh;
+      background: #ffffff;
+      left: -40rem;
+      text-align: left;
+      transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 0.5s;
+      padding: 15rem 2rem 0 2rem;
+      margin: 0;
+      z-index: 15;
+      transform: translate(-3rem, -7.5rem); } }
 
-@media (min-width: 768px) {
-  .sidemenu_logo {
-    display: none; } }
+.sidemenu_logo {
+  display: none; }
+  @media (max-width: 767px) {
+    .sidemenu_logo {
+      width: 60px;
+      display: block;
+      position: fixed;
+      z-index: 11;
+      top: 7.35rem; } }
+
 @media (max-width: 767px) {
   .logo {
     z-index: 10; }
@@ -1422,28 +1394,6 @@ a:visited {
     background: transparent;
     height: 55px;
     z-index: 100; }
-
-  .menu-area {
-    display: none; }
-
-  .sidemenu_logo {
-    width: 60px;
-    position: fixed;
-    z-index: 11;
-    top: 7.35rem; }
-
-  .wp_nav_wrapper {
-    position: fixed;
-    width: 40%;
-    height: 100vh;
-    background: #ffffff;
-    left: -40rem;
-    text-align: left;
-    transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 0.5s;
-    padding: 15rem 2rem 0 2rem;
-    margin: 0;
-    z-index: 15;
-    transform: translate(-3rem, -7.5rem); }
 
   .show-dropdown {
     left: 3rem !important;

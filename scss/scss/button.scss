@@ -1,4 +1,5 @@
 button{
+    font-family: $fontfamily-headings;
     @media (max-width: 450px){
         font-size: 1.6rem;
     }

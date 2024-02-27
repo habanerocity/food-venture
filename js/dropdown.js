@@ -19,7 +19,6 @@ buttonClick.addEventListener( 'click', () => {
     overlay.classList.toggle('hidden');
     sideMenuLogo.classList.toggle('hidden');
     hamburgerElements.classList.toggle('animate-button');
-    
 
 })
 

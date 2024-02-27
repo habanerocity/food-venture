@@ -131,10 +131,6 @@
     }
 }
 
-.menu-area {
-	background: gray;
-}
-
 .main-menu {
     height: 55px;
     display: flex;
@@ -272,6 +268,29 @@
     }
 }
 
+@media screen and (max-width: 767px){
+    #menu-main-menu li::before{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        background-color: $accent-color;
+        left: 0;
+        margin-top: $spacing-large;
+        transform: translateY(4px);
+    }
+
+    #menu-main-menu li a {
+        color: $primary-black!important;
+        
+        &:before {
+            display: none;
+        }
+    }
+}
+
 .main-menu ul li a, #home-main-menu ul li a {
     color: $primary-black;
     font-style: normal;
@@ -286,6 +305,7 @@
 	cursor: pointer;
 	display: none;
 }
+
 .menu-icon .bar1, 
 .menu-icon .bar2, 
 .menu-icon .bar3 {
@@ -308,25 +328,38 @@
     transition: 0.4s;
 }
 
-.header_banner{
-    height:77.5%;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-#nav_logo{
-    display: none;
+.header__banner{
+    height:69%;
+    @include flex-center;
 }
 
 .wp_nav_wrapper{
     display: flex;
+
+    @media (max-width: 767px){
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+		background: $primary-white;
+		left: -40rem;
+		text-align: left;
+		transition: all cubic-bezier(.79,.14,.15,.86) .5s;
+        padding: 15rem 2rem 0 2rem;
+        margin: 0;
+        z-index: 15;
+        transform: translate(-3rem, -7.5rem);
+    }
 }
 
-@media (min-width: 768px){
-    .sidemenu_logo{
-        display: none;
+.sidemenu_logo{
+    display: none;
+
+    @media (max-width: 767px){
+        width: 60px;
+        display: block;
+        position: fixed;
+        z-index: 11;
+        top: 7.35rem;
     }
 }
 
@@ -338,7 +371,6 @@
     .menu-icon,
     .check-button {
 		display: block;
-        // position: fixed;
 	}
 
     .check-button{
@@ -347,31 +379,6 @@
         height: 55px;
         z-index: 100;
     }
-
-    .menu-area{
-        display: none;
-    }
-
-    .sidemenu_logo{
-        width: 60px;
-        position: fixed;
-        z-index: 11;
-        top: 7.35rem;
-    }
-
-	.wp_nav_wrapper{
-		position: fixed;
-        width: 40%;
-        height: 100vh;
-		background: $primary-white;
-		left: -40rem;
-		text-align: left;
-		transition: all cubic-bezier(.79,.14,.15,.86) .5s;
-        padding: 15rem 2rem 0 2rem;
-        margin: 0;
-        z-index: 15;
-        transform: translate(-3rem, -7.5rem);
-	}
 
     .show-dropdown{
         left: 3rem !important;
