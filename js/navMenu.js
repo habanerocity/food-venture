@@ -7,7 +7,7 @@ hamburgerElements = document.querySelector('.menu-icon, #home-menu-icon'), //bur
 overlay = document.querySelector('.overlay'); //burger icon
 
 buttonClick.addEventListener( 'click', () => {
-    sideMenu.classList.toggle('show-dropdown');
+    sideMenu.classList.toggle('show-navMenu');
 
     const display = window.getComputedStyle(searchBox).display;
     if (display === "none") {
