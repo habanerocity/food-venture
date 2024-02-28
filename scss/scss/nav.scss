@@ -19,30 +19,54 @@
     height: 1.7rem;
     width: 1.7rem;
     position: absolute;
-    right: 13%;
+    right: 5%;
     top: 50%;
     transform: translateY(-50%); 
 
-    @media(min-width: 768px){
-        right: 1rem;
-    }
+    // @media(min-width: 768px){
+    //     right: 53%;
+    // }
 
     @media(max-width: 767px){
+        right: 5%;
         & > path {
             fill: $primary-black;
         }
+    }
+
+    @media(max-width: 450px){
+        right: 14%;
+    }
+
+    @media (max-width: 396px){
+        right: 34%;
     }
 }
 
 .searchbox{
     display: flex;
     align-items: center;
-    padding-left:2rem;
+    padding-left: 2rem;
     position: relative;
 
     & input[type="text"]{
-        padding: 7px 10px;
-        border: 1px solid #C6C6C6;
+        // padding: 7px 10px;
+        border: 1px solid transparent;
+        background-color: transparent;
+        color: $primary-white;
+        outline: none;
+
+        @media(max-width: 767px){
+            color: $primary-black;
+        }
+    }
+
+    & input[type="text"]::placeholder{
+        color: $primary-white;
+
+        @media(max-width: 767px){
+            color: $primary-black;
+        }
     }
     
     & input[type="submit"]{
@@ -67,11 +91,10 @@
     align-items: center;
     border-radius: 1rem;
     border: 1px solid $primary-white;
-    width: 17.2rem;
-    height: 4rem;
+    width: 14.2rem;
     flex-shrink: 0;
     background-color: transparent;
-    color: $accent-color;
+    color: $primary-white;
     padding: 0 1rem;
 
     &::placeholder{
@@ -84,16 +107,20 @@
         align-items: center;
         border-radius: 1rem;
         border: 1px solid $primary-black;
-        width: 17.2rem;
-        height: 4rem;
+        width: 14.2rem;
+        // height: 4rem;
         flex-shrink: 0;
         background-color: transparent;
         color: $secondary-black;
         padding: 0 1rem;
-        
-        &::placeholder{
-            text-align: left;
+
+        & input{
             color: $secondary-black;
+        }
+        
+        & input::placeholder{
+            text-align: left;
+            color: $secondary-black!important;
     
             @media (max-width: 1200px){
                 font-size: 1.6rem;
@@ -108,6 +135,18 @@
                 color: $accent-color;
             }
         }
+
+        @media (max-width: 450px){
+            width: 78%;
+        }
+    
+        @media (max-width: 396px){
+            width: 65%;
+        }
+    
+        @media (max-width: 396px){
+            width: 55%;
+        }
     }
 
     @media (max-width: 768px){
@@ -117,6 +156,18 @@
         &::placeholder{
             color: $accent-color;
         }
+    }
+
+    @media (max-width: 450px){
+        width: 78%;
+    }
+
+    @media (max-width: 396px){
+        width: 65%;
+    }
+
+    @media (max-width: 396px){
+        width: 55%;
     }
 }
 
@@ -174,8 +225,6 @@
             bottom: 0;
             background-color: $secondary-white;
             left: 0;
-            // transition: -webkit-transform .3s ease;
-            // transition: all .3s ease;
         }
     }
 
@@ -245,7 +294,6 @@
 }
 
 #home-main-menu{
-    
     & ul li.current-menu-item > a {
         text-decoration:none;
     
@@ -341,7 +389,8 @@
     color: $primary-black;
     font-style: normal;
     font-weight: $fontweight-semibold;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    font-family: $fontfamily-headings;
     margin: 0 1rem;
     text-decoration: none;
     display: block;
