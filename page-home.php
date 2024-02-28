@@ -63,7 +63,9 @@
                                         ?>
                                             <article class="article__card-home">
                                                 <div class="featured-thumbnail">
-                                                    <?php the_post_thumbnail('medium'); ?>
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <?php the_post_thumbnail('large'); ?>
+                                                    </a>
                                                 </div>
                                                 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                                 <?php the_excerpt(); ?>

@@ -74,7 +74,9 @@
                                             ?>
                                                 <article class="article__card-index">
                                                     <div class="featured-thumbnail">
-                                                        <?php the_post_thumbnail('medium'); ?>
+                                                        <a href="<?php the_permalink(); ?>">
+                                                            <?php the_post_thumbnail('large'); ?>
+                                                        </a>
                                                     </div>
                                                     <div class="article__card-content">
                                                         <div class="article__card-title&excerpt">

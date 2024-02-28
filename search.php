@@ -11,6 +11,7 @@
                                         if( have_posts() ):
                                             while( have_posts() ) : the_post();
                                             ?>
+                                                <?php if('post' == get_post_type() || 'blog_recipes' == get_post_type()): ?>
                                                 <article class="article__card-index">
                                                     <div class="featured-thumbnail">
                                                         <?php the_post_thumbnail('medium'); ?>
@@ -26,6 +27,7 @@
                                                         </div>
                                                     </div>
                                                 </article>
+                                                <?php endif; ?>
                                             <?php
                                             endwhile;
                                         else: ?>

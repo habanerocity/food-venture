@@ -32,6 +32,8 @@
                 } else {
                     the_archive_title();
                 }
+            } elseif(is_search()) {
+                echo 'Search Results for: ' . get_search_query();
             } else {
                 the_title();
             }
