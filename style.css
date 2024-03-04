@@ -299,27 +299,16 @@ img {
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   position: relative;
   width: 100%;
   height: auto; }
-  @media (max-width: 767px) {
-    .article__card-index:first-child {
-      margin-bottom: 3.2rem; } }
-  @media (max-width: 575px) {
-    .article__card-index:nth-child(3) {
-      margin-top: 0;
-      margin-bottom: 2.2rem; }
-    .article__card-index:nth-child(2) {
-      margin-bottom: 2.2rem; } }
   @media (max-width: 511px) {
     .article__card-index {
       max-width: 100%;
       height: auto;
-      margin-top: 0; }
-      .article__card-index:first-child {
-        margin-bottom: 2.2rem; } }
+      margin-top: 0; } }
   .article__card-index > p {
     margin-top: 0;
     margin-bottom: 1.2rem; }
@@ -387,7 +376,7 @@ img {
   height: 56rem; }
   @media (max-width: 1200px) {
     .article__card-home {
-      height: 57rem; } }
+      height: 56rem; } }
   @media (max-width: 767px) {
     .article__card-home {
       max-width: 47%; }
@@ -395,19 +384,18 @@ img {
         margin-bottom: 3.2rem; } }
   @media (max-width: 575px) {
     .article__card-home {
-      height: 51rem; }
+      height: 47rem; }
       .article__card-home:nth-child(3) {
-        margin-top: 0;
-        margin-bottom: 2.2rem; }
+        margin-top: 0; }
       .article__card-home:nth-child(2) {
-        margin-bottom: 2.2rem; } }
+        margin-bottom: 2.8rem; } }
   @media (max-width: 511px) {
     .article__card-home {
       max-width: 100%;
       height: auto;
       margin-top: 0; }
       .article__card-home:first-child {
-        margin-bottom: 2.2rem; } }
+        margin-bottom: 2.8rem; } }
   .article__card-home > p {
     margin-top: 0;
     margin-bottom: 1.2rem; }
@@ -464,7 +452,7 @@ img {
       color: #252525; }
 
 .article__card-img {
-  margin-bottom: 3rem; }
+  margin-bottom: 2rem; }
 
 @media (max-width: 767px) {
   .article__card-heading {
@@ -727,14 +715,6 @@ header .meta-info {
 .blog .blog-items h2,
 .archive .blog-items h2 {
   margin-top: 0; }
-
-.blog article:first-child {
-  margin-bottom: 40px; }
-@media (max-width: 575px) {
-  .blog article:first-child {
-    margin-bottom: 20px; } }
-.blog article:last-child {
-  margin-bottom: 0; }
 
 .blog aside,
 .archive aside {

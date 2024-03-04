@@ -73,20 +73,22 @@
                                             while( have_posts() ) : the_post();
                                             ?>
                                                 <article class="article__card-index">
-                                                    <div class="featured-thumbnail">
+                                                    <div class="article__card-top_wrapper">
+                                                        <div class="featured-thumbnail">
+                                                            <a href="<?php the_permalink(); ?>">
+                                                                <?php the_post_thumbnail('large', ['class' => 'article__card-img']); ?>
+                                                            </a>
+                                                        </div>
                                                         <a href="<?php the_permalink(); ?>">
-                                                            <?php the_post_thumbnail('large'); ?>
+                                                            <h4 class="article__card-heading">
+                                                                <?php the_title(); ?>
+                                                            </h4>
                                                         </a>
+                                                        <?php the_excerpt(); ?>
                                                     </div>
-                                                    <div class="article__card-content">
-                                                        <div class="article__card-title&excerpt">
-                                                            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                                            <?php the_excerpt(); ?>
-                                                        </div>
-                                                        <div class="article__card-index-footer">
-                                                            <span class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
-                                                            <span class="article__card-index-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
-                                                        </div>
+                                                    <div class="article__card-index-footer">
+                                                        <span class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
+                                                        <span class="article__card-index-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
                                                     </div>
                                                 </article>
                                             <?php
