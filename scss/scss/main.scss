@@ -444,12 +444,15 @@ img {
 
 .article__card-home{
     @include flex-container;
-    @include article__card;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
     max-width: 30%;
     height: 56rem;
 
     @media(max-width: 1200px){
-        height: 44rem;
+        height: 57rem;
     }
 
     @media(max-width: 767px){
@@ -461,6 +464,8 @@ img {
     }
 
     @media(max-width: 575px){
+        height: 51rem;
+
         &:nth-child(3){
             margin-top: 0;
             margin-bottom: 2.2rem;
@@ -558,6 +563,16 @@ img {
         color: $primary-black;
     }
 }
+}
+
+.article__card-img{
+    margin-bottom: 3rem;
+}
+
+.article__card-heading{
+    @media(max-width: 767px){
+        margin-bottom: 0;
+    }
 }
 
 //About Page
