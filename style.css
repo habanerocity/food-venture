@@ -1528,7 +1528,7 @@ button {
 .blog__items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.8rem;
   width: 100%; }
   @media (max-width: 767px) {
     .blog__items-grid {
