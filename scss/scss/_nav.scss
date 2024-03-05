@@ -437,10 +437,15 @@
     @include flex-center;
 }
 
-.custom__header-wrapper{
-    height:100%;
-    position:relative;
+.custom__header{
+    width: 100%;
+
+    &-wrapper{
+        height:100%;
+        position:relative;
+    }
 }
+
 
 .wp_nav_wrapper{
     display: flex;

@@ -13,7 +13,7 @@
                     }
                 } else {
                     ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" style="text-decoration: none;color: #000;"><span><?php echo esc_html(bloginfo('name')); ?></span></a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="unstyled-link"><span><?php echo esc_html(bloginfo('name')); ?></span></a>
                 <?php
                 }
                  ?>

@@ -454,9 +454,11 @@ img {
 .article__card-img {
   margin-bottom: 2rem; }
 
-@media (max-width: 767px) {
-  .article__card-heading {
-    margin-bottom: 0; } }
+.article__card-heading {
+  margin: 0; }
+  @media (max-width: 767px) {
+    .article__card-heading {
+      margin-bottom: 0; } }
 
 #about__me-heading {
   margin-top: 0; }
@@ -1421,9 +1423,11 @@ button {
   justify-content: center;
   align-items: center; }
 
-.custom__header-wrapper {
-  height: 100%;
-  position: relative; }
+.custom__header {
+  width: 100%; }
+  .custom__header-wrapper {
+    height: 100%;
+    position: relative; }
 
 .wp_nav_wrapper {
   display: flex; }
@@ -1538,7 +1542,7 @@ button {
 .blog__items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.8rem;
+  gap: 4.8rem;
   width: 100%; }
   @media (max-width: 767px) {
     .blog__items-grid {

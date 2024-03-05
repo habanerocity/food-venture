@@ -12,7 +12,7 @@
         $custom_bg_image = get_header_image();
     }
 ?>
-<div class="custom_header" style="background: url('<?php echo esc_url($custom_bg_image); ?>')50% / cover no-repeat; height: <?php echo get_custom_header()->height; ?>px;width: 100%;">
+<div class="custom__header" style="background: url('<?php echo esc_url($custom_bg_image); ?>')50% / cover no-repeat; height: <?php echo get_custom_header()->height; ?>px;">
     <div class="container custom__header-wrapper">
         <div class="navbar_wrapper secondary_white">
             <?php include 'navbar.php'?>
