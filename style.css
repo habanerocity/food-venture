@@ -2062,6 +2062,9 @@ button {
 .children {
   margin-top: 6rem; }
 
+.my-custom-comment-body {
+  margin: 2rem 0; }
+
 .my-custom-comment-header {
   display: flex;
   flex-direction: row; }

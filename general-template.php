@@ -14,9 +14,8 @@ Template Name: General Template
                                     while( have_posts() ) : the_post();
                                     ?>
                                         <article>
-                                            <h1><?php the_title(); ?></h1>
-    
-                                            <?php the_content(); ?>
+                                            <h1><?php echo esc_html(get_the_title()); ?></h1>
+                                            <?php echo wp_kses_post(get_the_content()); ?>
                                         </article>
                                     <?php
                                     endwhile;
