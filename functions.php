@@ -331,12 +331,12 @@ function my_custom_comment($comment, $args, $depth) {
                 <?php echo get_avatar( $comment, 76 ); // 64 is the size of the avatar in pixels ?>
             </div>
             <div class="comment__info-wrapper">
-                <h3><?php comment_author(); ?></h3>
-                <span><?php comment_date(); ?></span>
+                <h3><?php echo esc_html(comment_author()); ?></h3>
+                <span><?php echo esc_html(comment_date()); ?></span>
             </div>
         </div>
         <div class="my-custom-comment-body">
-            <?php comment_text(); ?>
+            <?php echo wp_kses_post(get_comment_text()); ?>
         </div>
         <div class="my-custom-comment-footer">
             <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
