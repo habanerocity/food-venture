@@ -17,22 +17,22 @@
                             ?>
                                 <div class="hero__post">
                                     <div class="hero__post-text_content">
-                                        <a class="hero__text-link" href="<?php echo get_permalink($post_id); ?>">
+                                        <a class="hero__text-link" href="<?php echo esc_url(get_permalink($post_id)); ?>">
                                             <h1 class="hero__title">
-                                                <?php echo get_the_title($post_id); ?>
+                                                <?php echo esc_html(get_the_title($post_id)); ?>
                                             </h1>
                                         </a>
                                         <p class="hero__summary">
-                                            <?php echo get_the_excerpt($post_id); ?>
+                                            <?php echo wp_kses_post(get_the_excerpt($post_id)); ?>
                                         </p>
                                         <div class="hero-btn_wrapper">
-                                            <a href="<?php echo get_permalink($post_id); ?>"><button class="btn__round-transparent">Read More</button></a>
+                                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>"><button class="btn__round-transparent">Read More</button></a>
                                         </div>
                                     </div>
                                     <div class="hero__post-image_wrapper">
                                         <div class="hero__post-image_container">
-                                            <a href="<?php echo get_permalink($post_id); ?>">
-                                                <img src="<?php echo $hero_image['url']; ?>" alt="" />
+                                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>">
+                                                <img src="<?php echo esc_url($hero_image['url']); ?>" alt="" />
                                             </a>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                             <div class="latest__articles-heading">
                                 <h3 class="section__title">Latest Articles</h3>
                                 <hr class="section__title-divider" />
-                                <a class="blog__link" href="<?php echo get_bloginfo('url') . '/blog';  ?>">See all</a>
+                                <a class="blog__link" href="<?php echo esc_url(get_bloginfo('url') . '/blog');  ?>">See all</a>
                             </div>
                             <div class="flex_container-row">
                                 <?php 
@@ -64,20 +64,20 @@
                                             <article class="article__card-home">
                                                 <div class="article__card-top_wrapper">
                                                     <div class="featured-thumbnail">
-                                                        <a href="<?php the_permalink(); ?>">
-                                                            <?php the_post_thumbnail('large', ['class' => 'article__card-img']); ?>
+                                                        <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">
+                                                            <?php the_post_thumbnail('large', ['class' => esc_attr('article__card-img')]); ?>
                                                         </a>
                                                     </div>
-                                                    <a href="<?php the_permalink(); ?>">
+                                                    <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">
                                                         <h4 class="article__card-heading">
-                                                            <?php the_title(); ?>
+                                                            <?php echo esc_html(get_the_title()); ?>
                                                         </h4>
                                                     </a>
-                                                    <?php the_excerpt(); ?>
+                                                    <?php echo esc_html(get_the_excerpt()); ?>
                                                 </div>
                                                 <div class="article__card-home-footer">
-                                                    <span class="article__card-home-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo get_the_date(); ?></span>
-                                                    <span class="article__card-home-footer_link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+                                                    <span class="article__card-home-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date()); ?></span>
+                                                    <span class="article__card-home-footer_link"><a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">Read More</a></span>
                                                 </div>
                                             </article>
                                         <?php
@@ -96,7 +96,7 @@
                         <div class="latest__articles-heading">
                             <h3 class="section__title">Latest Recipes</h3>
                             <hr class="section__title-divider" />
-                            <a class="blog__link" href="<?php echo get_bloginfo('url') . '/blog_recipes';  ?>">See all</a>
+                            <a class="blog__link" href="<?php echo esc_url(get_bloginfo('url') . '/blog_recipes');  ?>">See all</a>
                         </div>
                         <div class="flex_container-row">
                             <?php 
@@ -113,13 +113,13 @@
 
                                 // Render the image
                                 if (!empty($image_url)) {
-                                    echo '<div class="latest__recipes-thumbnail_container">';
-                                    echo '<a href="' . get_permalink() . '">';
-                                    echo '<img class="latest__recipes-thumbnail" src="' . esc_url($image_url) . '">';
-                                
-                                    echo '<div class="latest__recipes-thumbnail_overlay">';
                                     $heading = get_post_meta(get_the_ID(), 'recipe_thumbnail-heading', true);
                                     $subheading = get_post_meta(get_the_ID(), 'recipe_thumbnail-subheading', true);
+
+                                    echo '<div class="latest__recipes-thumbnail_container">';
+                                    echo '<a href="' . esc_url(get_permalink()) . '">';
+                                    echo '<img class="latest__recipes-thumbnail" src="' . esc_url($image_url) . '">';
+                                    echo '<div class="latest__recipes-thumbnail_overlay">';
                                     echo '<div class="latest__recipes-thumbnail_headings">';
                                     echo '<h4 class="latest__recipes-thumbnail_title">' . esc_html($heading) . '</h4>';
                                     echo '<h5 class="latest__recipes-thumbnail_subtitle">' . esc_html($subheading) . '</h5>';
