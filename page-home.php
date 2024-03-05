@@ -69,7 +69,7 @@
                                                         </a>
                                                     </div>
                                                     <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">
-                                                        <h4 class="article__card-heading">
+                                                        <h4 class="article__card-home_heading">
                                                             <?php echo esc_html(get_the_title()); ?>
                                                         </h4>
                                                     </a>

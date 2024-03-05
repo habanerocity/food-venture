@@ -1,0 +1,65 @@
+.newsletter-signup-form{
+    background: url('http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_6966-2.jpg') no-repeat center center / cover;
+    padding:3rem;
+    color: $secondary-white;
+    height: 32rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 1200px){
+        height: 28rem;
+    }
+
+    @media(max-width: 767px){
+        height: 23rem;
+    }
+
+    label{
+        font-size: 2.2rem;
+    }
+
+    input {
+        border-color: $secondary-white;
+        width: 30%;
+        outline: none;
+        color: $secondary-white;
+
+        @media(max-width: 1200px){
+        width: 60%;
+        }
+    }
+
+    input[type="submit"]{
+        color: $primary-white;
+        margin:0;
+        border:1px solid $secondary-white!important;
+
+        &:hover{
+            background: $primary-white!important;
+            color: $primary-black!important;
+            transition: .2s all ease-in-out;
+        }
+
+        @media (max-width: 1200px){
+            margin-top: 1.6rem;
+        }
+    }
+
+    input::placeholder {
+        color: $secondary-white;
+        font-size: 1.8rem;
+    }
+}
+
+#respond{
+    @media(max-width: 575px){
+        padding: 3.2rem 0;
+    }
+}
+
+.form-submit{
+    @media(max-width: 575px){
+        margin-bottom: 0;
+    }
+}

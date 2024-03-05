@@ -142,3 +142,155 @@
         margin-bottom: $spacing-small;
     }
 }
+
+section.latest__articles{
+    padding: 0;
+}
+
+.latest__articles-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom:3.6rem;
+
+    @media(max-width: 1200px){
+        margin-bottom: 3.2rem;
+    }
+
+    @media(max-width: 767px){
+        margin-bottom: $spacing-unit * 6;
+    }
+
+    @media(max-width: 511px){
+        margin-bottom: 2rem;
+    }
+}
+
+#breadcrumbs{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family: $fontfamily-headings;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+
+    @media(max-width: 575px){
+        margin-top: 3.2rem;
+    }
+
+    & > li > a{
+        color: $primary-black;
+        text-decoration: none;
+    }
+}
+
+header .meta-info{
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid $accent-color;
+}
+
+/************** INNER PAGES *****************/
+
+/* Blog, Archive, Search */
+.blog main .container,
+.archive main .container{
+    display: flex;
+}
+.blog .blog-items,
+.archive .archive-items{
+    padding: 0 15px 0 0;
+    flex: 1;
+}
+.blog .blog-items h2,
+.archive .blog-items h2{
+    margin-top: 0;
+}
+
+.blog aside,
+.archive aside{
+    padding: 25px;
+    background: $accent-color;
+    height: 100%;
+    width: 30%;
+}
+
+@media screen and (max-width: 991px ) {
+    .blog aside,
+    .archive aside,
+    .blog .blog-items,
+    .archive .archive-items{
+        min-width: 100%;
+    }
+}
+
+.archive-description{
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto 30px auto;
+}
+.archive-description p{
+    font-size: 85%;
+}
+
+.meta-info p{
+    margin: 0;
+}
+.wp-post-image{ 
+    float: left; 
+}
+@media screen and (max-width: 550px ) {
+    .wp-post-image{ 
+        width: 100%; 
+    }
+}
+article{ 
+    display: inline-block;  
+    width: 66.6667%; 
+
+    @media (max-width: 767px){
+        width: 100%;
+    }
+}
+
+article.post h2{
+    line-height: 3rem;
+    text-transform: none;
+}
+article h2{
+    line-height: 3rem;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+article.post h3,
+article.post h4,
+article.post h5{
+    margin-bottom: 0;
+}
+.searchform input[type="text"]{
+    padding: 7px 0px;
+    border: 1px solid #C6C6C6;
+}
+.searchform input[type="submit"]{
+    padding: 11px 10px;
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+}
+.searchform div{
+    display: flex;
+}
+
+.searchform input[type=submit]{
+    max-width: 70%;
+}
+@media (max-width: 991px) {
+    .blog .container,
+    .archive .container{
+        flex-wrap: wrap;
+    }
+}

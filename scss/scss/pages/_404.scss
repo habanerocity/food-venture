@@ -1,0 +1,26 @@
+.lost-description{
+    text-align: center;
+}
+
+.lost-pic{
+    max-width: 80%;
+    border-radius: 3px;
+}
+
+.banner-text{
+    text-align: center;
+
+    @media(max-width: 575px){
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact_form-container{
+        flex-direction: column;
+    }
+}
+
+.logo{
+    display: flex;
+}

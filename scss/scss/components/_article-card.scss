@@ -1,0 +1,239 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.article__card-index{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    @media(max-width: 511px){
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+}
+
+    & > p{
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: 575px){
+            margin-bottom: $spacing-unit * 2;
+        }
+    }
+
+    & > h4 {
+        margin-top: 2.4rem;
+        margin-bottom: 8px;
+        color: $primary-black;
+
+        @media(max-width: 1200px){
+            font-size: 1.8rem;
+        }
+
+        @media(max-width: 767px){
+            margin-top: $spacing-unit * 5;
+            margin-bottom: $spacing-unit * 2;
+        }
+
+        @media(max-width: 511px){
+            margin-top: $spacing-unit * 4;
+        }
+    }
+
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @media(max-width: 1200px){
+            font-size: 1.4rem;
+        }
+    } 
+
+    &-footer_link{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $fontfamily-headings;
+        font-size: 1.6rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
+        }
+    }
+
+    &-footer_date{
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+        }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
+        }
+    }
+
+   a {
+    text-decoration: none;
+    color: $primary-black;
+    
+    &:visited{
+        color: $primary-black;
+    }
+}
+}
+
+.article__card-home{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 30%;
+    height: 56rem;
+
+    @media(max-width: 1200px){
+        height: 56rem;
+    }
+
+    @media(max-width: 767px){
+        max-width: 47%;
+
+        &:first-child{
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    @media(max-width: 575px){
+        height: 47rem;
+
+        &:nth-child(3){
+            margin-top: 0;
+        }
+
+        &:nth-child(2){
+            margin-bottom: 2.8rem;
+        }
+    }
+
+    @media(max-width: 511px){
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+
+        &:first-child{
+            margin-bottom: 2.8rem;
+        }
+    }
+
+    & > p{
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: 575px){
+            margin-bottom: $spacing-unit * 2;
+        }
+    }
+
+    & > h4 {
+        margin-top: 2.4rem;
+        margin-bottom: $spacing-unit * 2;
+        color: $primary-black;
+
+        @media(max-width: 1200px){
+            font-size: 1.8rem;
+        }
+
+        @media(max-width: 767px){
+            margin-top: $spacing-unit * 5;
+            margin-bottom: $spacing-unit * 2;
+        }
+
+        @media(max-width: 511px){
+            margin-top: $spacing-unit * 4;
+        }
+    }
+
+    &_heading{
+        margin-bottom: $spacing-unit * 4;
+
+        @media (max-width: 575px){
+            margin-bottom: $spacing-unit * 3;
+        }
+    }
+
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @media(max-width: 1200px){
+            font-size: 1.4rem;
+        }
+    } 
+
+    &-footer_link{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $fontfamily-headings;
+        font-size: 1.6rem;
+
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+        }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
+        }
+    }
+
+    &-footer_date{
+        @media(max-width: 1200px){
+            font-size: 1.3rem;
+        }
+
+        @media(max-width: 767px){
+            font-size: 1.4rem;
+        }
+    }
+
+   a {
+    text-decoration: none;
+    color: $primary-black;
+    
+    &:visited{
+        color: $primary-black;
+    }
+}
+}
+
+.article__card-img{
+    margin-bottom: 2rem;
+}
+
+.article__card-heading{
+    margin: 0;
+
+    @media(max-width: 767px){
+        margin-bottom: 0;
+    }
+}

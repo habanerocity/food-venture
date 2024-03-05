@@ -15,23 +15,26 @@ Tags: one-column, custom-menu, custom-logo, featured-images, translation-ready
 */
 
 @import "scss/_main";
-@import "scss/_mixins";
-@import "scss/_variables";
-@import "scss/_typography";
-@import "scss/_button";
-@import "scss/_contact";
-@import "scss/_hero";
-@import "scss/_container";
-@import "scss/_nav";
-@import "scss/_header_banner";
-@import "scss/_blog";
-@import "scss/_sidebar";
-@import "scss/_latest_recipes";
-@import "scss/_useful-notes";
-@import "scss/_recipe-card";
-@import "scss/_comments";
-@import "scss/_pagination";
-@import "scss/_footer";
-
-
-
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/variables";
+@import "scss/base/normalize";
+@import "scss/base/typography";
+@import "scss/components/article-card";
+@import "scss/components/button";
+@import "scss/components/hero";
+@import "scss/components/comments";
+@import "scss/components/header_banner";
+@import "scss/components/latest_recipes";
+@import "scss/components/recipe-card";
+@import "scss/components/useful-notes";
+@import "scss/layout/container";
+@import "scss/layout/footer";
+@import "scss/layout/forms";
+@import "scss/layout/layout";
+@import "scss/layout/nav";
+@import "scss/layout/pagination";
+@import "scss/layout/sidebar";
+@import "scss/pages/404";
+@import "scss/pages/about";
+@import "scss/pages/blog";
+@import "scss/pages/contact";

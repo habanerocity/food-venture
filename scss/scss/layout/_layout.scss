@@ -1,0 +1,158 @@
+img {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+    border-radius: 3px;
+}
+
+//Overlay
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+    z-index: 14; /* Place the overlay above other content */
+
+    @media (min-width: 768px){
+        display: none;
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+//Flexbox
+
+.flex-col{
+    @include flex-container;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_container-row{
+    @include flex-container;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.flex_container{
+    @include flex-container;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding-section{
+    padding: ($spacing-unit * 20) 0;
+
+    @media (max-width: 1200px){
+        padding: ($spacing-unit * 15) 0;
+    }
+
+    @media (max-width: 767px){
+        padding: ($spacing-unit * 8) 0;
+    }
+}
+
+.border-top{
+    border-top: 1px solid #000;
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+
+.mt-0{
+    margin-top: 0;
+}
+
+.margin-section{
+    margin: ($spacing-unit * 20) 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1199px){
+        height: 5rem;
+    }
+}
+
+.column {
+    flex: 1;
+    margin-right: 3.34rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.column input {
+    max-width: 17rem;
+}
+
+.margin_right-xl{
+    margin-right: $spacing-xl;
+}
+
+.section__title{
+    margin: 0;
+
+    @media(max-width: 1200px){
+        font-size: 2rem;
+    }
+}
+
+hr.section__title-divider{
+    width: 72%;
+
+    @media (max-width: 1200px){
+        width: 63%;
+    }
+
+    @media (max-width: 767px){
+        width: 57%;
+    }
+
+    @media(max-width: 511px){
+        max-width: 50%;
+    }
+
+    @media(max-width: 454px){
+        max-width: 40%;
+    }
+
+    @media(max-width: 381px){
+        max-width: 30%;
+    }
+
+    @media(max-width: 329px){
+        max-width: 20%;
+    }
+}
+
+.unstyled-link{
+    text-decoration: none;
+    color: $button-black!important;
+
+    @media (max-width: 342px){
+        width: 100%;
+    }
+}
+
+.wp-block-heading{
+    width: 100%;
+}
+
+section{
+    padding-left: 0;
+    width:100%;
+}
