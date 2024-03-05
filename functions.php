@@ -37,6 +37,21 @@ function wpfoodventure_config(){
     add_theme_support('post-thumbnails');
 }
 
+//Add home page logo
+function theme_customize_register($wp_customize) {
+    $wp_customize->add_setting('home_logo', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_logo', [
+        'label' => __('Home Logo', 'theme'),
+        'section' => 'title_tagline',
+        'settings' => 'home_logo',
+    ]));
+}
+add_action('customize_register', 'theme_customize_register');
+
 //upload svg files
 
 function add_file_types_to_uploads($file_types){

@@ -6,14 +6,14 @@
                 if(has_custom_logo()){
                     if(is_front_page()){
                         // Display the logo for the homepage
-                        echo '<img src="http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg" class="home__logo" alt="Home Logo">';
+                        echo '<img src="' . esc_url(get_theme_mod('home_logo')) . '" class="home__logo" alt="Home Logo">';
                     } else {
                         // Display the custom logo for other pages
                         the_custom_logo();
                     }
                 } else {
                     ?>
-                    <a href="<?php echo home_url('/'); ?>" style="text-decoration: none;color: #000;"><span><?php bloginfo('name'); ?></span></a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" style="text-decoration: none;color: #000;"><span><?php echo esc_html(bloginfo('name')); ?></span></a>
                 <?php
                 }
                  ?>
@@ -27,7 +27,7 @@
                     </div>
                 </button>
                 <div class="wp_nav_wrapper">
-                    <img src="http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg" class="sidemenu_logo hidden">
+                    <img src="<?php echo esc_url('http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg') ?>" class="sidemenu_logo hidden">
                     <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
                     <div class="searchbox">
                         <?php get_search_form(); ?>
