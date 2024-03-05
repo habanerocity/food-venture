@@ -3,7 +3,7 @@
     <div class="overlay hidden"></div>
     <div id="primary ">
         <div id="main">
-            <div class="container padding-section blog__wrapper" style="display: flex;">
+            <div class="container padding-section blog__wrapper">
                 <?php
                 while( have_posts()):
                     the_post();
@@ -67,8 +67,8 @@
 
             if ($prev_link || $next_link) : ?>
             <div class="non-print-content">
-                <div class="post-navigation">
-                    <div class="container padding-section" style="display: flex; justify-content: space-between;">
+                <div class="post__navigation">
+                    <div class="container padding-section post__navigation-child">
                         <div class="prev-post">
                             <?php echo wp_kses_post($prev_link); ?>
                         </div>

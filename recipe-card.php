@@ -12,8 +12,6 @@ if( $recipe_ingredients) :
     $ingredients_array = explode("\n", $recipe_ingredients);
 if ( $recipe_steps) :
     $steps_array = explode("\n", $recipe_steps);
-
-
 ?>
 
 <div class="recipe__card">
@@ -23,33 +21,24 @@ if ( $recipe_steps) :
       <div class="recipe__card-row">
         <ul class="recipe__card-attributes">
           <li class="recipe__card-attribute">
-            <i class="fas fa-clock" style="color: #ffffff;">
-            </i>
+            <i class="fas fa-clock"></i>
             <b>&nbsp;Prep:</b>&nbsp;<?php echo esc_html($prep_time); ?>
           </li>
           <li>
-            <i class="fas fa-clock" style="color: #ffffff;">             </i>  
+            <i class="fas fa-clock"></i>  
             <b>&nbsp;Cook:</b>&nbsp;<?php echo esc_html($cooking_time); ?>
           </li>
           <li>
-            <i class="fas fa-utensils"style="color:#ffffff;">  
-            </i>
+            <i class="fas fa-utensils"></i>
             <b>&nbsp;Category:</b>&nbsp;<?php echo esc_html($recipe_category); ?>
           </li>
           <li>
-            <i class="fas fa-globe" style="color: #ffffff;">             </i>
+            <i class="fas fa-globe"></i>
             &nbsp;<?php echo esc_html($recipe_origin); ?>
           </li>
         </ul>
       </div>
       <div class="recipe__card-row">
-        <!-- <ul class="recipe__card-stars">
-          <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-          <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-          <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-          <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-          <li><i class="star fas fa-star" style="color: #FFD43B;"></i></li>
-        </ul> -->
         <?php
         if(function_exists('the_ratings')) { 
             ob_start(); // Start output buffering
@@ -104,7 +93,7 @@ if ( $recipe_steps) :
   <div class="recipe__card-subheading">
     <div class="recipe__card-row">
       <!-- <div class="recipe__card-attributes"> -->
-        <i class="fas fa-user" style="color: #fff;"></i>
+        <i class="fas fa-user"></i>
         <b>&nbsp;Servings:</b>&nbsp;<span class="recipe__card-servings"><?php echo esc_html($recipe_servings); ?></span>
       <!-- </div> -->
     </div>
@@ -116,22 +105,22 @@ if ( $recipe_steps) :
       </button>
       <div class="recipe__card-sm_icon">
         <button id="fb">
-          <i class="sm fab fa-facebook" style="color: #000;">         </i>      
+          <i class="sm fab fa-facebook"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">
         <button id="whatsApp">
-          <i class="sm fab fa-whatsapp" style="color: #000;"></i>      
+          <i class="sm fab fa-whatsapp"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">
         <button id="pinterest">
-          <i class="sm fab fa-pinterest" style="color: #000;"></i>      
+          <i class="sm fab fa-pinterest"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">
         <a href="mailto:?subject=<?php echo urlencode(get_the_title()); ?>&body=Check out this recipe: <?php echo urlencode(get_permalink()); ?>">
-          <i class="sm fas fa-envelope" style="color: #000;"></i>
+          <i class="sm fas fa-envelope black"></i>
         </a>
       </div>
     </div>
