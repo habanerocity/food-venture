@@ -13,11 +13,11 @@
                             <div class="non-print-content">
                                 <div class="meta-info">
                                     <?php custom_breadcrumbs(); ?>
-                                    <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+                                    <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo esc_html(get_the_date()); ?> by <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a></p>
                                     <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
                                         <?php
                                             if(get_post_type() == 'blog_recipes'){
-                                                echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_category', '', ', ' );
+                                                echo '&nbsp;' . wp_kses_post(get_the_term_list( $post->ID, 'recipe_category', '', ', ' ));
                                             } else {
                                                 the_category(' ');
                                             }
@@ -26,7 +26,7 @@
                                     <p class="blog__article-tags"><i class="fas fa-tags"></i>Tags:&nbsp; 
                                     <?php 
                                         if(get_post_type() == 'blog_recipes') {
-                                            echo '&nbsp;' . get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' ); 
+                                            echo '&nbsp;' . wp_kses_post(get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' )); 
                                         } else {
                                             the_tags( '', ', ' ); 
                                         }
@@ -70,10 +70,10 @@
                 <div class="post-navigation">
                     <div class="container padding-section" style="display: flex; justify-content: space-between;">
                         <div class="prev-post">
-                            <?php echo $prev_link; ?>
+                            <?php echo wp_kses_post($prev_link); ?>
                         </div>
                         <div class="next-post">
-                            <?php echo $next_link; ?>
+                            <?php echo wp_kses_post($next_link); ?>
                         </div>
                     </div>
                 </div>
