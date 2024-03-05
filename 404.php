@@ -10,11 +10,14 @@
                     <div class="container">
                         <div class="general-template">
                             <div class="404-wrapper padding-section flex-col">
-                                <img src="<?php echo $lost_image ?>" alt="404 Picture" class="lost-pic" />
+                                <img src="<?php echo esc_url($lost_image); ?>" alt="404 Picture" class="lost-pic" />
                                 <h3 class="lost-description">It looks like you're lost...</h3>
-                                <a href="<?php echo get_permalink(get_page_by_title('Home'));  ?>">
+                                <?php $home_url = get_permalink(get_page_by_title('Home')); ?>
+                                <?php if ($home_url) : ?>
+                                <a href="<?php echo esc_url($home_url);  ?>">
                                     <button class="btn__rectangular">RETURN HOME</button>
                                 </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
