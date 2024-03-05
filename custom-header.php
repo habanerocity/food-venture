@@ -12,8 +12,8 @@
         $custom_bg_image = get_header_image();
     }
 ?>
-<div class="custom_header" style="background-image: url('<?php echo esc_url($custom_bg_image); ?>');background-size: cover; background-position: 50%;background-repeat: no-repeat;height: <?php echo get_custom_header()->height; ?>px;width: 100%;">
-    <div class="container" style="height:100%;position:relative;">
+<div class="custom_header" style="background: url('<?php echo esc_url($custom_bg_image); ?>')50% / cover no-repeat; height: <?php echo get_custom_header()->height; ?>px;width: 100%;">
+    <div class="container custom__header-wrapper">
         <div class="navbar_wrapper secondary_white">
             <?php include 'navbar.php'?>
         </div>
@@ -33,9 +33,9 @@
                     the_archive_title();
                 }
             } elseif(is_search()) {
-                echo 'Search Results for: ' . get_search_query();
+                echo 'Search Results for: ' . esc_html(get_search_query());
             } else {
-                the_title();
+                esc_html(the_title());
             }
             ?>
         </h1>

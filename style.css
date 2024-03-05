@@ -1415,6 +1415,10 @@ button {
   justify-content: center;
   align-items: center; }
 
+.custom__header-wrapper {
+  height: 100%;
+  position: relative; }
+
 .wp_nav_wrapper {
   display: flex; }
   @media (max-width: 767px) {

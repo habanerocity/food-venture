@@ -437,6 +437,11 @@
     @include flex-center;
 }
 
+.custom__header-wrapper{
+    height:100%;
+    position:relative;
+}
+
 .wp_nav_wrapper{
     display: flex;
 
