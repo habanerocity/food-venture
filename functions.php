@@ -55,14 +55,14 @@ function custom_breadcrumbs() {
     echo '<ul id="breadcrumbs">';
     if (!is_home()) {
         echo '<li><a href="';
-        echo get_option('home');
+        echo esc_url(get_option('home'));
         echo '">';
         echo 'Home';
         echo '</a></li><li class="separator"> >> </li>';
         if (is_category() || is_single()) {
             if (is_single()) {
                 echo '<li><a href="';
-                echo get_permalink( get_option( 'page_for_posts' ) );
+                echo esc_url(get_permalink( get_option( 'page_for_posts' ) ));
                 echo '">';
                 echo 'Blog';
                 echo '</a></li><li class="separator"> >> </li>';
@@ -70,7 +70,7 @@ function custom_breadcrumbs() {
             echo '<li>';
             if(get_post_type() == 'blog_recipes') {
                 echo '<a href="'; 
-                echo get_post_type_archive_link('blog_recipes'); 
+                echo esc_url(get_post_type_archive_link('blog_recipes')); 
                 echo '">Recipes</a></li><li class="separator"> >> </li>'; 
                 $terms = get_the_terms( $post->ID, 'recipe_category' );
                 if ($terms && ! is_wp_error($terms)) {
@@ -97,12 +97,12 @@ function custom_breadcrumbs() {
                 $anc = get_post_ancestors( $post->ID );
                 $title = get_the_title();
                 foreach ( $anc as $ancestor ) {
-                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator"> >> </li>';
+                    $output = '<li><a href="'.esc_url(get_permalink($ancestor)).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator"> >> </li>';
                 }
                 echo $output;
                 echo '<strong title="'.$title.'"> '.$title.'</strong>';
             } else {
-                echo '<li><strong> '.get_the_title().'</strong></li>';
+                echo '<li><strong> '.esc_html(get_the_title()).'</strong></li>';
             }
         }
     }
