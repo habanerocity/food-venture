@@ -14,7 +14,7 @@ if( $recipe_useful_notes) :
                 <ul>
                     <?php foreach($useful_notes_array as $note) : ?>
                         <li>
-                            <?php echo $note; ?>
+                            <?php echo esc_html($note); ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
