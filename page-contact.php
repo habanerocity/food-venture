@@ -10,7 +10,7 @@
                     <div class="container">
                         <div class="contact__form-container contact__row padding-section">
                             <div class="contact__wrapper ">
-                                <img class="contact__pic" src="<?php echo $contact_image  ?>" />
+                                <img class="contact__pic" src="<?php echo esc_url($contact_image)  ?>" />
                             </div>
                             <div class="contact__form-wrapper">
                                 <?php echo do_shortcode('[contact-form-7 id="57e1d9f" title="Contact form"]'); ?>
