@@ -2111,8 +2111,7 @@ article.post h5 {
   margin-bottom: 0; }
 
 .searchform input[type="text"] {
-  padding: 7px 0px;
-  border: 1px solid #C6C6C6; }
+  padding: 7px 0px; }
 
 .searchform input[type="submit"] {
   padding: 11px 10px;
