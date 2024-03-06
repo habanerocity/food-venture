@@ -15,7 +15,7 @@
 <div class="custom__header" style="background: url('<?php echo esc_url($custom_bg_image); ?>')50% / cover no-repeat; height: <?php echo get_custom_header()->height; ?>px;">
     <div class="container custom__header-wrapper">
         <div class="navbar_wrapper secondary_white">
-            <?php include 'navbar.php'?>
+            <?php get_template_part('parts/content', 'navbar'); ?>
         </div>
         <div class="header__banner">
         <h1 class="secondary_white banner-text">

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php include 'custom-header.php'?>
+<?php get_template_part('parts/content', 'custom-header') ?>
     <div class="overlay hidden"></div>
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
