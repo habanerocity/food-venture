@@ -6,7 +6,7 @@
     <div id="content" class="site-content">
         <div id="primary" class="content-area">
             <div id="main" class="site-main container">
-                <section class="hero-section   padding-section">
+                <section class="hero__section   padding-section">
                     <?php get_template_part( 'parts/content', 'hero'); ?>
                 </section>
                 <section class="latest__articles">

@@ -582,7 +582,8 @@ button {
 
 .hero__post {
   display: flex;
-  height: 66rem; }
+  height: 66rem;
+  width: auto; }
   .hero__post-image {
     display: flex;
     justify-content: flex-end;
@@ -1316,7 +1317,7 @@ hr.section__title-divider {
 
 section {
   padding-left: 0;
-  width: 100%; }
+  width: auto; }
 
 /* Top Bar Section */
 .navbar {

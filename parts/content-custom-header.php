@@ -17,28 +17,28 @@
         <div class="navbar_wrapper secondary_white">
             <?php get_template_part('parts/content', 'navbar'); ?>
         </div>
-        <div class="header__banner">
-        <h1 class="secondary_white banner-text">
-            <?php 
-            if(is_404()){
-                echo '404 - Page Not Found!';
-            } elseif(is_category()) {
-                single_cat_title();
-            } elseif(is_home() || is_front_page()) {
-                echo 'All Categories';
-            } elseif(is_archive()) {
-                if(is_month()) {
-                    echo get_the_date('F Y');
+        <section class="header__banner">
+            <h1 class="secondary_white banner-text">
+                <?php 
+                if(is_404()){
+                    echo '404 - Page Not Found!';
+                } elseif(is_category()) {
+                    single_cat_title();
+                } elseif(is_home() || is_front_page()) {
+                    echo 'All Categories';
+                } elseif(is_archive()) {
+                    if(is_month()) {
+                        echo get_the_date('F Y');
+                    } else {
+                        the_archive_title();
+                    }
+                } elseif(is_search()) {
+                    echo 'Search Results for: ' . esc_html(get_search_query());
                 } else {
-                    the_archive_title();
+                    esc_html(the_title());
                 }
-            } elseif(is_search()) {
-                echo 'Search Results for: ' . esc_html(get_search_query());
-            } else {
-                esc_html(the_title());
-            }
-            ?>
-        </h1>
-        </div>
+                ?>
+            </h1>
+        </section>
     </div>    
 </div>
