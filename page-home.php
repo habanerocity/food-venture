@@ -7,41 +7,7 @@
             <div id="primary" class="content-area">
                 <div id="main" class="site-main container">
                     <section class="hero-section   padding-section">
-                        <?php 
-                        $args = array( 'numberposts' => '1' );
-                        $recent_posts = wp_get_recent_posts( $args );
-                        foreach( $recent_posts as $recent ){
-                            $post_id = $recent["ID"];
-                            $hero_image = get_field('hero_image', $post_id);
-                            if($hero_image){ // Check if the 'hero_image' field exists
-                            ?>
-                                <div class="hero__post">
-                                    <div class="hero__post-text_content">
-                                        <a class="hero__text-link" href="<?php echo esc_url(get_permalink($post_id)); ?>">
-                                            <h1 class="hero__title">
-                                                <?php echo esc_html(get_the_title($post_id)); ?>
-                                            </h1>
-                                        </a>
-                                        <p class="hero__summary">
-                                            <?php echo wp_kses_post(get_the_excerpt($post_id)); ?>
-                                        </p>
-                                        <div class="hero-btn_wrapper">
-                                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>"><button class="btn__round-transparent">Read More</button></a>
-                                        </div>
-                                    </div>
-                                    <div class="hero__post-image_wrapper">
-                                        <div class="hero__post-image_container">
-                                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>">
-                                                <img src="<?php echo esc_url($hero_image['url']); ?>" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php
-                                }
-                            }
-                        wp_reset_query();
-                        ?>
+                        <?php get_template_part( 'parts/hero'); ?>
                     </section>
                     <section class="latest__articles">
                         <div class="latest__articles-wrapper">
@@ -60,27 +26,7 @@
 
                                     if( $query->have_posts() ):
                                         while( $query->have_posts()) : $query->the_post();
-                                        ?>
-                                            <article class="article__card-home">
-                                                <div class="article__card-top_wrapper">
-                                                    <div class="featured-thumbnail">
-                                                        <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">
-                                                            <?php the_post_thumbnail('large', ['class' => esc_attr('article__card-img')]); ?>
-                                                        </a>
-                                                    </div>
-                                                    <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">
-                                                        <h4 class="article__card-home_heading">
-                                                            <?php echo esc_html(get_the_title()); ?>
-                                                        </h4>
-                                                    </a>
-                                                    <?php echo esc_html(get_the_excerpt()); ?>
-                                                </div>
-                                                <div class="article__card-home-footer">
-                                                    <span class="article__card-home-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date()); ?></span>
-                                                    <span class="article__card-home-footer_link"><a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">Read More</a></span>
-                                                </div>
-                                            </article>
-                                        <?php
+                                            get_template_part( 'parts/content-home');
                                         endwhile;
                                         wp_reset_postdata();
                                     else: ?>
@@ -105,33 +51,13 @@
                                 'posts_per_page' => 4,
                             );
                             $query = new WP_Query($args);
-
                             if($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
-                                // Get the image URL
-                                $image_url = get_field('recipe_thumbnail-home_page');
-
-                                // Render the image
-                                if (!empty($image_url)) {
-                                    $heading = get_post_meta(get_the_ID(), 'recipe_thumbnail-heading', true);
-                                    $subheading = get_post_meta(get_the_ID(), 'recipe_thumbnail-subheading', true);
-
-                                    echo '<div class="latest__recipes-thumbnail_container">';
-                                    echo '<a href="' . esc_url(get_permalink()) . '">';
-                                    echo '<img class="latest__recipes-thumbnail" src="' . esc_url($image_url) . '">';
-                                    echo '<div class="latest__recipes-thumbnail_overlay">';
-                                    echo '<div class="latest__recipes-thumbnail_headings">';
-                                    echo '<h4 class="latest__recipes-thumbnail_title">' . esc_html($heading) . '</h4>';
-                                    echo '<h5 class="latest__recipes-thumbnail_subtitle">' . esc_html($subheading) . '</h5>';
-                                    echo '</div>';
-                                    echo '</div>';
-                                    echo '</a>';
-                                    echo '</div>';
-                                }
+                            get_template_part( 'parts/latest-recipes');
 
                             endwhile;
                             endif;
-
+                            
                             // Reset post data
                             wp_reset_postdata();
                             ?>
