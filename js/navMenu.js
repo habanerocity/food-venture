@@ -29,4 +29,3 @@ window.addEventListener('resize', () => {
         // Keep the current display state of searchBox when window width is 767px or less
     }
 });
-

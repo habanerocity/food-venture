@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-//Selecting DOM Nodes and adding event listeners, plus callbacks
+
 const addButtonListener = (buttonId, callback) => {
     const button = document.getElementById(buttonId);
     if(button){

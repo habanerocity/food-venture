@@ -38,8 +38,8 @@
             <?php get_template_part('parts/content', 'pagination') ?>
             <?php get_template_part('parts/content', 'comments-section') ?>
             <?php
-                endwhile;
-                ?>
+            endwhile;
+            ?>
         </div>
     </div>
     <div class="non-print-content">
