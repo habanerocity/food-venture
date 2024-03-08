@@ -1,4 +1,4 @@
-<div class="meta-info">
+<article class="meta-info">
     <?php custom_breadcrumbs(); ?>
     <p class="blog__article-date"><i class="fas fa-calendar-alt"></i>&nbsp; <?php echo esc_html(get_the_date()); ?> by <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a></p>
     <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
@@ -19,4 +19,4 @@
         }
     ?>
     </p>
-</div>
+</article>

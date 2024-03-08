@@ -949,6 +949,7 @@ button {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 5rem;
+    line-height: 5rem;
     margin: 0 0 16px 0; }
   .recipe__card-pill {
     padding: 4px 19px;
@@ -2043,7 +2044,8 @@ section.latest__articles {
 
 header .meta-info {
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid #888888; }
+  border-bottom: 1px solid #888888;
+  width: 100%; }
 
 /************** INNER PAGES *****************/
 /* Blog, Archive, Search */
@@ -2059,13 +2061,6 @@ header .meta-info {
 .blog .blog-items h2,
 .archive .blog-items h2 {
   margin-top: 0; }
-
-.blog aside,
-.archive aside {
-  padding: 25px;
-  background: #888888;
-  height: 100%;
-  width: 30%; }
 
 @media screen and (max-width: 991px) {
   .blog aside,

@@ -17,7 +17,7 @@ if ( $recipe_steps) :
 <div class="recipe__card">
     <div class="recipe__card-header">
     <div class="recipe__card-pic" style="background-image: url('<?php echo esc_url(get_field('recipe_card_picture'));  ?>');"></div>
-      <h1 class="recipe__card-name"><?php esc_html(the_title()); ?></h1>
+      <h2 class="recipe__card-name"><?php esc_html(the_title()); ?></h2>
       <div class="recipe__card-row">
         <ul class="recipe__card-attributes">
           <li class="recipe__card-attribute">

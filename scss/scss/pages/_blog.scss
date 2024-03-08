@@ -192,6 +192,7 @@ section.latest__articles{
 header .meta-info{
     padding-bottom: 2.5rem;
     border-bottom: 1px solid $accent-color;
+    width: 100%;
 }
 
 /************** INNER PAGES *****************/
@@ -211,13 +212,13 @@ header .meta-info{
     margin-top: 0;
 }
 
-.blog aside,
-.archive aside{
-    padding: 25px;
-    background: $accent-color;
-    height: 100%;
-    width: 30%;
-}
+// .blog aside,
+// .archive aside{
+//     padding: 25px;
+//     background: $accent-color;
+//     height: 100%;
+//     width: 30%;
+// }
 
 @media screen and (max-width: 991px ) {
     .blog aside,
