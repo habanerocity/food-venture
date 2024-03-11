@@ -180,7 +180,7 @@ section.latest__articles{
     font-size: 1.4rem;
 
     @media(max-width: 575px){
-        margin-top: 3.2rem;
+        margin-top: $spacing-small;
     }
 
     & > li > a{

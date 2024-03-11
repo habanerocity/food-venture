@@ -59,6 +59,10 @@ img {
     @media (max-width: 767px){
         padding: ($spacing-unit * 8) 0;
     }
+
+    @media (max-width: 575px){
+        padding: ($spacing-unit * 8) ($spacing-unit * 4);
+    }
 }
 
 .border-top{
