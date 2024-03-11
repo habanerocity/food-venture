@@ -2087,11 +2087,11 @@ header .meta-info {
 @media screen and (max-width: 550px) {
   .wp-post-image {
     width: 100%; } }
-.post {
+.post, .blog_recipes {
   display: inline-block;
   width: 66.6667%; }
   @media (max-width: 767px) {
-    .post {
+    .post, .blog_recipes {
       width: 100%; } }
 
 article.post h2 {
