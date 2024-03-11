@@ -29,9 +29,9 @@
                 <div class="wp_nav_wrapper">
                     <img src="<?php echo esc_url('http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg') ?>" class="sidemenu_logo hidden">
                     <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
-                    <div class="searchbox">
+                    <aside class="searchbox">
                         <?php get_search_form(); ?>
-                    </div>
+                    </aside>
                 </div>
             </nav>
         </div>
