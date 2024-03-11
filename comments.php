@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<section id="comments" class="comments-area">
 
 	<?php
 			comment_form(
@@ -58,7 +58,7 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ul class="comment__list">
+		<article class="comment__list">
 			<?php
 				wp_list_comments(
 					array(
@@ -69,7 +69,7 @@ if ( post_password_required() ) {
 					)
 				);
 			?>
-		</ul><!-- .comment-list -->
+		</article><!-- .comment-list -->
 
 		<?php the_comments_navigation(); ?>
 
@@ -82,4 +82,4 @@ if ( post_password_required() ) {
 	<p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
 	<?php endif; ?>
 
-</div><!-- .comments-area -->
+</section><!-- .comments-area -->
