@@ -1,8 +1,12 @@
+<?php
+$image_id = get_post_thumbnail_id();
+$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
+?>
 <article class="article__card-index">
     <div class="article__card-top_wrapper">
         <figure class="featured-thumbnail">
             <a href="<?php echo esc_url(get_the_permalink()); ?>">
-                <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" class="article__card-img" alt="">
+                <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" class="article__card-img" alt="<?php echo esc_attr($image_alt); ?>">
             </a>
         </figure>
         <a href="<?php echo esc_url(get_the_permalink()); ?>">
