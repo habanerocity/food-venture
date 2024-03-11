@@ -20,7 +20,7 @@
             </div>
             <nav class="main-menu" <?php if (is_front_page()) echo 'id="home-main-menu"'; ?>>
                 <button class="check-button">
-                    <div <?php if (is_front_page()) echo 'id="home-menu-icon"';else echo 'class="menu-icon"' ?>>
+                    <div <?php if (is_front_page()) echo 'id="home-menu-hamburger"';else echo 'class="hamburger"' ?>>
                         <div class="bar1" id=""></div>
                         <div class="bar2" id=""></div>
                         <div class="bar3" id=""></div>

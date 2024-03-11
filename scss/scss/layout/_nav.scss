@@ -1,4 +1,3 @@
-/* Top Bar Section */
 .navbar{ 
     background: transparent; 
     color: #000000; 
@@ -404,15 +403,15 @@
     display: block;
 }
 
-.menu-icon,
+.hamburger,
 .check-button {
 	cursor: pointer;
 	display: none;
 }
 
-.menu-icon .bar1, 
-.menu-icon .bar2, 
-.menu-icon .bar3 {
+.hamburger .bar1, 
+.hamburger .bar2, 
+.hamburger .bar3 {
     width: 28px;
     height: 3px;
     background-color: $primary-white;
@@ -421,9 +420,9 @@
     transition: 0.4s;
 }
 
-#home-menu-icon .bar1, 
-#home-menu-icon .bar2, 
-#home-menu-icon .bar3 {
+#home-menu-hamburger .bar1, 
+#home-menu-hamburger .bar2, 
+#home-menu-hamburger .bar3 {
     width: 28px;
     height: 3px;
     background-color: $primary-black;
@@ -445,7 +444,6 @@
         position:relative;
     }
 }
-
 
 .wp_nav_wrapper{
     display: flex;
@@ -482,7 +480,7 @@
         z-index: 10;
     }
 
-    .menu-icon,
+    .hamburger,
     .check-button {
 		display: block;
 	}

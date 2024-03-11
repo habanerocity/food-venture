@@ -3,8 +3,8 @@ submenu = document.querySelector('.sub-menu'), //ul li ul
 sideMenuLogo = document.querySelector('.sidemenu_logo'), //sidemenu logo
 buttonClick = document.querySelector('.check-button'), //button
 searchBox = document.querySelector('.searchbox'), //search field
-hamburgerElements = document.querySelector('.menu-icon, #home-menu-icon'), //burger icon
-overlay = document.querySelector('.overlay'); //burger icon
+hamburgerElements = document.querySelector('.hamburger, #home-menu-hamburger'), //burger icon
+overlay = document.querySelector('.overlay'); 
 
 buttonClick.addEventListener( 'click', () => {
     sideMenu.classList.toggle('show-navMenu');
@@ -19,7 +19,6 @@ buttonClick.addEventListener( 'click', () => {
     overlay.classList.toggle('hidden');
     sideMenuLogo.classList.toggle('hidden');
     hamburgerElements.classList.toggle('animate-button');
-
 })
 
 window.addEventListener('resize', () => {
