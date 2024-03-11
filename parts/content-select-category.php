@@ -1,4 +1,4 @@
-<div id="blog__categories" >
+<nav id="blog__categories" >
     <?php 
         // Get current category
         $current_category = get_query_var('category_name');
@@ -39,4 +39,4 @@
             return $title;
         });
     ?>
-</div>
+</nav>

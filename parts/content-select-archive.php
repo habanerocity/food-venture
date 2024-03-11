@@ -1,4 +1,4 @@
-<div id="blog__archive" >
+<nav id="blog__archive" >
     <?php 
         // Dropdown of categories
         $archives = wp_get_archives( array(
@@ -15,4 +15,4 @@
             echo '</select>';
         }
     ?>
-</div>
+</nav>

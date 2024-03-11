@@ -4,11 +4,11 @@ if( $recipe_useful_notes) :
     $useful_notes_array = explode("\n", $recipe_useful_notes);
 ?>
 
-<div class="useful__notes-box">
+<section class="useful__notes-box">
     <div class="userful__notes-content_wrapper">
-        <div class="useful__notes-heading_box">
+        <header class="useful__notes-heading_box">
             <h4 class="useful__notes-heading_box_title">useful notes</h4>
-        </div>
+        </header>
         <div class="useful__notes-notes">
             <?php if (!empty($useful_notes_array)) : ?>
                 <ul>
@@ -23,6 +23,6 @@ if( $recipe_useful_notes) :
             <?php endif; ?>
         </div>
     </div>
-</div>
+</section>
 
 <?php endif; ?>
