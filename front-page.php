@@ -3,19 +3,19 @@
 <?php get_template_part('parts/content', 'navbar') ?>
 </div>
 <div class="overlay hidden"></div>
-    <div id="content" class="site-content">
+    <main id="content" class="site-content">
         <div id="primary" class="content-area">
             <div id="main" class="site-main container">
                 <section class="hero__section   padding-section">
                     <?php get_template_part( 'parts/content', 'hero'); ?>
                 </section>
-                <section class="latest__articles">
+                <article class="latest__articles">
                     <div class="latest__articles-wrapper">
-                        <div class="latest__articles-heading">
+                        <header class="latest__articles-heading">
                             <h3 class="section__title">Latest Articles</h3>
                             <hr class="section__title-divider" />
                             <a class="blog__link" href="<?php echo esc_url(get_bloginfo('url') . '/blog');  ?>">See all</a>
-                        </div>
+                        </header>
                         <div class="flex_container-row">
                             <?php 
                                 $args = array( 
@@ -34,16 +34,16 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                </section>
+                </article>
                 <section class="newsletter__signup padding-section">
                     <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                 </section>
-                <section class="latest__recipes">
-                    <div class="latest__articles-heading">
+                <article class="latest__recipes">
+                    <header class="latest__articles-heading">
                         <h3 class="section__title">Latest Recipes</h3>
                         <hr class="section__title-divider" />
                         <a class="blog__link" href="<?php echo esc_url(get_bloginfo('url') . '/blog_recipes');  ?>">See all</a>
-                    </div>
+                    </header>
                     <div class="flex_container-row">
                         <?php 
                         $args = array(
@@ -62,8 +62,8 @@
                         wp_reset_postdata();
                         ?>
                     </div>
-                </section>
+                </article>
             </div>
         </div>
-    </div>
+    </main>
 <?php get_footer(); ?>
