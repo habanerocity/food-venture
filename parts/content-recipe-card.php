@@ -14,8 +14,8 @@ if ( $recipe_steps) :
     $steps_array = explode("\n", $recipe_steps);
 ?>
 
-<div class="recipe__card">
-    <div class="recipe__card-header">
+<article class="recipe__card">
+    <header class="recipe__card-header">
     <div class="recipe__card-pic" style="background-image: url('<?php echo esc_url(get_field('recipe_card_picture'));  ?>');"></div>
       <h2 class="recipe__card-name"><?php esc_html(the_title()); ?></h2>
       <div class="recipe__card-row">
@@ -89,16 +89,14 @@ if ( $recipe_steps) :
         5.0 from 10 votes
         </span>
       </div> -->
-    </div>
-  <div class="recipe__card-subheading">
+      </header>
+  <section class="recipe__card-subheading">
     <div class="recipe__card-row">
-      <!-- <div class="recipe__card-attributes"> -->
-        <i class="fas fa-user"></i>
-        <b>&nbsp;Servings:</b>&nbsp;<span class="recipe__card-servings"><?php echo esc_html($recipe_servings); ?></span>
-      <!-- </div> -->
+      <i class="fas fa-user"></i>
+      <b>&nbsp;Servings:</b>&nbsp;<span class="recipe__card-servings"><?php echo esc_html($recipe_servings); ?></span>
     </div>
-  </div>
-  <div class="recipe__card-body">
+  </section>
+  <main class="recipe__card-body">
     <div class="recipe__card-row">
       <button id="printBtn" class="recipe__card-pill">
         Print
@@ -129,7 +127,7 @@ if ( $recipe_steps) :
       <?php echo esc_html($recipe_intro); ?>
       </div>
     </div>
-    <div class="recipe__card-row">
+    <section class="recipe__card-row">
       <div class="recipe__card-ingredient_divider">
         <h3 class="recipe__card-ingredients_heading">Ingredients</h3>
         <div class="recipe__card-ingredients_multipliers">          <button id="resetBtn" class="recipe__card-ingredient_multiplier">            1x
@@ -140,23 +138,23 @@ if ( $recipe_steps) :
          </button>
         </div>
       </div>
-    </div>
-      <div class="recipe__card-row">
-        <ul class="recipe__card-ingredients">
-          <?php foreach($ingredients_array as $ingredient): ?>
-            <?php 
-            $ingredient = preg_replace('/(\d+\/\d+|\d+)/', '<span class="ingredientQuantity">$1</span>', trim($ingredient)); 
-            $ingredient = preg_replace('/(cup|lb|tablespoon|teaspoon)\b/', '<span class="measurement">$1</span>', $ingredient);
-            ?>
-            <li><?php echo wp_kses($ingredient, array('span' => array('class' => array()))); ?></li>
-          <?php endforeach; ?>
-        </ul>
-    </div>
-    <div class="recipe__card-row">
-        <div class="recipe__card-ingredient_divider">
-            <h3>Instructions</h3>
-        </div>
-    </div>
+    </section>
+    <section class="recipe__card-row">
+      <ul class="recipe__card-ingredients">
+        <?php foreach($ingredients_array as $ingredient): ?>
+          <?php 
+          $ingredient = preg_replace('/(\d+\/\d+|\d+)/', '<span class="ingredientQuantity">$1</span>', trim($ingredient)); 
+          $ingredient = preg_replace('/(cup|lb|tablespoon|teaspoon)\b/', '<span class="measurement">$1</span>', $ingredient);
+          ?>
+          <li><?php echo wp_kses($ingredient, array('span' => array('class' => array()))); ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </section>
+    <section class="recipe__card-row">
+      <div class="recipe__card-ingredient_divider">
+          <h3>Instructions</h3>
+      </div>
+    </section>
     <div class="recipe__card-row">
         <ol class="recipe__card-steps">
             <?php foreach($steps_array as $step): ?>
@@ -165,5 +163,5 @@ if ( $recipe_steps) :
             <?php endif; ?>
         </ol>
         <?php endif; ?>
-    </div>
-  </div>
+  </main>
+</article>
