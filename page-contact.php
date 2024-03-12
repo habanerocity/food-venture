@@ -6,11 +6,13 @@
         <div id="main" class="site-main">
             <?php
             $contact_image = wp_get_attachment_url(get_theme_mod('set_contact_image'));
+            $contact_image_id = attachment_url_to_postid($contact_image);
+            $contact_image_alt = get_post_meta($contact_image_id, '_wp_attachment_image_alt', true);
             ?>
             <div class="container">
                 <section class="contact__form-container contact__row padding-section">
                     <div class="contact__wrapper ">
-                        <img class="contact__pic" src="<?php echo esc_url($contact_image)  ?>" />
+                        <img class="contact__pic" alt="<?php echo esc_attr($contact_image_alt) ?>" src="<?php echo esc_url($contact_image)  ?>" />
                     </div>
                     <div class="contact__form-wrapper">
                         <?php echo do_shortcode('[contact-form-7 id="57e1d9f" title="Contact form"]'); ?>

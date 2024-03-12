@@ -6,6 +6,8 @@
         <div id="main" class="site-main">
             <?php
             $about_image = wp_get_attachment_url(get_theme_mod('set_about_image'));
+            $about_image_id = attachment_url_to_postid($about_image);
+            $about_image_alt = get_post_meta($about_image_id, '_wp_attachment_image_alt', true);
             ?>
             <article class="general-template">
                 <div class="container">
@@ -17,7 +19,7 @@
                     <div class="container">
                         <section class="our_mission-section padding-section">
                             <div class="about_us_pic-wrapper">
-                                <img src="<?php echo esc_url($about_image) ?>" alt="Our Picture" class="about-pic" />
+                                <img src="<?php echo esc_url($about_image) ?>" alt="<?php echo esc_attr($about_image_alt); ?>" class="about-pic" />
                             </div>
                             <div class="our_mission-wrapper">
                                 <h2 class="mb-0 mt-0"><?php echo esc_html(get_theme_mod( 'set_our_mission_title', 'Our Mission' )); ?></h2>
