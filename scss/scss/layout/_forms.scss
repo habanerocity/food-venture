@@ -1,3 +1,15 @@
+.newsletter__signup{
+    padding: ($spacing-unit * 20) 0;
+
+    @media (max-width: 1200px){
+        padding: ($spacing-unit * 15) 0;
+    }
+
+    @media (max-width: 767px){
+        padding: ($spacing-unit * 8) 0;
+    }
+}
+
 .newsletter-signup-form{
     background: url('http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_6966-2.jpg') no-repeat center center / cover;
     padding:3rem;

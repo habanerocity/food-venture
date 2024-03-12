@@ -19,7 +19,7 @@
                  ?>
             </div>
             <nav class="main-menu" <?php if (is_front_page()) echo 'id="home-main-menu"'; ?>>
-                <button class="check-button">
+                <button class="check-button" aria-label="Navigation Menu">
                     <div <?php if (is_front_page()) echo 'id="home-menu-hamburger"';else echo 'class="hamburger"' ?>>
                         <div class="bar1" id=""></div>
                         <div class="bar2" id=""></div>
@@ -27,7 +27,7 @@
                     </div>
                 </button>
                 <div class="wp_nav_wrapper">
-                    <img src="<?php echo esc_url('http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg') ?>" class="sidemenu_logo hidden">
+                    <img src="<?php echo esc_url('http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg') ?>" class="sidemenu_logo hidden" alt="Taste Tripping Logo">
                     <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
                     <aside class="searchbox">
                         <?php get_search_form(); ?>

@@ -18,6 +18,6 @@ $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
     </div>
     <div class="article__card-index-footer">
         <time class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date()); ?></time>
-        <span class="article__card-index-footer_link"><a href="<?php echo esc_url(the_permalink()); ?>">Read More</a></span>
+        <span class="article__card-index-footer_link"><a href="<?php echo esc_url(the_permalink()); ?>">Read Article</a></span>
     </div>
 </article>

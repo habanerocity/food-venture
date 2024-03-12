@@ -21,17 +21,17 @@
                     </p>
                     <div class="hero-btn_wrapper">
                         <a href="<?php echo esc_url(get_permalink($post_id)); ?>">
-                            <button class="btn__round-transparent">Read More</button>
+                            <button class="btn__round-transparent">Read Article</button>
                         </a>
                     </div>
                 </section>
-                <figure class="hero__post-image_wrapper">
+                <div class="hero__post-image_wrapper">
                     <div class="hero__post-image_container">
                         <a href="<?php echo esc_url(get_permalink($post_id)); ?>">
                             <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image_alt); ?>" />
                         </a>
                     </div>
-                </figure>
+                </div>
             </article>
             <?php
             }

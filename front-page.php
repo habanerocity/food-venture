@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </article>
-                <section class="newsletter__signup padding-section">
+                <section class="newsletter__signup">
                     <?php echo do_shortcode('[contact-form-7 id="e8ce9fa" title="Newsletter Signup"]'); ?>
                 </section>
                 <article class="latest__recipes">

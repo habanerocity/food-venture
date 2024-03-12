@@ -14,6 +14,6 @@
     </div>
     <div class="article__card-home-footer">
         <time class="article__card-home-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date()); ?></time>
-        <span class="article__card-home-footer_link"><a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">Read More</a></span>
+        <span class="article__card-home-footer_link"><a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>">Read Article</a></span>
     </div>
 </article>

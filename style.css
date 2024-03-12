@@ -596,7 +596,8 @@ button {
     .hero__post-image_container > a {
       height: 100%; }
     .hero__post-image_container > a > img {
-      height: 100%; }
+      height: 100%;
+      width: 100%; }
       @media (max-width: 767px) {
         .hero__post-image_container > a > img {
           width: 32.5rem; } }
@@ -1147,6 +1148,15 @@ button {
     #footer-logo {
       width: 10rem; } }
 
+.newsletter__signup {
+  padding: 80px 0; }
+  @media (max-width: 1200px) {
+    .newsletter__signup {
+      padding: 60px 0; } }
+  @media (max-width: 767px) {
+    .newsletter__signup {
+      padding: 32px 0; } }
+
 .newsletter-signup-form {
   background: url("http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_6966-2.jpg") no-repeat center center/cover;
   padding: 3rem;
@@ -1289,7 +1299,7 @@ img {
       font-size: 2rem; } }
 
 hr.section__title-divider {
-  width: 72%; }
+  width: 74%; }
   @media (max-width: 1200px) {
     hr.section__title-divider {
       width: 63%; } }
@@ -1428,7 +1438,7 @@ section {
         border: 1px solid #252525;
         width: 90%; }
         #search__field-home::placeholder {
-          color: #888888; } }
+          color: #595959; } }
     @media (max-width: 450px) {
       #search__field-home {
         width: 78%; } }
@@ -1440,7 +1450,7 @@ section {
       border: 1px solid #252525;
       width: 90%; }
       #search__field::placeholder {
-        color: #888888; } }
+        color: #595959; } }
   @media (max-width: 450px) {
     #search__field {
       width: 78%; } }
@@ -1518,7 +1528,7 @@ section {
   @media (max-width: 767px) {
     .main-menu ul li.current_page_item > a::before {
       height: 0;
-      background-color: #888888; }
+      background-color: #595959; }
     .main-menu ul li {
       display: block;
       margin: 15px 0;
@@ -1584,7 +1594,7 @@ section {
     width: 100%;
     height: 1px;
     bottom: 0;
-    background-color: #888888;
+    background-color: #595959;
     left: 0;
     margin-top: 12px;
     transform: translateY(4px); }
@@ -1709,7 +1719,7 @@ section {
   .nav-links .page-numbers {
     padding: 10px 15px;
     display: inline-block;
-    background: #888888; }
+    background: #595959; }
   .nav-links .current {
     background-color: #0A0A0A;
     color: #ffffff; }
@@ -1748,7 +1758,7 @@ section {
 
 #featured_post_thumbnails-sidebar {
   padding: 0 2rem 2rem 2rem;
-  background-color: #888888;
+  background-color: #595959;
   display: flex;
   flex-direction: column;
   border-radius: 0 0 3px 3px; }
@@ -1807,7 +1817,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: #888888;
+  background-color: #595959;
   width: 100%;
   margin-left: 0;
   padding: 2rem;
@@ -1823,7 +1833,8 @@ section {
     box-sizing: border-box; }
 
 .author-bio {
-  background-color: #888888;
+  background-color: #595959;
+  color: #f5f5f5;
   padding: 2rem;
   border-radius: 0 0 3px 3px; }
 
@@ -1919,7 +1930,7 @@ section {
   align-items: center; }
   .blog__article-tags a {
     padding: 3px 1rem;
-    background-color: #888888;
+    background-color: #595959;
     border-radius: 1.5rem;
     text-decoration: none;
     color: #ffffff !important;
@@ -2046,7 +2057,7 @@ section.latest__articles {
 
 header .meta-info {
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid #888888;
+  border-bottom: 1px solid #595959;
   width: 100%; }
 
 /************** INNER PAGES *****************/

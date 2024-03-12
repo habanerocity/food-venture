@@ -12,6 +12,21 @@ function wpfoodventure_load_scripts(){
 
 add_action( 'wp_enqueue_scripts', 'wpfoodventure_load_scripts' );
 
+//Add meta tag to head
+function add_meta_description() {
+    if (is_single()) {
+        $description = get_the_excerpt();
+    } elseif (is_page()) {
+        $description = get_post_field('post_content', get_queried_object_id());
+        $description = wp_trim_words($description, 18);
+    } else {
+        $description = get_bloginfo('description');
+    }
+    echo '<meta name="description" content="' . esc_attr($description) . '">';
+}
+
+add_action('wp_head', 'add_meta_description');
+
 function wpfoodventure_config(){
     register_nav_menus(
         array(
