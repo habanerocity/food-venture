@@ -1158,7 +1158,7 @@ button {
       padding: 32px 0; } }
 
 .newsletter-signup-form {
-  background: url("http://wp-food-venture.local/wp-content/uploads/2024/01/IMG_6966-2.jpg") no-repeat center center/cover;
+  background: url("http://www.tastetripping.net/wp-content/uploads/2024/01/IMG_6966-2.jpg") no-repeat center center/cover;
   padding: 3rem;
   color: #f5f5f5;
   height: 32rem;
@@ -1946,7 +1946,8 @@ section {
   text-decoration: none;
   font-weight: bold;
   font-size: 2rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  color: #6d6d6d; }
   @media (max-width: 1200px) {
     .blog__link {
       font-size: 1.8rem; } }

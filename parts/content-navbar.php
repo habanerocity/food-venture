@@ -27,7 +27,7 @@
                     </div>
                 </button>
                 <div class="wp_nav_wrapper">
-                    <img src="<?php echo esc_url('http://wp-food-venture.local/wp-content/uploads/2024/01/tt.svg') ?>" class="sidemenu_logo hidden" alt="Taste Tripping Logo">
+                    <img src="<?php echo esc_url('http://www.tastetripping.net/wp-content/uploads/2024/03/image-removebg-preview-2.png') ?>" class="sidemenu_logo hidden" alt="Taste Tripping Logo">
                     <?php wp_nav_menu( array( 'theme_location' => 'wp_foodventure_main_menu' ) ); ?>
                     <aside class="searchbox">
                         <?php get_search_form(); ?>
