@@ -98,22 +98,22 @@ if ( $recipe_steps) :
   </section>
   <main class="recipe__card-body">
     <div class="recipe__card-row">
-      <button id="printBtn" class="recipe__card-pill">
+      <button id="printBtn" class="recipe__card-pill black">
         Print
       </button>
       <div class="recipe__card-sm_icon">
         <button id="fb">
-          <i class="sm fab fa-facebook"></i>      
+          <i class="sm fab fa-facebook black"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">
         <button id="whatsApp">
-          <i class="sm fab fa-whatsapp"></i>      
+          <i class="sm fab fa-whatsapp black"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">
         <button id="pinterest">
-          <i class="sm fab fa-pinterest"></i>      
+          <i class="sm fab fa-pinterest black"></i>      
         </button>
       </div>
       <div class="recipe__card-sm_icon">

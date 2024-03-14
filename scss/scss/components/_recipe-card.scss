@@ -76,6 +76,7 @@
     &-ingredient_multiplier{
       padding: 6px;
       background-color: #999;
+      color: $primary-black;
       margin-left: $spacing-small;
       border: none;
       font-size: 2rem;
@@ -83,7 +84,7 @@
 
     &-ingredient_multiplier:hover, &-ingredient_multiplier.clicked {
       cursor: pointer;
-      background-color: #454545;
+      background-color: $primary-black;
       color: $primary-white;
   }
     

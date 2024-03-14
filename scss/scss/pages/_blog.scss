@@ -14,6 +14,16 @@
         font-size: 1.2rem;
         margin: 0 1px;
         }
+
+        @media(max-width: 575px){
+            padding-bottom: $spacing-small;
+        }
+    }
+
+    &__article-date{
+        @media(max-width: 575px){
+            padding-bottom: $spacing-small;
+        }
     }
 
     &__article-tags{
@@ -191,7 +201,7 @@ section.latest__articles{
 }
 
 header .meta-info{
-    padding-bottom: 2.5rem;
+    padding-bottom: $spacing-xl;
     border-bottom: 1px solid $accent-color;
     width: 100%;
 }
@@ -213,22 +223,14 @@ header .meta-info{
     margin-top: 0;
 }
 
-// .blog aside,
-// .archive aside{
-//     padding: 25px;
-//     background: $accent-color;
-//     height: 100%;
-//     width: 30%;
+// @media screen and (max-width: 991px ) {
+//     .blog aside,
+//     .archive aside,
+//     .blog .blog-items,
+//     .archive .archive-items{
+//         min-width: 100%;
+//     }
 // }
-
-@media screen and (max-width: 991px ) {
-    .blog aside,
-    .archive aside,
-    .blog .blog-items,
-    .archive .archive-items{
-        min-width: 100%;
-    }
-}
 
 .archive-description{
     text-align: center;
@@ -276,7 +278,6 @@ article.post h5{
 }
 .searchform input[type="text"]{
     padding: 7px 0px;
-    // border: 1px solid #C6C6C6;
 }
 .searchform input[type="submit"]{
     padding: 11px 10px;

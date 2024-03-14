@@ -60,6 +60,26 @@
     }
 }
 
+#wpcf7-f112-o1 input[type="submit"]{
+    border-radius: $btn__round-border-radius;
+    border: 2px solid $button-black;
+    color: $primary-black;
+    background: transparent;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    width: auto;
+
+    &:hover{
+        background: $button-black;
+        color: $primary-white;
+        transition: .2s all ease-in-out;
+    }
+
+    @media (max-width: 1199px){
+        margin-bottom: 0;
+    }
+}
+
 .wpcf7-form {
     object-fit: cover;
 
@@ -72,6 +92,7 @@
     & input[type="submit"]{
         border-radius: $btn__round-border-radius;
         border: 2px solid $button-black;
+        // color: $primary-black;
         background: transparent;
         padding: 1rem 4rem;
         cursor: pointer;
@@ -91,6 +112,7 @@
     &-control{
         background-color: transparent;
         border: none;
+        border-radius: 0;
         border-bottom: 1px solid $primary-black;
         margin-bottom: $spacing-unit * 6;
         width: 100%;

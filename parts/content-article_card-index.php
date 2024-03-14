@@ -17,7 +17,7 @@ $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
         <?php the_excerpt(); ?>
     </div>
     <div class="article__card-index-footer">
-        <time class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date()); ?></time>
+        <time class="article__card-index-footer_date"><i class="fas fa-calendar-alt"></i> <?php echo esc_html(get_the_date("m.d.y")); ?></time>
         <span class="article__card-index-footer_link"><a href="<?php echo esc_url(the_permalink()); ?>">Read Article</a></span>
     </div>
 </article>
