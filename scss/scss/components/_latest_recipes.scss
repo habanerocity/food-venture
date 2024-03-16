@@ -9,6 +9,12 @@
         padding-bottom: ($spacing-unit * 8);
     }
 
+    &-thumbnail{
+        @media(max-width: 500px){
+            width: 100%;
+        }
+    }
+
     &-thumbnail_container{
         position: relative;
         max-width: 23%;
@@ -32,8 +38,9 @@
             }
         }
     
-        @media(max-width: 398px){
+        @media(max-width: 500px){
             max-width: 100%;
+            width: 100%;
     
             &:nth-child(1), &:nth-child(2), &:nth-child(3){
                 margin-bottom: $spacing-unit * 5;

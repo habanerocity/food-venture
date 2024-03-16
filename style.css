@@ -742,6 +742,9 @@ button {
   @media (max-width: 767px) {
     .latest__recipes {
       padding-bottom: 32px; } }
+  @media (max-width: 500px) {
+    .latest__recipes-thumbnail {
+      width: 100%; } }
   .latest__recipes-thumbnail_container {
     position: relative;
     max-width: 23%;
@@ -756,9 +759,10 @@ button {
     @media (max-width: 767px) {
       .latest__recipes-thumbnail_container:nth-child(1), .latest__recipes-thumbnail_container:nth-child(2) {
         margin-bottom: 20px; } }
-    @media (max-width: 398px) {
+    @media (max-width: 500px) {
       .latest__recipes-thumbnail_container {
-        max-width: 100%; }
+        max-width: 100%;
+        width: 100%; }
         .latest__recipes-thumbnail_container:nth-child(1), .latest__recipes-thumbnail_container:nth-child(2), .latest__recipes-thumbnail_container:nth-child(3) {
           margin-bottom: 20px; } }
   .latest__recipes-thumbnail_headings {
