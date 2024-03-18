@@ -84,6 +84,8 @@
 
     &-image_wrapper{
         width: 100%;
+        display: flex;
+        justify-content: flex-end;
     
         @media (max-width: 767px){
             @include flex-center;

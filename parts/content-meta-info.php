@@ -5,7 +5,7 @@
         <p class="blog__article-categories"><i class="fas fa-layer-group"></i>&nbsp;Categories:&nbsp; 
             <?php
                 if(get_post_type() == 'blog_recipes'){
-                    echo '&nbsp;' . wp_kses_post(get_the_term_list( $post->ID, 'recipe_category', '', ', ' ));
+                    echo '&nbsp;' . wp_kses_post(get_the_term_list( $post->ID, 'recipe_category', '', '' ));
                 } else {
                     the_category(' ');
                 }
@@ -16,7 +16,7 @@
             if(get_post_type() == 'blog_recipes') {
                 echo '&nbsp;' . wp_kses_post(get_the_term_list( $post->ID, 'recipe_tag', '', '&nbsp;' )); 
             } else {
-                the_tags( '', ', ' ); 
+                the_tags( '', ' ' ); 
             }
         ?>
         </p>

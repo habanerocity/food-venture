@@ -12,6 +12,16 @@ function wpfoodventure_load_scripts(){
 
 add_action( 'wp_enqueue_scripts', 'wpfoodventure_load_scripts' );
 
+//preconnect to required origins fontawesome
+function my_theme_resource_hints( $urls, $relation_type ) {
+    if ( 'preconnect' === $relation_type ) {
+        $urls[] = 'https://kit.fontawesome.com';
+    }
+    return $urls;
+}
+
+add_filter( 'wp_resource_hints', 'my_theme_resource_hints', 10, 2 );
+
 //Add meta tag to head
 function add_meta_description() {
     if (is_single()) {
