@@ -1028,7 +1028,7 @@ button {
   height: auto;
   border: 3px solid #252525;
   position: relative;
-  margin-top: 6rem;
+  margin: 6rem 0;
   padding: 2rem 4rem; }
 
 .useful__notes-heading_box {

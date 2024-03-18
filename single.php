@@ -20,8 +20,8 @@
                         </div>
                             <?php 
                                 if(get_post_type() == 'blog_recipes'):
-                                    get_template_part( 'parts/content', 'useful-notes');
                                     get_template_part( 'parts/content', 'recipe-card' );
+                                    get_template_part( 'parts/content', 'useful-notes');
                                 endif;
                             ?> 
                         </div>
