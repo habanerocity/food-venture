@@ -10,6 +10,8 @@
     }
 
     &-thumbnail{
+        width: 100%;
+        
         @media(max-width: 500px){
             width: 100%;
         }
@@ -29,6 +31,7 @@
     
             &:nth-child(1), &:nth-child(2){
                 margin-bottom: 3.2rem;
+                width: 100%;
             }
         }
     
