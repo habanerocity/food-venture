@@ -1,5 +1,8 @@
 <?php 
-    $args = array( 'numberposts' => '1' );
+    $args = array(
+         'numberposts' => '1',
+         'post_status' => 'publish' 
+        );
     $recent_posts = wp_get_recent_posts( $args );
 
     foreach( $recent_posts as $recent ){

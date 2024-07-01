@@ -20,7 +20,8 @@
                             <?php 
                                 $args = array( 
                                     'posts_per_page' => 3,
-                                    'offset' => 1
+                                    'offset' => 1,
+                                    'post_status' => 'publish'
                                 );
                                 $query = new WP_Query( $args);
 
@@ -49,6 +50,7 @@
                         $args = array(
                             'post_type' => 'blog_recipes',
                             'posts_per_page' => 4,
+                            'post_status' => 'publish'
                         );
                         $query = new WP_Query($args);
                         if($query->have_posts()) : while ($query->have_posts()) : $query->the_post();

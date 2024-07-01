@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 <?php get_template_part('parts/content', 'custom-header') ?>
     <div class="overlay hidden"></div>
-    <div id="primary ">
+    <div id="primary">
         <div id="main">
             <div class="container padding-section blog__wrapper">
                 <?php
                 while( have_posts()):
                     the_post();
                     ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article style="<?php echo !is_active_sidebar('sidebar-blog') ? 'width:100%;' : 'width: 66.6667%;'; ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="meta-info">
                             <div class="non-print-content">
                                 <?php get_template_part( 'parts/content', 'meta-info' ); ?>

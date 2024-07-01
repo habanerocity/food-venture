@@ -63,6 +63,10 @@
     }
 }
 
+.thumbnail{
+    margin-top: 2rem;
+}
+
 .thumbnail-container {
     position: relative;
 
@@ -107,6 +111,12 @@
         color: $primary-white;
     }
 }
+
+// .blog-sidebar-section h3{
+//     border-radius: 3px 3px 0px 0px;
+//     background: $primary-black;
+//     color: $primary-white;
+// }
 
 #select__categories-sidebar, #archive-sidebar{
     @include flex-center;

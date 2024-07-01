@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support('csc-sidebar');
+
 require get_template_directory() . '/inc/customizer.php';
 
 function wpfoodventure_load_scripts(){
@@ -245,8 +247,8 @@ function wp_foodventure_blog_sidebar(){
             'name' => 'Blog Sidebar',
             'id' => 'sidebar-blog',
             'description' => 'Sidebar for blog articles',
-            'before_widget' => '<div class="blog-sidebar-section">',
-            'after_widget' => '</div>',
+            'before_widget' => '<div class="blog-sidebar-section"><div class="widget %2$s">',
+            'after_widget' => '</div></div>',
             'before_title' => '<h4 class="blog-sidebar-label">',
             'after_title' => '</h4>'
         )
@@ -362,6 +364,8 @@ function create_recipe_tags() {
 
 add_action('init', 'create_recipe_tags', 0);
 
+
+
 //Customize comments by adding a wrapper div and custom classes
 
 function my_custom_comment($comment, $args, $depth) {
@@ -386,3 +390,4 @@ function my_custom_comment($comment, $args, $depth) {
     <?php
 }
 ?>
+

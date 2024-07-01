@@ -20,5 +20,31 @@
             }
         ?>
         </p>
+        <div class="blog__article-share">
+            <!-- <button id="printBtn" class="recipe__card-pill black">
+                Print
+            </button> -->
+            <span>Share article:&nbsp; &nbsp; </span>
+            <div class="recipe__card-sm_icon">
+                <button id="fb">
+                <i class="sm fab fa-facebook black"></i>      
+                </button>
+            </div>
+            <div class="recipe__card-sm_icon">
+                <button id="whatsApp">
+                <i class="sm fab fa-whatsapp black"></i>      
+                </button>
+            </div>
+            <div class="recipe__card-sm_icon">
+                <button id="pinterest">
+                <i class="sm fab fa-pinterest black"></i>      
+                </button>
+            </div>
+            <div class="recipe__card-sm_icon">
+                <a href="mailto:?subject=<?php echo urlencode(get_the_title()); ?>&body=Check out this recipe: <?php echo urlencode(get_permalink()); ?>">
+                <i class="sm fas fa-envelope black"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 </article>

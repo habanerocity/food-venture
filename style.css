@@ -1793,6 +1793,9 @@ section {
   .featured-thumbnail > img {
     width: 100%; }
 
+.thumbnail {
+  margin-top: 2rem; }
+
 .thumbnail-container {
   position: relative; }
   .thumbnail-container img {
@@ -1929,10 +1932,25 @@ section {
       max-width: 100%;
       margin-top: 48px; } }
 
+.author-metadata {
+  text-align: center; }
+  .author-metadata h3 {
+    margin-bottom: 0;
+    margin-top: 1.2rem; }
+  .author-metadata p {
+    margin-top: 0;
+    font-style: italic; }
+  .author-metadata ul {
+    padding: 0; }
+
+.author-website {
+  font-size: 1.6rem; }
+
 .blog__article-categories {
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap; }
   .blog__article-categories a {
     padding: 3px 1rem;
     background-color: #252525;
@@ -1947,10 +1965,17 @@ section {
 @media (max-width: 575px) {
   .blog__article-date {
     padding-bottom: 4px; } }
+.blog__article-share {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: .8rem; }
 .blog__article-tags {
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap; }
   .blog__article-tags a {
     padding: 3px 1rem;
     background-color: #595959;
@@ -2031,9 +2056,14 @@ section {
 
 .author-gravatar {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  flex-direction: column; }
   .author-gravatar > img {
     width: 100%; }
+
+.csc_sidebar-heading {
+  background-color: #252525;
+  color: #ffffff; }
 
 .meta-info > p {
   font-size: 1.6rem; }
