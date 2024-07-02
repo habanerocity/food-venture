@@ -15,7 +15,7 @@
                         <img class="contact__pic" alt="<?php echo esc_attr($contact_image_alt) ?>" src="<?php echo esc_url($contact_image)  ?>" />
                     </div>
                     <div class="contact__form-wrapper">
-                        <?php echo do_shortcode('[contact-form-7 id="57e1d9f" title="Contact form"]'); ?>
+                        <?php the_content(); ?>
                     </div>
                 </section>
             </div>
