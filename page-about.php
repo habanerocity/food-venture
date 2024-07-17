@@ -35,6 +35,24 @@
                             </div>
                         </section>
                     </div>
+                    <?php 
+                    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                    
+                    if( is_plugin_active('csc-blogging-locations/csc-blogging-locations.php')):
+                        if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+                    ?>
+                        <section style="width:100%;" class="border-top padding-section">
+                            <div class="container">
+                                <div class="post-content">
+                                    <?php the_content(); ?>
+                                </div>
+                            </div> 
+                        </section>
+                    <?php 
+                            endwhile; 
+                        endif; 
+                    endif;
+                    ?>
                 </div>
             </article>
         </div>

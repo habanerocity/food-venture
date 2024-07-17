@@ -13,14 +13,27 @@
                 </header>
                 <article class="blog__items-grid">
                     <?php 
-                        if( have_posts() ):
-                            while( have_posts() ) : the_post();
+                    if( have_posts() ):
+                        while( have_posts() ) : the_post();
                             get_template_part( 'parts/content', 'article_card-index');
-                            endwhile;
-                        else: ?>
-                            <p>No posts to be displayed!</p>
-                    <?php endif; ?>
+                        endwhile;
+                    ?>
                 </article>
+                <div class="container padding-section post__navigation-child">
+                    <div class="pages new">
+                        <?php previous_posts_link( "<< Newer posts" ) ?>
+                    </div>
+                    <div class="pages old">
+                        <?php next_posts_link( "Older posts >>" ) ?>
+                    </div>
+                </div>
+                <?php 
+                    else: 
+                ?>
+                <p>No posts to be displayed!</p>
+                <?php 
+                    endif; 
+                ?>
             </div>
         </div>
     </section>

@@ -8,7 +8,7 @@
                 while( have_posts()):
                     the_post();
                     ?>
-                    <article style="<?php echo !is_active_sidebar('sidebar-blog') ? 'width:100%;' : 'width: 66.6667%;'; ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article class="<?php echo !is_active_sidebar('sidebar-blog') ? 'no_sidebar' : 'with_sidebar'; ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="meta-info">
                             <div class="non-print-content">
                                 <?php get_template_part( 'parts/content', 'meta-info' ); ?>

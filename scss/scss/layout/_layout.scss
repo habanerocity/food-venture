@@ -160,6 +160,16 @@ hr.section__title-divider{
     width: 100%;
 }
 
+.wp-pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
+#padding__bottom-none{
+    padding-bottom: 0;
+
+}
+
 section{
     padding-left: 0;
     width:auto;
