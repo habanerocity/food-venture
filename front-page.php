@@ -19,6 +19,7 @@
                         <div class="flex_container-row">
                             <?php 
                                 $args = array( 
+                                    'post_type' => array('post', 'food_review'),
                                     'posts_per_page' => 3,
                                     'offset' => 1,
                                     'post_status' => 'publish'
