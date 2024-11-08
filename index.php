@@ -12,32 +12,30 @@
                     </div>
                 </header>
                 <article class="blog__items-grid">
-                <?php 
-                    $args = array( 
-                        'post_type' => array('post', 'food_review'),
-                        'posts_per_page' => 3,
-                        'offset' => 1,
-                        'post_status' => 'publish'
-                    );
-                    $query = new WP_Query( $args);
-
-                    if( $query->have_posts() ):
-                        while( $query->have_posts()) : $query->the_post();
+                    <?php 
+                    if( have_posts() ):
+                        while( have_posts() ) : the_post();
                             get_template_part( 'parts/content', 'article_card-index');
                         endwhile;
-                        wp_reset_postdata();
-                    else: ?>
-                        <p>No posts to be displayed!</p>
-                <?php endif; ?>
+                    ?>
                 </article>
-                <div class="container padding-section post__navigation-child">
-                    <div class="pages new">
-                        <?php previous_posts_link( "<< Newer posts" ) ?>
+                <nav id="blog__index-navigation" class="post__navigation">
+                    <div id="padding__bottom-none" class="container padding-section post__navigation-child">
+                        <div class="prev-post">
+                            <?php previous_posts_link( "Newer posts" ) ?>
+                        </div>
+                        <div class="next-post">
+                            <?php next_posts_link( "Older posts" ) ?>
+                        </div>
                     </div>
-                    <div class="pages old">
-                        <?php next_posts_link( "Older posts >>" ) ?>
-                    </div>
-                </div>
+                </nav>
+                <?php 
+                    else: 
+                ?>
+                <p>No posts to be displayed!</p>
+                <?php 
+                    endif; 
+                ?>
             </div>
         </div>
     </section>

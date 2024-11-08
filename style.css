@@ -546,6 +546,9 @@ button {
     content: "<";
     padding-right: 8px; }
 
+.sidebar__btn-container > a {
+  text-decoration: none; }
+
 .hero__summary {
   width: 71%; }
   @media (max-width: 1200px) {

@@ -101,3 +101,9 @@ button{
         }
     }
 }
+
+.sidebar__btn-container{
+    & > a{
+        text-decoration: none;
+    }
+}
