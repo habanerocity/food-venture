@@ -391,3 +391,14 @@ function my_custom_comment($comment, $args, $depth) {
 }
 ?>
 
+<?php
+
+//Add custom post types to the main query
+function include_custom_post_types_in_main_query($query) {
+    if (is_home() && $query->is_main_query() && !is_admin()) {
+        $query->set('post_type', array('post', 'food_review'));
+    }
+}
+add_action('pre_get_posts', 'include_custom_post_types_in_main_query');
+
+?>
